@@ -14,14 +14,13 @@ clc
 
 I_1 = 0.0109;
 I_2 = 0.0504;
-%I_3 = 0.0700;
-I_3 = I_2;
+I_3 = 0.0700;
 
 %% INITIAL CONDITIONS
 
 % Dynamics
-w1_0 = 0;
-w2_0 = 0;
+w1_0 = 0.53;
+w2_0 = 0.54;
 w3_0 = 0.26;
 
 % Kinematics : DCM
@@ -35,19 +34,16 @@ psi_0 = 0.84;
 % Pointing orbit
 mu = 398600;
 a = 200;
-e = 0;
+e = 0.3;
 i = 0;
 OMG = 0;
 omg = 0;
 theta = 0;
 
-% Used only in case of circual orbit pointing
-%n = sqrt((6.674*10^-11*(5.972*10^24 + 800))/ 200000^3);
-
 %% LAUNCH SIMULATOR
 
 simulation_time = 50;
-sim euler_works
+sim Lab_3
 
 %% OUTPUTS PLOT
 
