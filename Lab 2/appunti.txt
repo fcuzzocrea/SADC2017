@@ -1,0 +1,5 @@
+Pointing Vector : 
+
+x_p = A_bn' * [1 0 0]
+
+Obiettivo : integrare la cinematica simultaneamente con le eq di eulero. 
