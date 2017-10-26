@@ -10,11 +10,14 @@ close all
 clear 
 clc
 
+mu = 398600;
+R_e = 6378;
+
 %% INERTIAL PROPERTIES
 
-I_1 = 0.0109;
-I_2 = 0.0504;
-I_3 = 0.0700;
+I_1 = 0.0067;
+I_2 = 0.0333;
+I_3 = 0.0333;
 
 %% INITIAL CONDITIONS
 
@@ -28,7 +31,7 @@ I_3 = 0.0700;
 
 w1_0 = 0;
 w2_0 = 0;
-w3_0 = 0.587;  
+w3_0 = 0.58;  
 
 % Kinematics : DCM
 DCM_0 = eye(3);
@@ -38,10 +41,19 @@ phi_0 = 0.1;
 theta_0 = 0.1;
 psi_0 = 0.1;
 
-% Pointing orbit
-mu = 398600;    %km
-a = 400+6378;   %km
-e = 0.6;
+% % Pointing orbit (Molynia)
+% 
+% a = 20176+R_e;   %km
+% e = 0.72;
+% i = 63.4;
+% OMG = 0;
+% omg = -pi;
+% theta = 0;
+
+% Pointing orbit (test)
+
+a = 200+R_e;   %km
+e = 0;
 i = 0;
 OMG = 0;
 omg = 0;
@@ -49,7 +61,7 @@ theta = 0;
 
 %% LAUNCH SIMULATOR
 
-simulation_time = 6000;
+simulation_time = 2*pi*sqrt(a^3/mu);
 sim Lab_4
 
 %% OUTPUTS PLOT
@@ -67,7 +79,11 @@ axis vis3d
 %{
    TODO : 
            * Quaternions
-           * Gravity Gradient Torque
+           * Gravity Gradient Torque - Are results ok ? 
+            
+            Piu mi allontano piu aumenta l'errore ? WTF
+
+
 %}
 
           
