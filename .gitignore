@@ -2,3 +2,4 @@
 *.mexa64 
 *.autosave
 .directory
+*.original
