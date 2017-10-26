@@ -10,9 +10,6 @@ close all
 clear 
 clc
 
-m_t = 5.972e24;  % Kg
-G = 6.674e-11;   %  
-
 %% INERTIAL PROPERTIES
 
 I_1 = 0.0109;
@@ -21,13 +18,16 @@ I_3 = 0.0700;
 
 %% INITIAL CONDITIONS
 
-%Dynamics
+% Test omegas
+%
 % w1_0 = 0;
 % w2_0 = 0;
 % w3_0 = sqrt((6.674*10^-11*(5.972*10^24))/ (200000+6378000)^3);  
 
-w1_0 = 0.56;
-w2_0 = 0.64;
+% Simulation omegas
+
+w1_0 = 0;
+w2_0 = 0;
 w3_0 = 0.587;  
 
 % Kinematics : DCM
@@ -40,8 +40,8 @@ psi_0 = 0.1;
 
 % Pointing orbit
 mu = 398600;    %km
-a = 200+6378;   %km
-e = 0;
+a = 400+6378;   %km
+e = 0.6;
 i = 0;
 OMG = 0;
 omg = 0;
