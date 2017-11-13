@@ -11,7 +11,8 @@ clear
 clc
 
 mu = 398600;
-R_e = 6378;
+R_e = 6378;       % km
+
 
 %% INERTIAL PROPERTIES
 
