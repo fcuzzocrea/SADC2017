@@ -125,7 +125,7 @@ m_m = (a_m^3*H_0)*(4*pi/mu_0);  % Am^2
 %% LAUNCH SIMULATOR
 
 simulation_time = (2*pi*sqrt(a^3/mu));
-sim Lab_5    
+sim Lab_6
 
 %% OUTPUTS PLOT
 
