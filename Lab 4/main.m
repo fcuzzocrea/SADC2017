@@ -83,14 +83,6 @@ hold on
 plot(w_bl(1:700,1)); plot(w_bl(1:700,2)); plot(w_bl(1:700,3));
 title('Error between BFF and RF')
 legend('x','y','z')
-        
-%{
-   TODO : 
-           * Quaternions
-           * Gravity Gradient : dare condizione iniziale che diverga
-%}
-
-
     
 
           

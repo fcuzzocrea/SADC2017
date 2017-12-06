@@ -62,7 +62,7 @@ R_e = 6.378e+03;    % Km
 w1_0 = 0;
 w2_0 = 0;
 %w3_0 = sqrt(mu/(R_e+800)^3);
-w3_0 = sqrt(mu/(7.9755e+03)^3);  % rad/s^2
+w3_0 = (sqrt(mu/(7.9755e+03)^3))/10;  % rad/s
 %w3_0 = 0.0080;
 
 % Kinematics : DCM
@@ -178,14 +178,4 @@ figure(7)
 hold on
 plot(w_bl(1:end,1)); plot(w_bl(1:end,2)); plot(w_bl(1:end,3));
 title('Error between BFF and RF')
-legend('x','y','z')
-        
-%{
-   TODO : 
-           * Quaternions          
-%}
-
-
-    
-
-          
+legend('x','y','z')      
