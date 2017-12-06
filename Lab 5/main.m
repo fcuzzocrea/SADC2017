@@ -122,6 +122,12 @@ mu_0 = 4*pi*1e-7;            % T*m/A
 % Magnitude of the dipole
 m_m = (a_m^3*H_0)*(4*pi/mu_0);  % Am^2
 
+%% CONTROL 
+
+% We want to be aligned with the LVLH frame, so
+
+q_c = [0 0 0 1]';
+
 %% LAUNCH SIMULATOR
 
 simulation_time = (2*pi*sqrt(a^3/mu));

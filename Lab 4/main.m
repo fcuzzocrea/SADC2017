@@ -47,6 +47,12 @@ OMG = 0;
 omg = 0;
 theta = 0;
 
+%% CONTROL 
+
+% We want to be aligned with the LVLH frame, so
+
+q_c = [0 0 0 1]';
+
 %% LAUNCH SIMULATOR
 
 simulation_time = (2*pi*sqrt(a^3/mu));
