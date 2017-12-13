@@ -59,10 +59,12 @@ mu = 398600;        % Km^3/s^2
 R_e = 6.378e+03;    % Km
 
 % Test omegas
-w1_0 = 0;
-w2_0 = 0;
-%w3_0 = sqrt(mu/(R_e+800)^3);
-w3_0 = sqrt(mu/(7.9755e+03)^3);  % rad/s^2
+w1_0 = 0.1;
+w2_0 = 0.2;
+w3_0 = 0.5;
+%w3_0 = (sqrt(mu/(7.9755e+03)^3));  % rad/s
+%w3_0 = (sqrt(mu/(7.9755e+03)^3))*100;  % rad/s
+%w3_0 = 0.0872665;
 %w3_0 = 0.0080;
 
 % Kinematics : DCM
@@ -75,7 +77,8 @@ psi_0 = 0.1;
 q_0 = [0 1/sqrt(3) 1/sqrt(3) 1/sqrt(3)];
 
 % Pointing orbit (test)
-r_a = 2395 + R_e;               % Km
+%r_a = 2395 + R_e;               % Km
+r_a = 800 + R_e;
 r_p = 800 + R_e;                % Km
 a = (r_a + r_p)/2;              % Km
 e = (r_a - r_p)/(r_a + r_p);
@@ -109,7 +112,7 @@ alpha_m = deg2rad(11);
 % Earth's magnetic radius 
 a_m = 6371.2;         % m
 
-% IGRF 2005 Contants
+% IGRF 2005 Constants
 g_1_0 = -29554*10^-9;      % T
 g_1_1 = -1669.05*10^-9;    % T
 h_1_1 = 5077.99*10^-9;     % T
@@ -122,10 +125,18 @@ mu_0 = 4*pi*1e-7;            % T*m/A
 % Magnitude of the dipole
 m_m = (a_m^3*H_0)*(4*pi/mu_0);  % Am^2
 
+%% CONTROL 
+
+% We want to be aligned with the LVLH frame, so
+
+q_c = [0 0 0 1]';
+
 %% LAUNCH SIMULATOR
 
 simulation_time = (2*pi*sqrt(a^3/mu));
-sim Lab_6
+sim Lab_6    
+
+OMEGA_ORB =    8.8640e-04;  % Per ricavare il gain, ma tantonon lo uso piu
 
 %% OUTPUTS PLOT
 
@@ -172,14 +183,4 @@ figure(7)
 hold on
 plot(w_bl(1:end,1)); plot(w_bl(1:end,2)); plot(w_bl(1:end,3));
 title('Error between BFF and RF')
-legend('x','y','z')
-        
-%{
-   TODO : 
-           * Quaternions          
-%}
-
-
-    
-
-          
+legend('x','y','z')      

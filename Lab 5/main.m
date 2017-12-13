@@ -109,7 +109,7 @@ alpha_m = deg2rad(11);
 % Earth's magnetic radius 
 a_m = 6371.2;         % m
 
-% IGRF 2005 Contants
+% IGRF 2005 Constants
 g_1_0 = -29554*10^-9;      % T
 g_1_1 = -1669.05*10^-9;    % T
 h_1_1 = 5077.99*10^-9;     % T
