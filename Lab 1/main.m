@@ -30,6 +30,7 @@ clc
 %                                     /
 %                                    /  x
 %                                  \/
+%
 % Mass of 6U cubesat + payload
 M = 3.00;         % Kg
 
@@ -49,55 +50,16 @@ I_1 = M/12 * (w^2 + l^2); % Kg * m^2
 I_2 = M/12 * (w^2 + h^2); % Kg * m^2
 I_3 = M/12 * (l^2 + h^2); % Kg * m^2
 
-I = [I_1  0   0;
-      0  I_2  0;
-      0   0  I_3];
-  
-I_inv = inv(I);  
+I = [I_1,   0,  0;
+        0,I_2,  0;
+        0,  0, I_3];   
+    
+I_inv = inv(I);    
 %% INITIAL CONDITIONS
-
-% Standard gravitational parameter
-mu = 398600;        % Km^3/s^2
-
-% Radius of the Earth 
-R_e = 6.378e+03;    % Km
 
 % Test omegas
 w1_0 = 0.012;
 w2_0 = 0.09;
 w3_0 = 0.17;
 
-w_0 = [w1_0,w2_0,w3_0];
-
-% Kinematics : DCM
-DCM_0 = eye(3);
-
-% Kinematics : Euler Angles
-phi_0 = 0.1;
-theta_0 = 0.1;
-psi_0 = 0.1;
-
-% Pointing orbit
-r_a = 800 + R_e;
-r_p = 800 + R_e;                % Km
-a = (r_a + r_p)/2;              % Km
-e = (r_a - r_p)/(r_a + r_p);
-i = 0;                          % Degrees
-OMG = 0;                        % Degrees
-omg = 0;                        % Degrees
-theta = 0;                      % Degrees
-
-%% LAUNCH SIMULATOR
-
-simulation_time = (2*pi*sqrt(a^3/mu));
-sim Lab_3
-
-%% OUTPUTS PLOT
-
-% Pointing vector
-figure(1)
-plot3(X_P(1,:),X_P(2,:),X_P(3,:));
-
-% Pointing orbit
-figure(2)
-plot3(r(:,1),r(:,2),r(:,3))
+w_0 = [w1_0, w2_0, w3_0];
