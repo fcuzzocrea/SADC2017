@@ -30,6 +30,7 @@ clc
 %                                     /
 %                                    /  x
 %                                  \/
+%
 % Mass of 6U cubesat + payload
 M = 3.00;         % Kg
 
@@ -49,11 +50,6 @@ I_1 = M/12 * (w^2 + l^2); % Kg * m^2
 I_2 = M/12 * (w^2 + h^2); % Kg * m^2
 I_3 = M/12 * (l^2 + h^2); % Kg * m^2
 
-I = [I_1  0   0;
-      0  I_2  0;
-      0   0  I_3];
-  
-I_inv = inv(I);  
 %% INITIAL CONDITIONS
 
 % Standard gravitational parameter
@@ -67,10 +63,6 @@ w1_0 = 0.012;
 w2_0 = 0.09;
 w3_0 = 0.17;
 
-%w_0 = [w1_0,w2_0,w3_0];
-
-w_0 = [0,0,0];
-
 % Kinematics : DCM
 DCM_0 = eye(3);
 
@@ -78,8 +70,10 @@ DCM_0 = eye(3);
 phi_0 = 0.1;
 theta_0 = 0.1;
 psi_0 = 0.1;
+q_0 = [0 1/sqrt(3) 1/sqrt(3) 1/sqrt(3)];
 
-% Pointing orbit
+% Pointing orbit (test)
+%r_a = 2395 + R_e;               % Km
 r_a = 800 + R_e;
 r_p = 800 + R_e;                % Km
 a = (r_a + r_p)/2;              % Km
@@ -89,17 +83,101 @@ OMG = 0;                        % Degrees
 omg = 0;                        % Degrees
 theta = 0;                      % Degrees
 
+%% CONDITIONS FOR DISTURBANCES
+
+% Angular velocity of the Earth
+w_e = [0 0 0.00007291];  % rad/sec
+
+% Sun Mean Motion
+n = 2*pi/(60*60*24*365); % rad/s   
+
+% Obliquity of the Ecliptic
+eps = deg2rad(23.439);   % rad       
+
+% Air properties
+rho = 1.31e-17*1000;     % Kg/m^3 @ 800km
+C_d = 2.2;
+
+% Reflection cofficients
+rho_s = 0.5;
+rho_d = 0.1;
+
+% Earth's magnetic axis inclination 
+alpha_m = deg2rad(11);
+
+% Earth's magnetic radius 
+a_m = 6371.2;         % m
+
+% IGRF 2005 Constants
+g_1_0 = -29554*10^-9;      % T
+g_1_1 = -1669.05*10^-9;    % T
+h_1_1 = 5077.99*10^-9;     % T
+
+H_0 = sqrt((g_1_0)^2 + (g_1_1)^2 + (h_1_1)^2);  % T
+
+% Vacuum permeability, to convert m^3*T in A*m^2
+mu_0 = 4*pi*1e-7;            % T*m/A
+
+% Magnitude of the dipole
+m_m = (a_m^3*H_0)*(4*pi/mu_0);  % Am^2
+
+%% CONTROL 
+
+% We want to be aligned with the LVLH frame, so
+
+q_c = [0 0 0 1]';
+
 %% LAUNCH SIMULATOR
 
-simulation_time = (2*pi*sqrt(a^3/mu));
-sim Lab_3
+period = (2*pi*sqrt(a^3/mu));
+
+sim Lab_8    
+
+OMEGA_ORB =    8.8640e-04;  % Per ricavare il gain, ma tanto non lo uso piu
 
 %% OUTPUTS PLOT
 
 % Pointing vector
 figure(1)
 plot3(X_P(1,:),X_P(2,:),X_P(3,:));
+axis equal 
 
-% Pointing orbit
+% Reference orbit
 figure(2)
 plot3(r(:,1),r(:,2),r(:,3))
+axis equal
+
+% Gravity Gradient
+figure(3)
+hold on
+plot(GG(1:end,1)); plot(GG(1:end,2)); plot(GG(1:end,3));
+title('Disturbance Torque due to Gravity Gradient')
+legend('GG_x','GG_y','GG_z')
+
+% Drag Torque
+figure(4)
+hold on
+plot(drag_torque(1:end,1)); plot(drag_torque(1:end,2)); plot(drag_torque(1:end,3));
+title('Disturbance Torque due to Aerodynamic Drag')
+legend('DT_x','DT_y','DT_z')
+
+% Drag Torque
+figure(5)
+hold on
+plot(srp_torque(1:end,1)); plot(srp_torque(1:end,2)); plot(srp_torque(1:end,3));
+title('Disturbance Torque due to Solar Radiation Pressure')
+legend('SRP_x','SRP_y','SRP_z')
+
+% Drag Torque
+figure(6)
+hold on
+plot(magnetic_torque(1:end,1)); plot(magnetic_torque(1:end,2)); plot(magnetic_torque(1:end,3));
+title('Disturbance Torque due to Earth''s Magnetic Field')
+legend('MT_x','MT_y','MT_z')
+
+% Error on attitude
+figure(7)
+hold on
+plot(w_bl(1:end,1)); plot(w_bl(1:end,2)); plot(w_bl(1:end,3));
+title('Error between BFF and RF')
+legend('x','y','z')      
