@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.16"
+    ComputedModelVersion    "1.17"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -64,7 +64,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 0.0, 1368.0, 738.0]
+      Location		      [0.0, 0.0, 1920.0, 1038.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -88,9 +88,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1322.0, 556.0]
-	ZoomFactor		[2.16]
-	Offset			[-296.66666666666669, 173.40740740740745]
+	Extents			[1882.0, 860.0]
+	ZoomFactor		[3.3821138211382116]
+	Offset			[-405.49688390313389, 234.86057692307693]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -110,7 +110,7 @@ Model {
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
       "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABiAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAALAD///8AAAVQAAACagAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAALAD///8AAAeAAAADmgAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAACA/////wAAAAAAAAAA/////wEAAADo/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFo/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAANt/////wAAAAAAAAAA/"
@@ -124,9 +124,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "fcuzzocrea"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Sep 14 16:22:50 2018"
-  RTWModifiedTimeStamp	  443374573
-  ModelVersionFormat	  "1.%<AutoIncrement:16>"
+  LastModifiedDate	  "Sat Sep 15 13:26:24 2018"
+  RTWModifiedTimeStamp	  458918766
+  ModelVersionFormat	  "1.%<AutoIncrement:17>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -183,7 +183,7 @@ Model {
     $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Lab_1"
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -238,7 +238,7 @@ Model {
 	  DisabledProps		  []
 	  Description		  ""
 	  StartTime		  "0.0"
-	  StopTime		  "50"
+	  StopTime		  "10"
 	  AbsTol		  "auto"
 	  AutoScaleAbsTol	  "on"
 	  FixedStep		  "auto"
@@ -252,7 +252,7 @@ Model {
 	  MaxStep		  "auto"
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
-	  RelTol		  "1e-3"
+	  RelTol		  "1e-7"
 	  EnableMultiTasking	  off
 	  ConcurrentTasks	  off
 	  Solver		  "ode45"
@@ -262,7 +262,7 @@ Model {
 	  ZeroCrossControl	  "UseLocalSettings"
 	  ZeroCrossAlgorithm	  "Nonadaptive"
 	  AlgebraicLoopSolver	  "TrustRegion"
-	  SolverInfoToggleStatus  off
+	  SolverInfoToggleStatus  on
 	  IsAutoAppliedInSIP	  off
 	  SolverResetMethod	  "Fast"
 	  PositivePriorityOrder	  off
@@ -931,7 +931,7 @@ Model {
       Name		      "Configuration"
       ExtraOptions	      ""
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    [ 459, 183, 1267, 639 ]
+      ConfigPrmDlgPosition    [ 459, 183, 1555, 868 ]
     }
     PropName		    "ConfigurationSets"
   }
@@ -1105,7 +1105,7 @@ Model {
   }
   System {
     Name		    "Lab_1"
-    Location		    [0, 0, 1368, 738]
+    Location		    [0, 0, 1920, 1038]
     Open		    on
     PortBlocksUseCompactNotation off
     SetDomainSpec	    off
@@ -1120,15 +1120,15 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "216"
+    ZoomFactor		    "338"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "78"
+    SIDHighWatermark	    "79"
     Block {
       BlockType		      SubSystem
       Name		      "Dynamics\n\n"
       SID		      "53"
       Ports		      [0, 1]
-      Position		      [-285, 239, -125, 421]
+      Position		      [-305, 249, -145, 431]
       ZOrder		      39
       BackgroundColor	      "yellow"
       FontName		      "Noto Sans"
@@ -1136,7 +1136,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Dynamics\n\n"
-	Location		[0, 0, 1368, 738]
+	Location		[0, 0, 1920, 1038]
 	Open			off
 	PortBlocksUseCompactNotation off
 	SetDomainSpec		off
@@ -1151,7 +1151,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"238"
+	ZoomFactor		"371"
 	Block {
 	  BlockType		  Reference
 	  Name			  "3x3 Cross Product"
@@ -1161,16 +1161,16 @@ Model {
 	  ZOrder		  2296
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
-	  LibraryVersion	  "1.142"
+	  LibraryVersion	  "1.146"
 	  SourceBlock		  "sharedutil/3x3 Cross Product"
 	  SourceType		  "CrossProduct"
 	  SourceProductName	  "Aerospace Blockset"
 	  SourceProductBaseCode	  "AE"
 	  ContentPreviewEnabled	  off
-	  aMode			  aMode
+	  aMode			  "aMode"
 	  Port {
 	    PortNumber		    1
-	    Name		    "(In*ω_b)Xω_b"
+	    Name		    "I*ω X ω"
 	  }
 	}
 	Block {
@@ -1187,7 +1187,7 @@ Model {
 	  SaturateOnIntegerOverflow off
 	  Port {
 	    PortNumber		    1
-	    Name		    "In*ω_b"
+	    Name		    "I*ω"
 	  }
 	}
 	Block {
@@ -1201,7 +1201,7 @@ Model {
 	  InitialCondition	  "w_0"
 	  Port {
 	    PortNumber		    1
-	    Name		    "ω_b"
+	    Name		    "ω"
 	  }
 	}
 	Block {
@@ -1217,19 +1217,19 @@ Model {
 	  SaturateOnIntegerOverflow off
 	  Port {
 	    PortNumber		    1
-	    Name		    "ω_b_dot"
+	    Name		    "ω_dot"
 	  }
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "w"
+	  Name			  "ω"
 	  SID			  "78"
 	  Position		  [865, 213, 895, 227]
 	  ZOrder		  2293
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  Name			  "(In*ω_b)Xω_b"
+	  Name			  "I*ω X ω"
 	  ZOrder		  79
 	  Labels		  [0, 1]
 	  SrcBlock		  "3x3 Cross Product"
@@ -1239,7 +1239,7 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "In*ω_b"
+	  Name			  "I*ω"
 	  ZOrder		  80
 	  Labels		  [1, 0]
 	  SrcBlock		  "Inertia"
@@ -1248,7 +1248,7 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "ω_b_dot"
+	  Name			  "ω_dot"
 	  ZOrder		  81
 	  Labels		  [1, 1]
 	  SrcBlock		  "Inverse of inertia tensor"
@@ -1257,7 +1257,7 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  Name			  "ω_b"
+	  Name			  "ω"
 	  ZOrder		  86
 	  Labels		  [0, 0]
 	  SrcBlock		  "Integrator2"
@@ -1269,7 +1269,7 @@ Model {
 	    Branch {
 	      ZOrder		      84
 	      Points		      [0, 15]
-	      DstBlock		      "w"
+	      DstBlock		      "ω"
 	      DstPort		      1
 	    }
 	    Branch {
@@ -1284,19 +1284,38 @@ Model {
 	    DstPort		    1
 	  }
 	}
+	Annotation {
+	  SID			  "79"
+	  Name			  "ω"
+	  Position		  [789, 205, 798, 219]
+	  InternalMargins	  [0, 0, 0, 0]
+	}
       }
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope"
+      Name		      "ω\n"
       SID		      "65"
       Ports		      [1]
-      Position		      [0, 314, 30, 346]
+      Position		      [-25, 324, 5, 356]
       ZOrder		      40
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
-      "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true),extmgr.Configuration('Tools','P"
-      "lot Navigation',true),extmgr.Configuration('Tools','Measurements',true)),'Version','2017b')"
+      "ources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('Mi"
+      "nYLimReal','0.41893','MaxYLimReal','0.53037','YLabelReal','','MinYLimMag','0.41893','MaxYLimMag','0.53037','Lege"
+      "ndVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274"
+      "509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.6235294"
+      "11764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176470"
+      "58823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLab"
+      "el>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'Dynamics  :1','Dynami"
+      "cs  :2','Dynamics  :3'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','0.41"
+      "893','MaxYLimReal','0.53037','YLabelReal','','MinYLimMag','0.41893','MaxYLimMag','0.53037','LegendVisibility','o"
+      "ff','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6862"
+      "74509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160784"
+      "31372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745"
+      "098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot"
+      " Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Vers"
+      "ion','2018a')"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -1304,7 +1323,7 @@ Model {
       ZOrder		      54
       SrcBlock		      "Dynamics\n\n"
       SrcPort		      1
-      DstBlock		      "Scope"
+      DstBlock		      "ω\n"
       DstPort		      1
     }
   }
