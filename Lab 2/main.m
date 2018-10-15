@@ -63,3 +63,18 @@ w2_0 = 0.09;
 w3_0 = 0.17;
 
 w_0 = [w1_0, w2_0, w3_0];
+
+%% LAUNCH SIMULATOR
+
+simulation_time = (2*pi*sqrt(a^3/mu));
+sim Lab_2
+
+%% OUTPUTS PLOT
+
+% Pointing vector
+figure(1)
+plot3(X_P(1,:),X_P(2,:),X_P(3,:));
+
+% Pointing orbit
+figure(2)
+plot3(r(:,1),r(:,2),r(:,3))
