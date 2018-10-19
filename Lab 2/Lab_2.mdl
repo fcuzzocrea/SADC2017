@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.144"
+    ComputedModelVersion    "1.145"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -83,21 +83,21 @@ Model {
 	Dimension		2
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "252"
+	  LoadSaveID		  "272"
 	  Extents		  [1135.0, 546.0]
-	  ZoomFactor		  [1.1776595744680851]
-	  Offset		  [-1281.887985546522, 66.684281842818422]
+	  ZoomFactor		  [0.96]
+	  Offset		  [-1404.171875, 56.739583333333371]
 	}
 	Object {
 	  $ObjectID		  7
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "1"
 	  Extents		  [1135.0, 546.0]
 	  ZoomFactor		  [1.9185185185185185]
-	  Offset		  [2157.4126447876447, 377.70270270270271]
+	  Offset		  [2117.3785291988415, 377.70270270270271]
 	}
 	PropName		"EditorsInfo"
       }
@@ -133,9 +133,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "fcuzzocrea"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Oct 16 14:35:47 2018"
-  RTWModifiedTimeStamp	  461601344
-  ModelVersionFormat	  "1.%<AutoIncrement:144>"
+  LastModifiedDate	  "Wed Oct 17 19:51:30 2018"
+  RTWModifiedTimeStamp	  461700066
+  ModelVersionFormat	  "1.%<AutoIncrement:145>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1380,7 +1380,7 @@ Model {
       System {
 	Name			"A_bn"
 	Location		[0, 0, 1368, 732]
-	Open			on
+	Open			off
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
 	ExecutionDomainType	"Deduce"
@@ -1397,7 +1397,7 @@ Model {
 	ZoomFactor		"118"
 	Block {
 	  BlockType		  Inport
-	  Name			  "w"
+	  Name			  "ω_bn"
 	  SID			  "253"
 	  Position		  [-1270, 188, -1205, 222]
 	  ZOrder		  105
@@ -1730,7 +1730,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  18
-	  SrcBlock		  "w"
+	  SrcBlock		  "ω_bn"
 	  SrcPort		  1
 	  DstBlock		  "MATLAB Function"
 	  DstPort		  1
@@ -1925,7 +1925,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "w"
+	  Name			  "ω_bn"
 	  SID			  "186"
 	  Position		  [2580, 528, 2610, 542]
 	  ZOrder		  2288
@@ -1955,7 +1955,7 @@ Model {
 	    Branch {
 	      ZOrder		      457
 	      Points		      [0, -30]
-	      DstBlock		      "w"
+	      DstBlock		      "ω_bn"
 	      DstPort		      1
 	    }
 	  }
@@ -2058,7 +2058,7 @@ Model {
       System {
 	Name			"Euler Angles\n"
 	Location		[0, 0, 1368, 732]
-	Open			off
+	Open			on
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
 	ExecutionDomainType	"Deduce"
@@ -2075,7 +2075,7 @@ Model {
 	ZoomFactor		"96"
 	Block {
 	  BlockType		  Inport
-	  Name			  "w"
+	  Name			  "ω_bn"
 	  SID			  "273"
 	  Position		  [-1115, 143, -1085, 157]
 	  ZOrder		  103
@@ -2310,7 +2310,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "Attitude"
+	  Name			  "attitude"
 	  SID			  "280"
 	  Position		  [-545, 308, -515, 322]
 	  ZOrder		  91
@@ -2345,7 +2345,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  16
-	  SrcBlock		  "w"
+	  SrcBlock		  "ω_bn"
 	  SrcPort		  1
 	  DstBlock		  "MATLAB Function"
 	  DstPort		  1
@@ -2418,7 +2418,7 @@ Model {
 	  ZOrder		  11
 	  SrcBlock		  "Mux"
 	  SrcPort		  1
-	  DstBlock		  "Attitude"
+	  DstBlock		  "attitude"
 	  DstPort		  1
 	}
 	Line {
@@ -2564,7 +2564,7 @@ Model {
 	ZoomFactor		"61"
 	Block {
 	  BlockType		  Inport
-	  Name			  "w"
+	  Name			  "ω_bn"
 	  SID			  "407"
 	  Position		  [365, 273, 395, 287]
 	  ZOrder		  223
@@ -2959,7 +2959,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  367
-	  SrcBlock		  "w"
+	  SrcBlock		  "ω_bn"
 	  SrcPort		  1
 	  Points		  [-70, 0]
 	  DstBlock		  "Demux"
@@ -3020,7 +3020,7 @@ Model {
       Ports		      [1]
       Position		      [-3380, -945, -3320, -915]
       ZOrder		      205
-      VariableName	      "w"
+      VariableName	      "w_bn"
       MaxDataPoints	      "inf"
       Save2DSignal	      "3-D array (concatenate along third dimension)"
       FixptAsFi		      on
@@ -3141,7 +3141,7 @@ Model {
       ZOrder		      372
       SrcBlock		      "Subsystem"
       SrcPort		      1
-      Points		      [-139, 0; 0, -340]
+      Points		      [-50, 0; 0, -340]
       DstBlock		      "Dynamics\n\n"
       DstPort		      1
     }
