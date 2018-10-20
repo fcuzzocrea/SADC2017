@@ -31,9 +31,10 @@ mu = 398600;        % Km^3/s^2
 R_e = 6.378e+03;    % Km
 
 % Test omegas
-w1_0 = 0;
-w2_0 = 0;
-w3_0 = 0.001038158026828;
+w1_0 = 0.01;
+w2_0 = 0.03;
+w3_0 = 0.05;
+%w3_0 = 0.001038158026828;
 
 w_0 = [w1_0,w2_0,w3_0];
 
@@ -55,9 +56,16 @@ OMG = 0;                        % Degrees
 omg = 0;                        % Degrees
 theta = 0;                      % Degrees
 
+%% CONTROLLER SETUP
+
+% Gains
+
+k1 = 0.01;
+k2 = 0.001;
+
 %% LAUNCH SIMULATOR
 
-simulation_time = (2*pi*sqrt(a^3/mu));
+simulation_time = (2*pi*sqrt(a^3/mu))*3;
 sim Lab_3
 
 %% OUTPUTS PLOT
@@ -65,7 +73,6 @@ sim Lab_3
 % Pointing vector
 figure(1)
 plot3(X_P(1,:),X_P(2,:),X_P(3,:));
-
 % LVLH orbit
 figure(2)
-plot3(r_LVLH(:,1),r_LVLH(:,2),r_LVLH(:,3))
+plot3(r_LVLH(:,1),r_LVLH(:,2),r_LVLH(:,3));
