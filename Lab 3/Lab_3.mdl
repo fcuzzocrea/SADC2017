@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.286"
+    ComputedModelVersion    "1.289"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -133,9 +133,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "fcuzzocrea"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Oct 20 17:50:55 2018"
-  RTWModifiedTimeStamp	  461958332
-  ModelVersionFormat	  "1.%<AutoIncrement:286>"
+  LastModifiedDate	  "Mon Oct 22 11:09:07 2018"
+  RTWModifiedTimeStamp	  462107345
+  ModelVersionFormat	  "1.%<AutoIncrement:289>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1274,7 +1274,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "599"
+    SIDHighWatermark	    "611"
     Block {
       BlockType		      SubSystem
       Name		      "\n"
@@ -1393,21 +1393,21 @@ Model {
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
       "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData3'),extmgr.Configuration('Visuals','Time Domain"
-      "',true,'SerializedDisplays',{struct('MinYLimReal','-11.06355','MaxYLimReal','5.32416','YLabelReal','','MinYLimMa"
-      "g','0.00000','MaxYLimMag','11.06355','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axe"
+      "',true,'SerializedDisplays',{struct('MinYLimReal','-2.68656','MaxYLimReal','10.77048','YLabelReal','','MinYLimMa"
+      "g','0.00000','MaxYLimMag','10.77048','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axe"
       "sColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666"
       "666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831"
       "372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074509803921568"
       "6 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLine"
-      "s',3,'LineNames',{{'Kinematics: Euler Angles/1:1','Kinematics: Euler Angles/1:2','Kinematics: Euler Angles/1:3'}"
-      "},'ShowContent',true,'Placement',1)},'TimeUnits','seconds','ShowTimeAxisLabel',true,'DisplayPropertyDefaults',st"
-      "ruct('MinYLimReal','-11.06355','MaxYLimReal','5.32416','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','11.0"
-      "6355','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor'"
-      ",[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 "
-      "0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.39215686274509"
-      "8 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.C"
-      "onfiguration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('T"
-      "ools','Measurements',true,'Version','2018b')),'Version','2018b','Position',[290 196 896 395])"
+      "s',3,'LineNames',{{'Kinematics: Euler Angles1/1:1','Kinematics: Euler Angles1/1:2','Kinematics: Euler Angles1/1:"
+      "3'}},'ShowContent',true,'Placement',1)},'TimeUnits','seconds','ShowTimeAxisLabel',true,'DisplayPropertyDefaults'"
+      ",struct('MinYLimReal','-2.68656','MaxYLimReal','10.77048','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1"
+      "0.77048','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCol"
+      "or',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1"
+      ";1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.39215686274"
+      "5098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmg"
+      "r.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration"
+      "('Tools','Measurements',true,'Version','2018b')),'Version','2018b','Position',[294 200 888 391])"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -2844,6 +2844,19 @@ Model {
 		    }
 		    }
 		    Block {
+		    BlockType		    ToWorkspace
+		    Name		    "To Workspace"
+		    SID			    "611"
+		    Ports		    [1]
+		    Position		    [400, 115, 460, 145]
+		    ZOrder		    179
+		    VariableName	    "A_LN"
+		    MaxDataPoints	    "inf"
+		    Save2DSignal	    "3-D array (concatenate along third dimension)"
+		    FixptAsFi		    on
+		    SampleTime		    "-1"
+		    }
+		    Block {
 		    BlockType		    Outport
 		    Name		    "A_LN"
 		    SID			    "431"
@@ -2886,8 +2899,18 @@ Model {
 		    ZOrder		    13
 		    SrcBlock		    "MATLAB Function"
 		    SrcPort		    1
+		    Points		    [22, 0]
+		    Branch {
+		    ZOrder		    26
+		    Points		    [0, -80]
+		    DstBlock		    "To Workspace"
+		    DstPort		    1
+		    }
+		    Branch {
+		    ZOrder		    25
 		    DstBlock		    "A_LN"
 		    DstPort		    1
+		    }
 		    }
 		    Line {
 		    ZOrder		    15
@@ -4131,25 +4154,25 @@ Model {
       "666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372"
       "549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0"
       ".650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',"
-      "3,'LineNames',{{'Kinematics: Euler Angles/2','Kinematics: Euler Angles/3','Kinematics: Euler Angles/4'}},'ShowCo"
-      "ntent',true,'Placement',1)},'TimeUnits','seconds','ShowTimeAxisLabel',true,'DisplayPropertyDefaults',struct('Min"
-      "YLimReal','-0.7854','MaxYLimReal','7.06858','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','7.06858','Legen"
-      "dVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627450"
-      "9803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.4117647058"
-      "82353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.83137254"
-      "9019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration"
-      "('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measu"
-      "rements',true,'Version','2018b')),'Version','2018b','Position',[323 156 904 398])"
+      "3,'LineNames',{{'Kinematics: Euler Angles1/2','Kinematics: Euler Angles1/3','Kinematics: Euler Angles1/4'}},'Sho"
+      "wContent',true,'Placement',1)},'TimeUnits','seconds','ShowTimeAxisLabel',true,'DisplayPropertyDefaults',struct('"
+      "MinYLimReal','-0.7854','MaxYLimReal','7.06858','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','7.06858','Le"
+      "gendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627"
+      "4509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.4117647"
+      "05882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.83137"
+      "2549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configurat"
+      "ion('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Me"
+      "asurements',true,'Version','2018b')),'Version','2018b','Position',[323 156 904 398])"
       NumInputPorts	      "1"
       Floating		      off
     }
     Block {
       BlockType		      SubSystem
       Name		      "Kinematics: Euler Angles"
-      SID		      "484"
+      SID		      "600"
       Ports		      [1, 4]
-      Position		      [-4645, -570, -4490, -435]
-      ZOrder		      197
+      Position		      [-4635, -571, -4480, -434]
+      ZOrder		      290
       BackgroundColor	      "magenta"
       FontName		      "Noto Sans"
       FontSize		      14
@@ -4171,11 +4194,11 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"96"
+	ZoomFactor		"93"
 	Block {
 	  BlockType		  Inport
 	  Name			  "ω_bn"
-	  SID			  "485"
+	  SID			  "601"
 	  Position		  [-1115, 143, -1085, 157]
 	  ZOrder		  103
 	  IconDisplay		  "Port number"
@@ -4183,7 +4206,7 @@ Model {
 	Block {
 	  BlockType		  Integrator
 	  Name			  "Integrator"
-	  SID			  "486"
+	  SID			  "602"
 	  Ports			  [1, 1]
 	  Position		  [-800, 135, -770, 165]
 	  ZOrder		  84
@@ -4192,7 +4215,7 @@ Model {
 	Block {
 	  BlockType		  Integrator
 	  Name			  "Integrator1"
-	  SID			  "487"
+	  SID			  "603"
 	  Ports			  [1, 1]
 	  Position		  [-800, 300, -770, 330]
 	  ZOrder		  85
@@ -4201,7 +4224,7 @@ Model {
 	Block {
 	  BlockType		  Integrator
 	  Name			  "Integrator2"
-	  SID			  "488"
+	  SID			  "604"
 	  Ports			  [1, 1]
 	  Position		  [-800, 465, -770, 495]
 	  ZOrder		  86
@@ -4210,7 +4233,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "MATLAB Function"
-	  SID			  "489"
+	  SID			  "605"
 	  Ports			  [3, 3]
 	  Position		  [-1005, 67, -830, 563]
 	  ZOrder		  83
@@ -4241,7 +4264,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "w"
-	      SID		      "489::1"
+	      SID		      "605::1"
 	      Position		      [20, 101, 40, 119]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -4249,7 +4272,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "tetha"
-	      SID		      "489::28"
+	      SID		      "605::28"
 	      Position		      [20, 136, 40, 154]
 	      ZOrder		      19
 	      Port		      "2"
@@ -4258,7 +4281,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "psi"
-	      SID		      "489::29"
+	      SID		      "605::29"
 	      Position		      [20, 171, 40, 189]
 	      ZOrder		      20
 	      Port		      "3"
@@ -4267,7 +4290,7 @@ Model {
 	    Block {
 	      BlockType		      Demux
 	      Name		      " Demux "
-	      SID		      "489::31"
+	      SID		      "605::31"
 	      Ports		      [1, 1]
 	      Position		      [270, 245, 320, 285]
 	      ZOrder		      22
@@ -4276,8 +4299,8 @@ Model {
 	    Block {
 	      BlockType		      S-Function
 	      Name		      " SFunction "
-	      SID		      "489::30"
-	      Tag		      "Stateflow S-Function Lab_3 4"
+	      SID		      "605::30"
+	      Tag		      "Stateflow S-Function Lab_3 7"
 	      Ports		      [3, 4]
 	      Position		      [180, 102, 230, 203]
 	      ZOrder		      21
@@ -4302,14 +4325,14 @@ Model {
 	    Block {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
-	      SID		      "489::32"
+	      SID		      "605::32"
 	      Position		      [460, 256, 480, 274]
 	      ZOrder		      23
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "phi_dot"
-	      SID		      "489::25"
+	      SID		      "605::25"
 	      Position		      [460, 101, 480, 119]
 	      ZOrder		      16
 	      IconDisplay	      "Port number"
@@ -4317,7 +4340,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "tetha_dot"
-	      SID		      "489::26"
+	      SID		      "605::26"
 	      Position		      [460, 136, 480, 154]
 	      ZOrder		      17
 	      Port		      "2"
@@ -4326,7 +4349,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "psi_dot"
-	      SID		      "489::27"
+	      SID		      "605::27"
 	      Position		      [460, 171, 480, 189]
 	      ZOrder		      18
 	      Port		      "3"
@@ -4334,46 +4357,21 @@ Model {
 	    }
 	    Line {
 	      ZOrder		      1
-	      SrcBlock		      "w"
+	      SrcBlock		      " SFunction "
 	      SrcPort		      1
-	      DstBlock		      " SFunction "
+	      DstBlock		      " Demux "
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      2
-	      SrcBlock		      "tetha"
+	      SrcBlock		      " Demux "
 	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "psi"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "phi_dot"
-	      ZOrder		      4
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      2
-	      DstBlock		      "phi_dot"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "tetha_dot"
-	      ZOrder		      5
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      3
-	      DstBlock		      "tetha_dot"
+	      DstBlock		      " Terminator "
 	      DstPort		      1
 	    }
 	    Line {
 	      Name		      "psi_dot"
-	      ZOrder		      6
+	      ZOrder		      3
 	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
 	      SrcPort		      4
@@ -4381,17 +4379,42 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      7
-	      SrcBlock		      " Demux "
-	      SrcPort		      1
-	      DstBlock		      " Terminator "
+	      Name		      "tetha_dot"
+	      ZOrder		      4
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "tetha_dot"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      8
+	      Name		      "phi_dot"
+	      ZOrder		      5
+	      Labels		      [0, 0]
 	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "phi_dot"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      6
+	      SrcBlock		      "psi"
 	      SrcPort		      1
-	      DstBlock		      " Demux "
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "tetha"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "w"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
 	      DstPort		      1
 	    }
 	  }
@@ -4399,7 +4422,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "490"
+	  SID			  "606"
 	  Ports			  [3, 1]
 	  Position		  [-595, 64, -585, 566]
 	  ZOrder		  90
@@ -4410,7 +4433,7 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "Attitude"
-	  SID			  "491"
+	  SID			  "607"
 	  Position		  [-545, 308, -515, 322]
 	  ZOrder		  91
 	  IconDisplay		  "Port number"
@@ -4418,7 +4441,7 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "phi"
-	  SID			  "492"
+	  SID			  "608"
 	  Position		  [-725, 83, -695, 97]
 	  ZOrder		  104
 	  Port			  "2"
@@ -4427,7 +4450,7 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "theta"
-	  SID			  "493"
+	  SID			  "609"
 	  Position		  [-725, 233, -695, 247]
 	  ZOrder		  105
 	  Port			  "3"
@@ -4436,7 +4459,7 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "psi"
-	  SID			  "494"
+	  SID			  "610"
 	  Position		  [-725, 408, -695, 422]
 	  ZOrder		  106
 	  Port			  "4"
@@ -4444,104 +4467,104 @@ Model {
 	}
 	Line {
 	  ZOrder		  1
-	  SrcBlock		  "ω_bn"
+	  SrcBlock		  "Integrator2"
 	  SrcPort		  1
-	  DstBlock		  "MATLAB Function"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  2
-	  SrcBlock		  "MATLAB Function"
-	  SrcPort		  1
-	  DstBlock		  "Integrator"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  3
-	  SrcBlock		  "MATLAB Function"
-	  SrcPort		  2
-	  DstBlock		  "Integrator1"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  4
-	  SrcBlock		  "MATLAB Function"
-	  SrcPort		  3
-	  DstBlock		  "Integrator2"
-	  DstPort		  1
+	  Points		  [27, 0]
+	  Branch {
+	    ZOrder		    2
+	    Points		    [0, 107; -311, 0; 0, -107]
+	    DstBlock		    "MATLAB Function"
+	    DstPort		    3
+	  }
+	  Branch {
+	    ZOrder		    3
+	    DstBlock		    "Mux"
+	    DstPort		    3
+	  }
+	  Branch {
+	    ZOrder		    4
+	    Points		    [0, -65]
+	    DstBlock		    "psi"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  ZOrder		  5
-	  SrcBlock		  "Integrator"
-	  SrcPort		  1
-	  Points		  [24, 0]
-	  Branch {
-	    ZOrder		    6
-	    Points		    [0, -60]
-	    DstBlock		    "phi"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    7
-	    DstBlock		    "Mux"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  ZOrder		  8
-	  SrcBlock		  "Integrator1"
-	  SrcPort		  1
-	  Points		  [25, 0]
-	  Branch {
-	    ZOrder		    9
-	    DstBlock		    "theta"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    10
-	    Points		    [94, 0]
-	    Branch {
-	      ZOrder		      11
-	      DstBlock		      "Mux"
-	      DstPort		      2
-	    }
-	    Branch {
-	      ZOrder		      12
-	      Points		      [0, 303; -454, 0; 0, -303]
-	      DstBlock		      "MATLAB Function"
-	      DstPort		      2
-	    }
-	  }
-	}
-	Line {
-	  ZOrder		  13
 	  SrcBlock		  "Mux"
 	  SrcPort		  1
 	  DstBlock		  "Attitude"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  14
-	  SrcBlock		  "Integrator2"
+	  ZOrder		  6
+	  SrcBlock		  "Integrator1"
 	  SrcPort		  1
-	  Points		  [27, 0]
+	  Points		  [25, 0]
 	  Branch {
-	    ZOrder		    15
-	    Points		    [0, -65]
-	    DstBlock		    "psi"
+	    ZOrder		    7
+	    Points		    [94, 0]
+	    Branch {
+	      ZOrder		      8
+	      Points		      [0, 303; -454, 0; 0, -303]
+	      DstBlock		      "MATLAB Function"
+	      DstPort		      2
+	    }
+	    Branch {
+	      ZOrder		      9
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    ZOrder		    10
+	    DstBlock		    "theta"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "Integrator"
+	  SrcPort		  1
+	  Points		  [24, 0]
+	  Branch {
+	    ZOrder		    12
+	    DstBlock		    "Mux"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    16
-	    DstBlock		    "Mux"
-	    DstPort		    3
+	    ZOrder		    13
+	    Points		    [0, -60]
+	    DstBlock		    "phi"
+	    DstPort		    1
 	  }
-	  Branch {
-	    ZOrder		    17
-	    Points		    [0, 107; -311, 0; 0, -107]
-	    DstBlock		    "MATLAB Function"
-	    DstPort		    3
-	  }
+	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  "MATLAB Function"
+	  SrcPort		  3
+	  DstBlock		  "Integrator2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  15
+	  SrcBlock		  "MATLAB Function"
+	  SrcPort		  2
+	  DstBlock		  "Integrator1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  16
+	  SrcBlock		  "MATLAB Function"
+	  SrcPort		  1
+	  DstBlock		  "Integrator"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  17
+	  SrcBlock		  "ω_bn"
+	  SrcPort		  1
+	  DstBlock		  "MATLAB Function"
+	  DstPort		  1
 	}
       }
     }
@@ -4691,7 +4714,7 @@ Model {
       Name		      "Scope3"
       SID		      "229"
       Ports		      [2]
-      Position		      [-5515, -218, -5470, -132]
+      Position		      [-5520, -214, -5470, -136]
       ZOrder		      133
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -4743,7 +4766,7 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      428
+      ZOrder		      579
       SrcBlock		      "Kinematics: Euler Angles"
       SrcPort		      1
       DstBlock		      "Attitude"
@@ -4758,13 +4781,13 @@ Model {
 	ZOrder			490
 	Points			[0, 185]
 	Branch {
-	  ZOrder		  491
+	  ZOrder		  587
 	  Points		  [0, 205]
 	  DstBlock		  "Attitude Error"
 	  DstPort		  2
 	}
 	Branch {
-	  ZOrder		  427
+	  ZOrder		  577
 	  DstBlock		  "Kinematics: Euler Angles"
 	  DstPort		  1
 	}
@@ -4784,21 +4807,21 @@ Model {
       DstPort		      2
     }
     Line {
-      ZOrder		      433
+      ZOrder		      581
       SrcBlock		      "Kinematics: Euler Angles"
       SrcPort		      3
       DstBlock		      "Mux"
       DstPort		      2
     }
     Line {
-      ZOrder		      434
+      ZOrder		      582
       SrcBlock		      "Kinematics: Euler Angles"
       SrcPort		      4
       DstBlock		      "Mux"
       DstPort		      3
     }
     Line {
-      ZOrder		      432
+      ZOrder		      580
       SrcBlock		      "Kinematics: Euler Angles"
       SrcPort		      2
       DstBlock		      "Mux"
@@ -4863,7 +4886,7 @@ Model {
       BackgroundColor	      "[0.901961, 0.901961, 1.000000]"
       DropShadow	      on
       AnnotationType	      "area_annotation"
-      ZOrder		      429
+      ZOrder		      440
       FontSize		      12
     }
     Annotation {
@@ -4898,9 +4921,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 3 0 0]
     viewObj		    2
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    9
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5025,8 +5045,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 10 0 0]
     viewObj		    9
-    subviewS {
-    }
     ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5151,9 +5169,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 17 0 0]
     viewObj		    16
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5272,25 +5287,23 @@ Stateflow {
   chart {
     id			    23
     machine		    1
-    name		    "Kinematics: Euler Angles/MATLAB Function"
+    name		    "Control/MATLAB Function1"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 24 0 0]
     viewObj		    23
-    subviewS {
-    }
-    ssIdHighWaterMark	    13
+    ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    chartFileNumber	    4
+    chartFileNumber	    5
     disableImplicitCasting  1
     eml {
-      name		      "euler_eqtns"
+      name		      "fcn"
     }
     firstData		    25
-    firstTransition	    32
-    firstJunction	    31
+    firstTransition	    28
+    firstJunction	    27
   }
   state {
     id			    24
@@ -5306,14 +5319,264 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [phi_dot,tetha_dot, psi_dot] = euler_eqtns(w, tetha, psi)\n\n% Euler rotations (sequence"
-      " 123)\nphi_dot = 1/cos(tetha)*((w(1)*cos(psi)-w(2)*sin(psi)));\ntetha_dot = (w(2)*cos(psi))+(w(1)*sin(psi));\nps"
-      "i_dot = w(3) - ((w(1)*cos(psi) - w(2)*sin(psi))*(sin(tetha)/cos(tetha)));\n\nend"
+      script		      "function y = fcn(u)\n\ny = norm(u);\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    25
+    ssIdNumber		    4
+    name		    "u"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [23 0 26]
+  }
+  data {
+    id			    26
+    ssIdNumber		    5
+    name		    "y"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [23 25 0]
+  }
+  junction {
+    id			    27
+    position		    [23.5747 49.5747 7]
+    chart		    23
+    subviewer		    23
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [23 0 0]
+  }
+  transition {
+    id			    28
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      27
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    23
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    23
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+    linkNode		    [23 0 0]
+  }
+  instance {
+    id			    29
+    machine		    1
+    name		    "Control/MATLAB Function1"
+    chart		    23
+  }
+  chart {
+    id			    30
+    machine		    1
+    name		    "MATLAB Function2"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 31 0 0]
+    viewObj		    30
+    ssIdHighWaterMark	    5
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    chartFileNumber	    6
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+    firstData		    32
+    firstTransition	    35
+    firstJunction	    34
+  }
+  state {
+    id			    31
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    30
+    treeNode		    [30 0 0 0]
+    superState		    SUBCHART
+    subviewer		    30
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function y = fcn(u)\n\ny = norm(u);\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    32
+    ssIdNumber		    4
+    name		    "u"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [30 0 33]
+  }
+  data {
+    id			    33
+    ssIdNumber		    5
+    name		    "y"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [30 32 0]
+  }
+  junction {
+    id			    34
+    position		    [23.5747 49.5747 7]
+    chart		    30
+    subviewer		    30
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [30 0 0]
+  }
+  transition {
+    id			    35
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      34
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    30
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    30
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+    linkNode		    [30 0 0]
+  }
+  instance {
+    id			    36
+    machine		    1
+    name		    "MATLAB Function2"
+    chart		    30
+  }
+  chart {
+    id			    37
+    machine		    1
+    name		    "Kinematics: Euler Angles/MATLAB Function"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 38 0 0]
+    viewObj		    37
+    subviewS {
+    }
+    ssIdHighWaterMark	    13
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    chartFileNumber	    7
+    disableImplicitCasting  1
+    eml {
+      name		      "euler_eqtns"
+    }
+    firstData		    39
+    firstTransition	    46
+    firstJunction	    45
+  }
+  state {
+    id			    38
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    37
+    treeNode		    [37 0 0 0]
+    superState		    SUBCHART
+    subviewer		    37
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function [phi_dot,tetha_dot, psi_dot] = euler_eqtns(w, tetha, psi)\n\n% Euler rotations (sequence"
+      " 123)\n%phi_dot = 1/cos(tetha)*((w(1)*cos(psi)-w(2)*sin(psi)));\n%tetha_dot = (w(2)*cos(psi))+(w(1)*sin(psi));\n"
+      "%psi_dot = w(3) - ((w(1)*cos(psi) - w(2)*sin(psi))*(sin(tetha)/cos(tetha)));\n\n% Euler rotations (sequence 321)"
+      "\nphi_dot = 1/cos(tetha)*(w(2)*sin(psi) + w(3)*cos(psi));\n\ntetha_dot = (w(2)*cos(psi)-w(3)*sin(psi));\n\npsi_d"
+      "ot = w(1) + 1/cos(tetha)*(w(2)*sin(tetha)*sin(psi) + w(3)*sin(tetha)*cos(psi)); \n\nend"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    39
     ssIdNumber		    9
     name		    "phi_dot"
     scope		    OUTPUT_DATA
@@ -5335,10 +5598,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [23 0 26]
+    linkNode		    [37 0 40]
   }
   data {
-    id			    26
+    id			    40
     ssIdNumber		    10
     name		    "tetha_dot"
     scope		    OUTPUT_DATA
@@ -5360,10 +5623,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [23 25 27]
+    linkNode		    [37 39 41]
   }
   data {
-    id			    27
+    id			    41
     ssIdNumber		    11
     name		    "psi_dot"
     scope		    OUTPUT_DATA
@@ -5385,10 +5648,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [23 26 28]
+    linkNode		    [37 40 42]
   }
   data {
-    id			    28
+    id			    42
     ssIdNumber		    4
     name		    "w"
     scope		    INPUT_DATA
@@ -5407,10 +5670,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [23 27 29]
+    linkNode		    [37 41 43]
   }
   data {
-    id			    29
+    id			    43
     ssIdNumber		    12
     name		    "tetha"
     scope		    INPUT_DATA
@@ -5432,10 +5695,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [23 28 30]
+    linkNode		    [37 42 44]
   }
   data {
-    id			    30
+    id			    44
     ssIdNumber		    13
     name		    "psi"
     scope		    INPUT_DATA
@@ -5457,267 +5720,16 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [23 29 0]
-  }
-  junction {
-    id			    31
-    position		    [23.5747 49.5747 7]
-    chart		    23
-    subviewer		    23
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-    linkNode		    [23 0 0]
-  }
-  transition {
-    id			    32
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [28.125 13.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      31
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    23
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    23
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-    linkNode		    [23 0 0]
-  }
-  instance {
-    id			    33
-    machine		    1
-    name		    "Kinematics: Euler Angles/MATLAB Function"
-    chart		    23
-  }
-  chart {
-    id			    34
-    machine		    1
-    name		    "Control/MATLAB Function1"
-    windowPosition	    [422 539.941 189 413]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 35 0 0]
-    viewObj		    34
-    visible		    1
-    subviewS {
-    }
-    ssIdHighWaterMark	    5
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    chartFileNumber	    5
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-    firstData		    36
-    firstTransition	    39
-    firstJunction	    38
-  }
-  state {
-    id			    35
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    34
-    treeNode		    [34 0 0 0]
-    superState		    SUBCHART
-    subviewer		    34
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function y = fcn(u)\n\ny = norm(u);\n"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    36
-    ssIdNumber		    4
-    name		    "u"
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-    linkNode		    [34 0 37]
-  }
-  data {
-    id			    37
-    ssIdNumber		    5
-    name		    "y"
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-    linkNode		    [34 36 0]
-  }
-  junction {
-    id			    38
-    position		    [23.5747 49.5747 7]
-    chart		    34
-    subviewer		    34
-    ssIdNumber		    3
-    type		    CONNECTIVE_JUNCTION
-    linkNode		    [34 0 0]
-  }
-  transition {
-    id			    39
-    labelString		    "{eML_blk_kernel();}"
-    labelPosition	    [28.125 13.875 102.544 14.964]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 23.5747 14.625 0 0]
-    }
-    dst {
-      id		      38
-      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
-    }
-    midPoint		    [23.5747 24.9468]
-    chart		    34
-    dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    34
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-    linkNode		    [34 0 0]
-  }
-  instance {
-    id			    40
-    machine		    1
-    name		    "Control/MATLAB Function1"
-    chart		    34
-  }
-  chart {
-    id			    41
-    machine		    1
-    name		    "MATLAB Function2"
-    windowPosition	    [422 539.941 189 413]
-    viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 42 0 0]
-    viewObj		    41
-    subviewS {
-    }
-    ssIdHighWaterMark	    5
-    decomposition	    CLUSTER_CHART
-    type		    EML_CHART
-    chartFileNumber	    6
-    disableImplicitCasting  1
-    eml {
-      name		      "fcn"
-    }
-    firstData		    43
-    firstTransition	    46
-    firstJunction	    45
-  }
-  state {
-    id			    42
-    labelString		    "eML_blk_kernel()"
-    position		    [18 64.5 118 66]
-    fontSize		    12
-    chart		    41
-    treeNode		    [41 0 0 0]
-    superState		    SUBCHART
-    subviewer		    41
-    ssIdNumber		    1
-    type		    FUNC_STATE
-    decomposition	    CLUSTER_STATE
-    eml {
-      isEML		      1
-      script		      "function y = fcn(u)\n\ny = norm(u);\n"
-      editorLayout	      "100 M4x1[10 5 700 500]"
-    }
-  }
-  data {
-    id			    43
-    ssIdNumber		    4
-    name		    "u"
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-    linkNode		    [41 0 44]
-  }
-  data {
-    id			    44
-    ssIdNumber		    5
-    name		    "y"
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-      }
-      complexity	      SF_COMPLEX_INHERITED
-      frame		      SF_FRAME_NO
-      unit {
-	name			"inherit"
-      }
-    }
-    dataType		    "Inherit: Same as Simulink"
-    linkNode		    [41 43 0]
+    linkNode		    [37 43 0]
   }
   junction {
     id			    45
     position		    [23.5747 49.5747 7]
-    chart		    41
-    subviewer		    41
+    chart		    37
+    subviewer		    37
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [41 0 0]
+    linkNode		    [37 0 0]
   }
   transition {
     id			    46
@@ -5732,22 +5744,22 @@ Stateflow {
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    41
+    chart		    37
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    41
+    subviewer		    37
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [41 0 0]
+    linkNode		    [37 0 0]
   }
   instance {
     id			    47
     machine		    1
-    name		    "MATLAB Function2"
-    chart		    41
+    name		    "Kinematics: Euler Angles/MATLAB Function"
+    chart		    37
   }
   chart {
     id			    48
@@ -5758,9 +5770,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 49 0 0]
     viewObj		    48
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -5886,9 +5895,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 56 0 0]
     viewObj		    55
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    14
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6043,9 +6049,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 64 0 0]
     viewObj		    63
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    16
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -6200,9 +6203,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 72 0 0]
     viewObj		    71
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    13
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
