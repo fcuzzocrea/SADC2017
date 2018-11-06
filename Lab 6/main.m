@@ -33,7 +33,7 @@ clc
 %
 
 % Mass of 6U cubesat + payload
-M = 3.00;                           % Kg
+M = 12.00;                          % Kg
 
 % Dimensions
 w = 100*10^-3;                      % m
@@ -93,7 +93,7 @@ theta = 0;                          % Degrees
 
 %% CONDITIONS FOR DISTURBANCES
 
-% Gravity Gradient
+% Nadir vector for gravity gradient computation
 nadir_vector = [1; 0; 0];
 
 % Angular velocity of the Earth
@@ -112,6 +112,10 @@ C_d = 2.2;
 % Reflection cofficients
 rho_s = 0.5;
 rho_d = 0.1;
+
+% Load Schmidt quasi-normalized IGRF coefficients for magnetic field
+% generation
+load('igrf_normalized_coefficient.mat')
 
 % Earth's magnetic axis inclination 
 alpha_m = deg2rad(11);
@@ -138,7 +142,9 @@ m_m = (a_m^3*H_0)*(4*pi/mu_0);      % Am^2
 % Gains
 k_p = -0.001;
 k_d = -0.001;
-%k_d = 0; k_p = k_d;
+% k_bdot = -(4*pi)/((2*pi*sqrt(a^3/mu))) * (1 + sin(deg2rad(38.5))) *
+% min([I_1,I_2,I_3]) * 100
+k_bdot =-5.1553e01;
 
 % Commanded quaternion 
 %q_c = [0; 1; 0; 0];
@@ -152,7 +158,7 @@ Q_C = [ q_c(4)  q_c(3)  -q_c(2) -q_c(1) ;
 %% LAUNCH SIMULATOR
 
 simulation_time = (2*pi*sqrt(a^3/mu));
-sim Lab_5    
+sim Lab_6    
 
 %% OUTPUTS PLOT
 
@@ -178,14 +184,14 @@ plot(drag_torque(1:end,1)); plot(drag_torque(1:end,2)); plot(drag_torque(1:end,3
 title('Disturbance Torque due to Aerodynamic Drag')
 legend('DT_x','DT_y','DT_z')
 
-% Drag Torque
+% Solar Radiation Pressure Torque
 figure(5)
 hold on
 plot(srp_torque(1:end,1)); plot(srp_torque(1:end,2)); plot(srp_torque(1:end,3));
 title('Disturbance Torque due to Solar Radiation Pressure')
 legend('SRP_x','SRP_y','SRP_z')
 
-% Drag Torque
+% Magnetic Field Torque
 figure(6)
 hold on
 plot(magnetic_torque(1:end,1)); plot(magnetic_torque(1:end,2)); plot(magnetic_torque(1:end,3));
