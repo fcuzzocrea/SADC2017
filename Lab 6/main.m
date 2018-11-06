@@ -144,7 +144,7 @@ k_p = -0.001;
 k_d = -0.001;
 % k_bdot = -(4*pi)/((2*pi*sqrt(a^3/mu))) * (1 + sin(deg2rad(38.5))) *
 % min([I_1,I_2,I_3]) * 100
-k_bdot =-5.1553e01;
+k_bdot =-5.1553e02;
 
 % Commanded quaternion 
 %q_c = [0; 1; 0; 0];
