@@ -2,7 +2,7 @@ function ghnorm()
 
 [gh, n, m, val, sv] = textread('igrf.txt','%s %f %f %f %f');
 
-val = val*1e-9;
+%val = val*1e-9;
 
 N=max(n);
 g=zeros(N,N+1);
@@ -41,5 +41,5 @@ for n=1:N
         count=count+1;
     end
 end
-dlmwrite('igrfSgT.txt',gS,'\t')
-dlmwrite('igrfShT.txt',hS,'\t')
+dlmwrite('igrfSgnT.txt',gS,'\t')
+dlmwrite('igrfShnT.txt',hS,'\t')

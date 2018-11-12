@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.562"
+    ComputedModelVersion    "1.563"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -17,7 +17,7 @@ Model {
     PreCompExecutionDomainType "Unset"
     IsExportFunctionModel   0
     NumParameterArguments   0
-    NumExternalFileReferences 6
+    NumExternalFileReferences 7
     ExternalFileReference {
       Reference		      "sharedtransform/Direction Cosine Matrix \nto Quaternions"
       Path		      "Lab_5/Attitude Error/Body\\LVLH Difference/LVLH/Direction Cosine Matrix  to Quaternions"
@@ -46,6 +46,13 @@ Model {
       Reference		      "vrlib/Utilities/Cross Product"
       Path		      "Lab_5/Disturbance Torques/Magnetic Field Torque Calculator/Cross Product"
       SID		      "1118"
+      Type		      "LIBRARY_BLOCK"
+    }
+    ExternalFileReference {
+      Reference		      "aerolibconvert2/Julian Date Conversion"
+      Path		      "Lab_5/Disturbance Torques/Solar Radiation Pressure Torque Calculator/Subsystem/Julian Date Conversi"
+      "on"
+      SID		      "1244"
       Type		      "LIBRARY_BLOCK"
     }
     ExternalFileReference {
@@ -163,9 +170,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "fcuzzocrea"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Oct 30 13:06:11 2018"
-  RTWModifiedTimeStamp	  462805569
-  ModelVersionFormat	  "1.%<AutoIncrement:562>"
+  LastModifiedDate	  "Mon Nov 12 16:44:07 2018"
+  RTWModifiedTimeStamp	  463941847
+  ModelVersionFormat	  "1.%<AutoIncrement:563>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -2564,6 +2571,11 @@ Model {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      Clock
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
       BlockType		      Concatenate
       NumInputs		      "2"
       Mode		      "Vector"
@@ -2846,7 +2858,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "60"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1230"
+    SIDHighWatermark	    "1249"
     Block {
       BlockType		      SubSystem
       Name		      "\n"
@@ -7252,7 +7264,6 @@ Model {
 	      ZOrder		      8
 	      SrcBlock		      "Constant1"
 	      SrcPort		      1
-	      Points		      [5, 0]
 	      DstBlock		      "MATLAB Function"
 	      DstPort		      4
 	    }
@@ -8805,10 +8816,10 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Solar Radiation Pressure Torque Calculator"
-	  SID			  "1154"
+	  SID			  "1231"
 	  Ports			  [2, 1]
 	  Position		  [260, 507, 430, 618]
-	  ZOrder		  238
+	  ZOrder		  363
 	  BackgroundColor	  "orange"
 	  RequestExecContextInheritance	off
 	  System {
@@ -8828,20 +8839,20 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "147"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "r_LVLH"
-	      SID		      "1155"
-	      Position		      [290, 168, 320, 182]
+	      SID		      "1232"
+	      Position		      [-130, 163, -100, 177]
 	      ZOrder		      285
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "A_BN"
-	      SID		      "1156"
-	      Position		      [-115, 258, -85, 272]
+	      SID		      "1233"
+	      Position		      [0, 243, 30, 257]
 	      ZOrder		      239
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -8849,48 +8860,48 @@ Model {
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant"
-	      SID		      "1157"
-	      Position		      [290, 295, 320, 325]
+	      SID		      "1234"
+	      Position		      [290, 315, 320, 345]
 	      ZOrder		      270
 	      Value		      "A_i"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant1"
-	      SID		      "1158"
-	      Position		      [290, 340, 320, 370]
+	      SID		      "1235"
+	      Position		      [290, 355, 320, 385]
 	      ZOrder		      271
 	      Value		      "dim"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant2"
-	      SID		      "1159"
-	      Position		      [290, 430, 320, 460]
+	      SID		      "1236"
+	      Position		      [290, 435, 320, 465]
 	      ZOrder		      273
 	      Value		      "rho_s"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant3"
-	      SID		      "1160"
-	      Position		      [290, 385, 320, 415]
+	      SID		      "1237"
+	      Position		      [290, 395, 320, 425]
 	      ZOrder		      272
 	      Value		      "rho_d"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant7"
-	      SID		      "1161"
-	      Position		      [290, 205, 320, 235]
+	      SID		      "1238"
+	      Position		      [290, 195, 320, 225]
 	      ZOrder		      284
 	      Value		      "R_e"
 	    }
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "MATLAB Function"
-	      SID		      "1162"
-	      Ports		      [7, 1]
+	      SID		      "1239"
+	      Ports		      [8, 1]
 	      Position		      [355, 156, 530, 464]
 	      ZOrder		      269
 	      ErrorFcn		      "Stateflow.Translate.translate"
@@ -8916,11 +8927,11 @@ Model {
 		TiledPageScale		1
 		ShowPageBoundaries	off
 		ZoomFactor		"100"
-		SIDHighWatermark	"36"
+		SIDHighWatermark	"37"
 		Block {
 		  BlockType		  Inport
 		  Name			  "r"
-		  SID			  "1162::32"
+		  SID			  "1239::32"
 		  Position		  [20, 101, 40, 119]
 		  ZOrder		  23
 		  IconDisplay		  "Port number"
@@ -8928,7 +8939,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "R_e"
-		  SID			  "1162::33"
+		  SID			  "1239::33"
 		  Position		  [20, 136, 40, 154]
 		  ZOrder		  24
 		  Port			  "2"
@@ -8937,7 +8948,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "S_b"
-		  SID			  "1162::1"
+		  SID			  "1239::1"
 		  Position		  [20, 171, 40, 189]
 		  ZOrder		  -1
 		  Port			  "3"
@@ -8945,44 +8956,53 @@ Model {
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "A_i"
-		  SID			  "1162::22"
+		  Name			  "S_earthSun"
+		  SID			  "1239::37"
 		  Position		  [20, 206, 40, 224]
-		  ZOrder		  13
+		  ZOrder		  28
 		  Port			  "4"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "dim"
-		  SID			  "1162::23"
+		  Name			  "A_i"
+		  SID			  "1239::22"
 		  Position		  [20, 246, 40, 264]
-		  ZOrder		  14
+		  ZOrder		  13
 		  Port			  "5"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "rho_d"
-		  SID			  "1162::26"
+		  Name			  "dim"
+		  SID			  "1239::23"
 		  Position		  [20, 281, 40, 299]
-		  ZOrder		  17
+		  ZOrder		  14
 		  Port			  "6"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Inport
-		  Name			  "rho_s"
-		  SID			  "1162::29"
+		  Name			  "rho_d"
+		  SID			  "1239::26"
 		  Position		  [20, 316, 40, 334]
-		  ZOrder		  20
+		  ZOrder		  17
 		  Port			  "7"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "rho_s"
+		  SID			  "1239::29"
+		  Position		  [20, 351, 40, 369]
+		  ZOrder		  20
+		  Port			  "8"
 		  IconDisplay		  "Port number"
 		}
 		Block {
 		  BlockType		  Demux
 		  Name			  " Demux "
-		  SID			  "1162::35"
+		  SID			  "1239::35"
 		  Ports			  [1, 1]
 		  Position		  [270, 230, 320, 270]
 		  ZOrder		  26
@@ -8991,13 +9011,13 @@ Model {
 		Block {
 		  BlockType		  S-Function
 		  Name			  " SFunction "
-		  SID			  "1162::34"
+		  SID			  "1239::34"
 		  Tag			  "Stateflow S-Function Lab_5 17"
-		  Ports			  [7, 2]
-		  Position		  [180, 100, 230, 260]
+		  Ports			  [8, 2]
+		  Position		  [180, 100, 230, 280]
 		  ZOrder		  25
 		  FunctionName		  "sf_sfun"
-		  PortCounts		  "[7 2]"
+		  PortCounts		  "[8 2]"
 		  SFunctionDeploymentMode off
 		  EnableBusSupport	  on
 		  SFcnIsStateOwnerBlock	  off
@@ -9009,14 +9029,14 @@ Model {
 		Block {
 		  BlockType		  Terminator
 		  Name			  " Terminator "
-		  SID			  "1162::36"
+		  SID			  "1239::36"
 		  Position		  [460, 241, 480, 259]
 		  ZOrder		  27
 		}
 		Block {
 		  BlockType		  Outport
 		  Name			  "srp_torque"
-		  SID			  "1162::5"
+		  SID			  "1239::5"
 		  Position		  [460, 101, 480, 119]
 		  ZOrder		  -5
 		  IconDisplay		  "Port number"
@@ -9044,35 +9064,42 @@ Model {
 		}
 		Line {
 		  ZOrder		  4
-		  SrcBlock		  "A_i"
+		  SrcBlock		  "S_earthSun"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  4
 		}
 		Line {
 		  ZOrder		  5
-		  SrcBlock		  "dim"
+		  SrcBlock		  "A_i"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  5
 		}
 		Line {
 		  ZOrder		  6
-		  SrcBlock		  "rho_d"
+		  SrcBlock		  "dim"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  6
 		}
 		Line {
 		  ZOrder		  7
-		  SrcBlock		  "rho_s"
+		  SrcBlock		  "rho_d"
 		  SrcPort		  1
 		  DstBlock		  " SFunction "
 		  DstPort		  7
 		}
 		Line {
-		  Name			  "srp_torque"
 		  ZOrder		  8
+		  SrcBlock		  "rho_s"
+		  SrcPort		  1
+		  DstBlock		  " SFunction "
+		  DstPort		  8
+		}
+		Line {
+		  Name			  "srp_torque"
+		  ZOrder		  9
 		  Labels		  [0, 0]
 		  SrcBlock		  " SFunction "
 		  SrcPort		  2
@@ -9080,14 +9107,14 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  9
+		  ZOrder		  10
 		  SrcBlock		  " Demux "
 		  SrcPort		  1
 		  DstBlock		  " Terminator "
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  10
+		  ZOrder		  11
 		  SrcBlock		  " SFunction "
 		  SrcPort		  1
 		  DstBlock		  " Demux "
@@ -9097,14 +9124,15 @@ Model {
 	    }
 	    Block {
 	      BlockType		      SubSystem
-	      Name		      "spacecraftSunVector"
-	      SID		      "1163"
-	      Ports		      [1, 1]
-	      Position		      [-35, 217, 250, 313]
-	      ZOrder		      268
+	      Name		      "Subsystem"
+	      SID		      "1240"
+	      Ports		      [2, 2]
+	      Position		      [105, 231, 245, 309]
+	      ZOrder		      347
 	      RequestExecContextInheritance off
+	      ContentPreviewEnabled   on
 	      System {
-		Name			"spacecraftSunVector"
+		Name			"Subsystem"
 		Location		[0, 0, 1368, 732]
 		Open			off
 		PortBlocksUseCompactNotation off
@@ -9120,73 +9148,62 @@ Model {
 		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 		TiledPageScale		1
 		ShowPageBoundaries	off
-		ZoomFactor		"144"
+		ZoomFactor		"187"
 		Block {
 		  BlockType		  Inport
 		  Name			  "A_BN"
-		  SID			  "1164"
-		  Position		  [465, 63, 495, 77]
-		  ZOrder		  267
+		  SID			  "1241"
+		  Position		  [200, 3, 230, 17]
+		  ZOrder		  348
 		  IconDisplay		  "Port number"
 		}
 		Block {
-		  BlockType		  Constant
-		  Name			  "Constant"
-		  SID			  "1165"
-		  Position		  [-10, 122, 50, 148]
-		  ZOrder		  270
-		  Value			  "cos(epsilon)"
+		  BlockType		  Inport
+		  Name			  "r_LVLH"
+		  SID			  "1242"
+		  Position		  [-10, 133, 20, 147]
+		  ZOrder		  351
+		  Port			  "2"
+		  IconDisplay		  "Port number"
 		}
 		Block {
-		  BlockType		  Constant
-		  Name			  "Constant1"
-		  SID			  "1166"
-		  Position		  [-5, 252, 50, 278]
-		  ZOrder		  260
-		  Value			  "sin(epsilon)"
+		  BlockType		  Clock
+		  Name			  "Clock"
+		  SID			  "1243"
+		  Position		  [-240, 79, -190, 131]
+		  ZOrder		  345
+		  DisplayTime		  on
 		}
 		Block {
-		  BlockType		  Sin
-		  Name			  "Cos(nt)"
-		  SID			  "1167"
-		  Ports			  [0, 1]
-		  Position		  [20, 55, 50, 85]
-		  ZOrder		  247
-		  Frequency		  "n"
-		  Phase			  "pi/2"
-		  SampleTime		  "0"
-		}
-		Block {
-		  BlockType		  Product
-		  Name			  "Product"
-		  SID			  "1168"
-		  Ports			  [2, 1]
-		  Position		  [265, 104, 305, 226]
-		  ZOrder		  253
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  RndMeth		  "Floor"
-		  SaturateOnIntegerOverflow off
-		}
-		Block {
-		  BlockType		  Product
-		  Name			  "Product1"
-		  SID			  "1169"
-		  Ports			  [2, 1]
-		  Position		  [265, 242, 305, 273]
-		  ZOrder		  254
-		  InputSameDT		  off
-		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-		  RndMeth		  "Floor"
-		  SaturateOnIntegerOverflow off
+		  BlockType		  Reference
+		  Name			  "Julian Date Conversion"
+		  SID			  "1244"
+		  Ports			  [1, 1]
+		  Position		  [-115, 90, -25, 120]
+		  ZOrder		  344
+		  LibraryVersion	  "1.140"
+		  SourceBlock		  "aerolibconvert2/Julian Date Conversion"
+		  SourceType		  "JulianDate"
+		  SourceProductName	  "Aerospace Blockset"
+		  SourceProductBaseCode	  "AE"
+		  ContentPreviewEnabled	  on
+		  year			  "2019"
+		  month			  "January"
+		  day			  "1"
+		  hour			  "12"
+		  min			  "0"
+		  sec			  "0"
+		  modflag		  off
+		  deltaT		  "Sec"
+		  errorflag		  "Error"
 		}
 		Block {
 		  BlockType		  Product
 		  Name			  "Product2"
-		  SID			  "1170"
+		  SID			  "1245"
 		  Ports			  [2, 1]
-		  Position		  [580, 24, 640, 211]
-		  ZOrder		  266
+		  Position		  [315, -36, 375, 151]
+		  ZOrder		  347
 		  Multiplication	  "Matrix(*)"
 		  InputSameDT		  off
 		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -9194,103 +9211,222 @@ Model {
 		  SaturateOnIntegerOverflow off
 		}
 		Block {
-		  BlockType		  Sin
-		  Name			  "Sin(nt)"
-		  SID			  "1171"
-		  Ports			  [0, 1]
-		  Position		  [20, 180, 50, 210]
-		  ZOrder		  248
-		  Frequency		  "n"
-		  SampleTime		  "0"
-		}
-		Block {
-		  BlockType		  Concatenate
-		  Name			  "Vector\nConcatenate"
-		  SID			  "1172"
-		  Ports			  [3, 1]
-		  Position		  [425, 24, 435, 306]
-		  ZOrder		  265
-		  NumInputs		  "3"
+		  BlockType		  SubSystem
+		  Name			  "sunPosition"
+		  SID			  "1246"
+		  Ports			  [2, 2]
+		  Position		  [55, 89, 205, 156]
+		  ZOrder		  350
+		  ErrorFcn		  "Stateflow.Translate.translate"
+		  PermitHierarchicalResolution "ExplicitOnly"
+		  TreatAsAtomicUnit	  on
+		  RequestExecContextInheritance	off
+		  SFBlockType		  "MATLAB Function"
+		  ContentPreviewEnabled	  on
+		  System {
+		    Name		    "sunPosition"
+		    Location		    [223, 338, 826, 833]
+		    Open		    off
+		    PortBlocksUseCompactNotation off
+		    SetExecutionDomain	    off
+		    ExecutionDomainType	    "Deduce"
+		    ModelBrowserVisibility  on
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    SIDHighWatermark	    "23"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "JD"
+		    SID			    "1246::1"
+		    Position		    [20, 101, 40, 119]
+		    ZOrder		    -1
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "r_LVLH"
+		    SID			    "1246::22"
+		    Position		    [20, 136, 40, 154]
+		    ZOrder		    13
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    " Demux "
+		    SID			    "1246::20"
+		    Ports		    [1, 1]
+		    Position		    [270, 230, 320, 270]
+		    ZOrder		    11
+		    Outputs		    "1"
+		    }
+		    Block {
+		    BlockType		    S-Function
+		    Name		    " SFunction "
+		    SID			    "1246::19"
+		    Tag			    "Stateflow S-Function Lab_5 14"
+		    Ports		    [2, 3]
+		    Position		    [180, 100, 230, 180]
+		    ZOrder		    10
+		    FunctionName	    "sf_sfun"
+		    PortCounts		    "[2 3]"
+		    SFunctionDeploymentMode off
+		    EnableBusSupport	    on
+		    SFcnIsStateOwnerBlock   off
+		    Port {
+		    PortNumber		    2
+		    Name		    "S_i"
+		    }
+		    Port {
+		    PortNumber		    3
+		    Name		    "S_eartSun"
+		    }
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    " Terminator "
+		    SID			    "1246::21"
+		    Position		    [460, 241, 480, 259]
+		    ZOrder		    12
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "S_i"
+		    SID			    "1246::5"
+		    Position		    [460, 101, 480, 119]
+		    ZOrder		    -5
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "S_eartSun"
+		    SID			    "1246::23"
+		    Position		    [460, 136, 480, 154]
+		    ZOrder		    14
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    ZOrder		    1
+		    SrcBlock		    "JD"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    2
+		    SrcBlock		    "r_LVLH"
+		    SrcPort		    1
+		    Points		    [120, 0]
+		    DstBlock		    " SFunction "
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "S_i"
+		    ZOrder		    3
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    2
+		    DstBlock		    "S_i"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "S_eartSun"
+		    ZOrder		    4
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    3
+		    DstBlock		    "S_eartSun"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    5
+		    SrcBlock		    " Demux "
+		    SrcPort		    1
+		    DstBlock		    " Terminator "
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    6
+		    SrcBlock		    " SFunction "
+		    SrcPort		    1
+		    DstBlock		    " Demux "
+		    DstPort		    1
+		    }
+		  }
 		}
 		Block {
 		  BlockType		  Outport
 		  Name			  "S_b\n"
-		  SID			  "1173"
-		  Position		  [715, 113, 745, 127]
-		  ZOrder		  268
+		  SID			  "1247"
+		  Position		  [425, 53, 455, 67]
+		  ZOrder		  349
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "S_eartSun"
+		  SID			  "1248"
+		  Position		  [240, 133, 270, 147]
+		  ZOrder		  352
+		  Port			  "2"
 		  IconDisplay		  "Port number"
 		}
 		Line {
 		  ZOrder		  1
+		  SrcBlock		  "Clock"
+		  SrcPort		  1
+		  DstBlock		  "Julian Date Conversion"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "Julian Date Conversion"
+		  SrcPort		  1
+		  DstBlock		  "sunPosition"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  3
 		  SrcBlock		  "Product2"
 		  SrcPort		  1
 		  DstBlock		  "S_b\n"
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  2
-		  SrcBlock		  "Constant"
-		  SrcPort		  1
-		  DstBlock		  "Product"
-		  DstPort		  1
-		}
-		Line {
-		  ZOrder		  3
-		  SrcBlock		  "Constant1"
-		  SrcPort		  1
-		  DstBlock		  "Product1"
-		  DstPort		  2
-		}
-		Line {
 		  ZOrder		  4
-		  SrcBlock		  "Sin(nt)"
-		  SrcPort		  1
-		  Points		  [70, 0]
-		  Branch {
-		    ZOrder		    5
-		    Points		    [0, 55]
-		    DstBlock		    "Product1"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    6
-		    DstBlock		    "Product"
-		    DstPort		    2
-		  }
-		}
-		Line {
-		  ZOrder		  7
-		  SrcBlock		  "Product1"
-		  SrcPort		  1
-		  DstBlock		  "Vector\nConcatenate"
-		  DstPort		  3
-		}
-		Line {
-		  ZOrder		  8
-		  SrcBlock		  "Vector\nConcatenate"
+		  SrcBlock		  "sunPosition"
 		  SrcPort		  1
 		  DstBlock		  "Product2"
 		  DstPort		  2
 		}
 		Line {
-		  ZOrder		  9
+		  ZOrder		  5
 		  SrcBlock		  "A_BN"
 		  SrcPort		  1
 		  DstBlock		  "Product2"
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  10
-		  SrcBlock		  "Product"
+		  ZOrder		  6
+		  SrcBlock		  "r_LVLH"
 		  SrcPort		  1
-		  DstBlock		  "Vector\nConcatenate"
+		  DstBlock		  "sunPosition"
 		  DstPort		  2
 		}
 		Line {
-		  ZOrder		  11
-		  SrcBlock		  "Cos(nt)"
-		  SrcPort		  1
-		  DstBlock		  "Vector\nConcatenate"
+		  ZOrder		  7
+		  SrcBlock		  "sunPosition"
+		  SrcPort		  2
+		  DstBlock		  "S_eartSun"
 		  DstPort		  1
 		}
 	      }
@@ -9298,7 +9434,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "srp torque\n"
-	      SID		      "1174"
+	      SID		      "1249"
 	      Position		      [590, 303, 620, 317]
 	      ZOrder		      275
 	      IconDisplay	      "Port number"
@@ -9307,64 +9443,81 @@ Model {
 	      ZOrder		      1
 	      SrcBlock		      "A_BN"
 	      SrcPort		      1
-	      DstBlock		      "spacecraftSunVector"
+	      DstBlock		      "Subsystem"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      2
-	      SrcBlock		      "spacecraftSunVector"
-	      SrcPort		      1
-	      DstBlock		      "MATLAB Function"
-	      DstPort		      3
-	    }
-	    Line {
-	      ZOrder		      3
 	      SrcBlock		      "Constant"
-	      SrcPort		      1
-	      DstBlock		      "MATLAB Function"
-	      DstPort		      4
-	    }
-	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "Constant1"
 	      SrcPort		      1
 	      DstBlock		      "MATLAB Function"
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "Constant3"
+	      ZOrder		      3
+	      SrcBlock		      "Constant1"
 	      SrcPort		      1
 	      DstBlock		      "MATLAB Function"
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      6
-	      SrcBlock		      "Constant2"
+	      ZOrder		      4
+	      SrcBlock		      "Constant3"
 	      SrcPort		      1
 	      DstBlock		      "MATLAB Function"
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "r_LVLH"
+	      ZOrder		      5
+	      SrcBlock		      "Constant2"
 	      SrcPort		      1
 	      DstBlock		      "MATLAB Function"
-	      DstPort		      1
+	      DstPort		      8
 	    }
 	    Line {
-	      ZOrder		      8
+	      ZOrder		      6
+	      SrcBlock		      "r_LVLH"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		ZOrder			7
+		Points			[0, 120]
+		DstBlock		"Subsystem"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			8
+		DstBlock		"MATLAB Function"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      9
 	      SrcBlock		      "Constant7"
 	      SrcPort		      1
 	      DstBlock		      "MATLAB Function"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      9
+	      ZOrder		      10
 	      SrcBlock		      "MATLAB Function"
 	      SrcPort		      1
 	      DstBlock		      "srp torque\n"
 	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      11
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      1
+	      DstBlock		      "MATLAB Function"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      12
+	      SrcBlock		      "Subsystem"
+	      SrcPort		      2
+	      DstBlock		      "MATLAB Function"
+	      DstPort		      4
 	    }
 	  }
 	}
@@ -9435,14 +9588,14 @@ Model {
 	    ZOrder		    101
 	    Points		    [0, -385; 539, 0; 0, 150]
 	    Branch {
-	      ZOrder		      120
-	      Points		      [0, 230]
-	      DstBlock		      "Magnetic Field Torque Calculator"
+	      ZOrder		      180
+	      DstBlock		      "Solar Radiation Pressure Torque Calculator"
 	      DstPort		      2
 	    }
 	    Branch {
-	      ZOrder		      11
-	      DstBlock		      "Solar Radiation Pressure Torque Calculator"
+	      ZOrder		      120
+	      Points		      [0, 230]
+	      DstBlock		      "Magnetic Field Torque Calculator"
 	      DstPort		      2
 	    }
 	  }
@@ -9476,7 +9629,7 @@ Model {
 	  }
 	}
 	Line {
-	  ZOrder		  18
+	  ZOrder		  181
 	  SrcBlock		  "Solar Radiation Pressure Torque Calculator"
 	  SrcPort		  1
 	  Points		  [49, 0]
@@ -9530,14 +9683,14 @@ Model {
 	    ZOrder		    146
 	    Points		    [0, -124; 495, 0; 0, 64]
 	    Branch {
-	      ZOrder		      121
-	      Points		      [0, 230]
-	      DstBlock		      "Magnetic Field Torque Calculator"
+	      ZOrder		      179
+	      DstBlock		      "Solar Radiation Pressure Torque Calculator"
 	      DstPort		      1
 	    }
 	    Branch {
-	      ZOrder		      33
-	      DstBlock		      "Solar Radiation Pressure Torque Calculator"
+	      ZOrder		      121
+	      Points		      [0, 230]
+	      DstBlock		      "Magnetic Field Torque Calculator"
 	      DstPort		      1
 	    }
 	  }
@@ -10183,16 +10336,14 @@ Model {
       "6666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83137"
       "2549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 "
       "0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines'"
-      ",9,'LineNames',{{'Attitude Matrix/1:1','Attitude Matrix/1:2','Attitude Matrix/1:3','Attitude Matrix/1:4','Attitu"
-      "de Matrix/1:5','Attitude Matrix/1:6','Attitude Matrix/1:7','Attitude Matrix/1:8','Attitude Matrix/1:9'}},'ShowCo"
-      "ntent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-1.2497','MaxYLimReal','1.24997','YL"
-      "abelReal','','MinYLimMag','0.00000','MaxYLimMag','1.24997','LegendVisibility','off','XGrid',true,'YGrid',true,'P"
-      "lotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'"
-      "ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;"
-      "0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 "
-      "1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Config"
-      "uration('Tools','Measurements',true,'Version','2018b')),'Version','2018b','Position',[797 150 568 424],'VisibleA"
-      "tModelOpen','on')"
+      ",0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-1.2497"
+      "','MaxYLimReal','1.24997','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.24997','LegendVisibility','off'"
+      ",'XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.6862745"
+      "09803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.160784313"
+      "72549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098"
+      "039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Na"
+      "vigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','2018b','Position"
+      "',[789 146 576 428])"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -10512,7 +10663,7 @@ Stateflow {
     created		    "04-Oct-2017 12:24:42"
     isLibrary		    0
     sfVersion		    80000014
-    firstTarget		    135
+    firstTarget		    145
   }
   chart {
     id			    2
@@ -11148,9 +11299,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 36 0 0]
     viewObj		    35
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    13
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -12429,23 +12577,25 @@ Stateflow {
   chart {
     id			    101
     machine		    1
-    name		    "Disturbance Torques/Magnetic Field Torque Calculator/Magnetic Field/MATLAB Function"
+    name		    "Disturbance Torques/Solar Radiation Pressure Torque Calculator/Subsystem/sunPosition"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 102 0 0]
     viewObj		    101
-    ssIdHighWaterMark	    5
+    subviewS {
+    }
+    ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    chartFileNumber	    15
+    chartFileNumber	    14
     disableImplicitCasting  1
     eml {
-      name		      "norm2"
+      name		      "sunPosition"
     }
     firstData		    103
-    firstTransition	    106
-    firstJunction	    105
+    firstTransition	    108
+    firstJunction	    107
   }
   state {
     id			    102
@@ -12461,14 +12611,27 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function y = norm2(u)\n\ny = (norm(u))^2;\n\nend\n"
+      script		      "function [S_i, S_eartSun]  = sunPosition(JD,r_LVLH)\n\n% Formulas taken from  Fundamentals of Spa"
+      "cecraft\n% Attitude Determination and Control pag. 421 \n\n% Number of centuries\nT_UT1 = (JD - 2451545.0)/36525"
+      ";\n\n% Mean longitude of the Sun\nphi_sun = 280.460 + 36000.771*T_UT1;\n\n% phi_sun must be in the range 0 - 360"
+      " degrees\nif (phi_sun >= 360)\n    phi_sun = phi_sun - fix(phi_sun/360)*360;\nelseif (phi_sun < 0)\n    phi_sun "
+      "= phi_sun - (fix(phi_sun/360) - 1)*360;\nend\n\n% Mean anomaly of the Sun\nM_sun = 357.5277233 + 35999.05034*T_U"
+      "T1;\n\n% M_sun must be in the range 0 - 360 degrees\nif (M_sun >= 360)\n    M_sun = M_sun - fix(M_sun/360)*360;\n"
+      "elseif (M_sun < 0)\n    M_sun = M_sun - (fix(M_sun/360) - 1)*360;\nend\n\n% Longitude of the ecliptic, in degree"
+      "s\nphi_ecliptic = phi_sun + 1.914666471*sind(M_sun) + 0.019994643*sind(2*M_sun);\n\n% Obliquity of the ecliptic,"
+      " in degrees\nepsilon = 23.439291 - 0.0130042*T_UT1;\n\n% This is the direction from the Earth To the Sun\nS_eart"
+      "Sun = [cosd(phi_ecliptic);\n             cosd(epsilon)*sind(phi_ecliptic);\n             sind(epsilon)*sind(phi_"
+      "ecliptic)];\n\n% Distance between the Earth and the Sun, in AU  \nr_earthSun_mod = 1.000140612 - 0.016708617*cos"
+      "d(M_sun) - 0.000139589*cosd(2*M_sun);\nr_earthSun = r_earthSun_mod*S_eartSun;\n\n% We need r_LVLH in AU\nr_LVLH "
+      "= r_LVLH*6.68459e-9;\n\n% Compute the distance between the S/C and the Sun\nr_satSun = r_earthSun - r_LVLH;\n\n%"
+      " Compute S_i\nS_i = r_satSun/norm(r_satSun);\n "
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
     id			    103
     ssIdNumber		    4
-    name		    "u"
+    name		    "JD"
     scope		    INPUT_DATA
     machine		    1
     props {
@@ -12490,7 +12653,7 @@ Stateflow {
   data {
     id			    104
     ssIdNumber		    5
-    name		    "y"
+    name		    "S_i"
     scope		    OUTPUT_DATA
     machine		    1
     props {
@@ -12508,10 +12671,60 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [101 103 0]
+    linkNode		    [101 103 105]
+  }
+  data {
+    id			    105
+    ssIdNumber		    6
+    name		    "r_LVLH"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [101 104 106]
+  }
+  data {
+    id			    106
+    ssIdNumber		    7
+    name		    "S_eartSun"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [101 105 0]
   }
   junction {
-    id			    105
+    id			    107
     position		    [23.5747 49.5747 7]
     chart		    101
     subviewer		    101
@@ -12520,7 +12733,7 @@ Stateflow {
     linkNode		    [101 0 0]
   }
   transition {
-    id			    106
+    id			    108
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -12528,7 +12741,7 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      105
+      id		      107
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
@@ -12544,52 +12757,52 @@ Stateflow {
     linkNode		    [101 0 0]
   }
   instance {
-    id			    107
+    id			    109
     machine		    1
-    name		    "Disturbance Torques/Magnetic Field Torque Calculator/Magnetic Field/MATLAB Function"
+    name		    "Disturbance Torques/Solar Radiation Pressure Torque Calculator/Subsystem/sunPosition"
     chart		    101
   }
   chart {
-    id			    108
+    id			    110
     machine		    1
-    name		    "Disturbance Torques/Magnetic Field Torque Calculator/Magnetic Field/MATLAB Function1"
+    name		    "Disturbance Torques/Magnetic Field Torque Calculator/Magnetic Field/MATLAB Function"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 109 0 0]
-    viewObj		    108
+    treeNode		    [0 111 0 0]
+    viewObj		    110
     ssIdHighWaterMark	    5
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
-    chartFileNumber	    16
+    chartFileNumber	    15
     disableImplicitCasting  1
     eml {
-      name		      "norm5"
+      name		      "norm2"
     }
-    firstData		    110
-    firstTransition	    113
-    firstJunction	    112
+    firstData		    112
+    firstTransition	    115
+    firstJunction	    114
   }
   state {
-    id			    109
+    id			    111
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    108
-    treeNode		    [108 0 0 0]
+    chart		    110
+    treeNode		    [110 0 0 0]
     superState		    SUBCHART
-    subviewer		    108
+    subviewer		    110
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function y = norm5(u)\n\ny = (norm(u))^5;\n\nend\n"
+      script		      "function y = norm2(u)\n\ny = (norm(u))^2;\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
-    id			    110
+    id			    112
     ssIdNumber		    4
     name		    "u"
     scope		    INPUT_DATA
@@ -12608,10 +12821,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [108 0 111]
+    linkNode		    [110 0 113]
   }
   data {
-    id			    111
+    id			    113
     ssIdNumber		    5
     name		    "y"
     scope		    OUTPUT_DATA
@@ -12631,19 +12844,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [108 110 0]
+    linkNode		    [110 112 0]
   }
   junction {
-    id			    112
+    id			    114
     position		    [23.5747 49.5747 7]
-    chart		    108
-    subviewer		    108
+    chart		    110
+    subviewer		    110
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [108 0 0]
+    linkNode		    [110 0 0]
   }
   transition {
-    id			    113
+    id			    115
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -12651,40 +12864,162 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      112
+      id		      114
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    108
+    chart		    110
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    108
+    subviewer		    110
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [108 0 0]
+    linkNode		    [110 0 0]
   }
   instance {
-    id			    114
+    id			    116
     machine		    1
-    name		    "Disturbance Torques/Magnetic Field Torque Calculator/Magnetic Field/MATLAB Function1"
-    chart		    108
+    name		    "Disturbance Torques/Magnetic Field Torque Calculator/Magnetic Field/MATLAB Function"
+    chart		    110
   }
   chart {
-    id			    115
+    id			    117
+    machine		    1
+    name		    "Disturbance Torques/Magnetic Field Torque Calculator/Magnetic Field/MATLAB Function1"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 118 0 0]
+    viewObj		    117
+    ssIdHighWaterMark	    5
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    chartFileNumber	    16
+    disableImplicitCasting  1
+    eml {
+      name		      "norm5"
+    }
+    firstData		    119
+    firstTransition	    122
+    firstJunction	    121
+  }
+  state {
+    id			    118
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    117
+    treeNode		    [117 0 0 0]
+    superState		    SUBCHART
+    subviewer		    117
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function y = norm5(u)\n\ny = (norm(u))^5;\n\nend\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    119
+    ssIdNumber		    4
+    name		    "u"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [117 0 120]
+  }
+  data {
+    id			    120
+    ssIdNumber		    5
+    name		    "y"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [117 119 0]
+  }
+  junction {
+    id			    121
+    position		    [23.5747 49.5747 7]
+    chart		    117
+    subviewer		    117
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [117 0 0]
+  }
+  transition {
+    id			    122
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      121
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    117
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    117
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+    linkNode		    [117 0 0]
+  }
+  instance {
+    id			    123
+    machine		    1
+    name		    "Disturbance Torques/Magnetic Field Torque Calculator/Magnetic Field/MATLAB Function1"
+    chart		    117
+  }
+  chart {
+    id			    124
     machine		    1
     name		    "Disturbance Torques/Solar Radiation Pressure Torque Calculator/MATLAB Function"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 116 0 0]
-    viewObj		    115
-    visible		    1
+    treeNode		    [0 125 0 0]
+    viewObj		    124
     subviewS {
     }
-    ssIdHighWaterMark	    17
+    ssIdHighWaterMark	    18
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
     chartFileNumber	    17
@@ -12692,53 +13027,53 @@ Stateflow {
     eml {
       name		      "srp"
     }
-    firstData		    117
-    firstTransition	    126
-    firstJunction	    125
+    firstData		    126
+    firstTransition	    136
+    firstJunction	    135
   }
   state {
-    id			    116
+    id			    125
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    115
-    treeNode		    [115 0 0 0]
+    chart		    124
+    treeNode		    [124 0 0 0]
     superState		    SUBCHART
-    subviewer		    115
+    subviewer		    124
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function srp_torque  = srp(r, R_e, S_b, A_i, dim, rho_d, rho_s)\n\n% Define normal vectors\nn_1 ="
-      " [1 0 0];\nn_2 = [0 1 0];\nn_3 = [0 0 1];\nn_4 = [-1 0 0];\nn_5 = [0 -1 0];\nn_6 = [0 0 -1];\n\n% Dimensions \nw"
-      " = dim(1);\nl = dim(2);\nh = dim(3);\n\n% Sections \nA_i_1 = A_i(1);\nA_i_2 = A_i(2);\nA_i_3 = A_i(3);\nA_i_4 = "
-      "A_i(1);\nA_i_5 = A_i(2);\nA_i_6 = A_i(3);\n\n% Distance between the center of pressure and the center of mass\n%"
-      " +0.1*rcg(da aggiungere)\nr_1 = [h/2 0.1 0.1];\nr_2 = [0.2 l/2 0.2];\nr_3 = [0.4 0.4 w/2];\nr_4 = [-h/2 0.1 0.1]"
-      ";\nr_5 = [0.2 -l/2 0.2];\nr_6 = [0.4 0.4 -w/2];\n\n% Compute Solar Radiation Pressure\n% Values taken from  Fund"
-      "amentals of Spacecraft\n% Attitude Determination and Control pag. 421\nsolar_flux = 1362;        % W/m^2\nc = 29"
-      "9792458;            % m/s\nP = solar_flux/c;         % Pa\n\nS_b = S_b';\n\n% Compute SRP on all the surface onl"
-      "y if we are not shadowed by the Earth\nif dot(r,S_b) < -sqrt((norm(r))^2 - R_e^2)\n    srp_torque = [0 0 0]';\ne"
-      "lse    \n    % Compute torque due to the solar radiation pressure only exposed faces.\n    % If dot(S_b,n_i)) =>"
-      " 1 then the face is exposed othewise no.\n    if dot(S_b,n_1) >= 0\n        F_srp_1 = P*A_i_1*dot(S_b,n_1) * ((1"
-      "-rho_s)*S_b + (2*rho_s*dot(S_b,n_1)+2/3*rho_d)*n_1);\n        T_srp_1 = cross(r_1,F_srp_1);\n    else\n        T"
-      "_srp_1 = [0 0 0];\n    end\n    \n    if dot(S_b,n_2) >= 0\n        F_srp_2 = P*A_i_2*dot(S_b,n_2) * ((1-rho_s)*"
-      "S_b + (2*rho_s*dot(S_b,n_2)+2/3*rho_d)*n_2);\n        T_srp_2 = cross(r_2,F_srp_2);\n    else\n        T_srp_2 ="
-      " [0 0 0];\n    end\n    \n    if dot(S_b,n_3) >= 0\n        F_srp_3 = P*A_i_3*dot(S_b,n_3) * ((1-rho_s)*S_b + (2"
-      "*rho_s*dot(S_b,n_3)+2/3*rho_d)*n_3);\n        T_srp_3 = cross(r_3,F_srp_3);\n    else\n        T_srp_3 = [0 0 0]"
-      ";\n    end\n    \n    if dot(S_b,n_4) >= 0\n        F_srp_4 = P*A_i_4*dot(S_b,n_4) * ((1-rho_s)*S_b + (2*rho_s*d"
-      "ot(S_b,n_4)+2/3*rho_d)*n_4);\n        T_srp_4 = cross(r_4,F_srp_4);\n    else\n        T_srp_4 = [0 0 0];\n    e"
-      "nd\n    \n    if dot(S_b,n_5) >= 0\n        F_srp_5 = P*A_i_5*dot(S_b,n_5) * ((1-rho_s)*S_b + (2*rho_s*dot(S_b,n"
-      "_5)+2/3*rho_d)*n_5);\n        T_srp_5 = cross(r_5,F_srp_5);\n    else\n        T_srp_5 = [0 0 0];\n    end\n    "
-      "\n    if dot(S_b,n_6) >= 0\n        F_srp_6 = P*A_i_6*dot(S_b,n_6) * ((1-rho_s)*S_b + (2*rho_s*dot(S_b,n_6)+2/3*"
-      "rho_d)*n_6);\n        T_srp_6 = cross(r_6,F_srp_6);\n    else\n        T_srp_6 = [0 0 0];\n    end\n    % Comput"
-      "e Solar Radiation Pressure on all surfaces\n    srp_torque = [T_srp_1 + T_srp_2 + T_srp_3 + T_srp_4 + T_srp_5 + "
-      "T_srp_5 + T_srp_6]';\nend\n\nend\n"
+      script		      "function srp_torque  = srp(r, R_e, S_b, S_earthSun, A_i, dim, rho_d, rho_s)\n\n% Define normal ve"
+      "ctors\nn_1 = [1 0 0];\nn_2 = [0 1 0];\nn_3 = [0 0 1];\nn_4 = [-1 0 0];\nn_5 = [0 -1 0];\nn_6 = [0 0 -1];\n\n% Di"
+      "mensions \nw = dim(1);\nl = dim(2);\nh = dim(3);\n\n% Sections \nA_i_1 = A_i(1);\nA_i_2 = A_i(2);\nA_i_3 = A_i(3"
+      ");\nA_i_4 = A_i(1);\nA_i_5 = A_i(2);\nA_i_6 = A_i(3);\n\n% Distance between the center of pressure and the cente"
+      "r of mass\n% +0.1*rcg(da aggiungere)\nr_1 = [h/2 0.1 0.1];\nr_2 = [0.2 l/2 0.2];\nr_3 = [0.4 0.4 w/2];\nr_4 = [-"
+      "h/2 0.1 0.1];\nr_5 = [0.2 -l/2 0.2];\nr_6 = [0.4 0.4 -w/2];\n\n% Values taken from  Fundamentals of Spacecraft\n"
+      "% Attitude Determination and Control pag. 421\nsolar_flux = 1362;        % W/m^2\nc = 299792458;            % m/"
+      "s\nP = solar_flux/c;         % Pa\n\nS_b = S_b';\n\n% Compute SRP on all the surface only if we are not shadowed"
+      " by the Earth\nif dot(r,S_earthSun) < -sqrt((norm(r))^2 - R_e^2)\n    srp_torque = [0 0 0]';\nelse    \n    % Co"
+      "mpute torque due to the solar radiation pressure only exposed faces.\n    % If dot(S_b,n_i)) => 1 then the face "
+      "is exposed othewise no.\n    if dot(S_b,n_1) >= 0\n        F_srp_1 = P*A_i_1*dot(S_b,n_1) * ((1-rho_s)*S_b + (2*"
+      "rho_s*dot(S_b,n_1)+2/3*rho_d)*n_1);\n        T_srp_1 = cross(r_1,F_srp_1);\n    else\n        T_srp_1 = [0 0 0];"
+      "\n    end\n    \n    if dot(S_b,n_2) >= 0\n        F_srp_2 = P*A_i_2*dot(S_b,n_2) * ((1-rho_s)*S_b + (2*rho_s*do"
+      "t(S_b,n_2)+2/3*rho_d)*n_2);\n        T_srp_2 = cross(r_2,F_srp_2);\n    else\n        T_srp_2 = [0 0 0];\n    en"
+      "d\n    \n    if dot(S_b,n_3) >= 0\n        F_srp_3 = P*A_i_3*dot(S_b,n_3) * ((1-rho_s)*S_b + (2*rho_s*dot(S_b,n_"
+      "3)+2/3*rho_d)*n_3);\n        T_srp_3 = cross(r_3,F_srp_3);\n    else\n        T_srp_3 = [0 0 0];\n    end\n    \n"
+      "    if dot(S_b,n_4) >= 0\n        F_srp_4 = P*A_i_4*dot(S_b,n_4) * ((1-rho_s)*S_b + (2*rho_s*dot(S_b,n_4)+2/3*rh"
+      "o_d)*n_4);\n        T_srp_4 = cross(r_4,F_srp_4);\n    else\n        T_srp_4 = [0 0 0];\n    end\n    \n    if d"
+      "ot(S_b,n_5) >= 0\n        F_srp_5 = P*A_i_5*dot(S_b,n_5) * ((1-rho_s)*S_b + (2*rho_s*dot(S_b,n_5)+2/3*rho_d)*n_5"
+      ");\n        T_srp_5 = cross(r_5,F_srp_5);\n    else\n        T_srp_5 = [0 0 0];\n    end\n    \n    if dot(S_b,n"
+      "_6) >= 0\n        F_srp_6 = P*A_i_6*dot(S_b,n_6) * ((1-rho_s)*S_b + (2*rho_s*dot(S_b,n_6)+2/3*rho_d)*n_6);\n    "
+      "    T_srp_6 = cross(r_6,F_srp_6);\n    else\n        T_srp_6 = [0 0 0];\n    end\n    % Compute Solar Radiation "
+      "Pressure on all surfaces\n    srp_torque = [T_srp_1 + T_srp_2 + T_srp_3 + T_srp_4 + T_srp_5 + T_srp_5 + T_srp_6]"
+      "';\nend\n\nend\n"
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
   data {
-    id			    117
+    id			    126
     ssIdNumber		    16
     name		    "r"
     scope		    INPUT_DATA
@@ -12760,10 +13095,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [115 0 118]
+    linkNode		    [124 0 127]
   }
   data {
-    id			    118
+    id			    127
     ssIdNumber		    17
     name		    "R_e"
     scope		    INPUT_DATA
@@ -12785,10 +13120,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [115 117 119]
+    linkNode		    [124 126 128]
   }
   data {
-    id			    119
+    id			    128
     ssIdNumber		    4
     name		    "S_b"
     scope		    INPUT_DATA
@@ -12807,10 +13142,35 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [115 118 120]
+    linkNode		    [124 127 129]
   }
   data {
-    id			    120
+    id			    129
+    ssIdNumber		    18
+    name		    "S_earthSun"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [124 128 130]
+  }
+  data {
+    id			    130
     ssIdNumber		    5
     name		    "srp_torque"
     scope		    OUTPUT_DATA
@@ -12830,10 +13190,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [115 119 121]
+    linkNode		    [124 129 131]
   }
   data {
-    id			    121
+    id			    131
     ssIdNumber		    6
     name		    "A_i"
     scope		    INPUT_DATA
@@ -12855,10 +13215,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [115 120 122]
+    linkNode		    [124 130 132]
   }
   data {
-    id			    122
+    id			    132
     ssIdNumber		    7
     name		    "dim"
     scope		    INPUT_DATA
@@ -12880,10 +13240,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [115 121 123]
+    linkNode		    [124 131 133]
   }
   data {
-    id			    123
+    id			    133
     ssIdNumber		    10
     name		    "rho_d"
     scope		    INPUT_DATA
@@ -12905,10 +13265,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [115 122 124]
+    linkNode		    [124 132 134]
   }
   data {
-    id			    124
+    id			    134
     ssIdNumber		    13
     name		    "rho_s"
     scope		    INPUT_DATA
@@ -12930,19 +13290,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [115 123 0]
+    linkNode		    [124 133 0]
   }
   junction {
-    id			    125
+    id			    135
     position		    [23.5747 49.5747 7]
-    chart		    115
-    subviewer		    115
+    chart		    124
+    subviewer		    124
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [115 0 0]
+    linkNode		    [124 0 0]
   }
   transition {
-    id			    126
+    id			    136
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -12950,36 +13310,36 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      125
+      id		      135
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    115
+    chart		    124
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    115
+    subviewer		    124
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [115 0 0]
+    linkNode		    [124 0 0]
   }
   instance {
-    id			    127
+    id			    137
     machine		    1
     name		    "Disturbance Torques/Solar Radiation Pressure Torque Calculator/MATLAB Function"
-    chart		    115
+    chart		    124
   }
   chart {
-    id			    128
+    id			    138
     machine		    1
     name		    "Disturbance Torques/Gravity Gradient/MATLAB Function"
     windowPosition	    [422 539.941 189 413]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 3600 1200 1.180555555555556]
-    treeNode		    [0 129 0 0]
-    viewObj		    128
+    treeNode		    [0 139 0 0]
+    viewObj		    138
     ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -12988,19 +13348,19 @@ Stateflow {
     eml {
       name		      "norm3"
     }
-    firstData		    130
-    firstTransition	    133
-    firstJunction	    132
+    firstData		    140
+    firstTransition	    143
+    firstJunction	    142
   }
   state {
-    id			    129
+    id			    139
     labelString		    "eML_blk_kernel()"
     position		    [18 64.5 118 66]
     fontSize		    12
-    chart		    128
-    treeNode		    [128 0 0 0]
+    chart		    138
+    treeNode		    [138 0 0 0]
     superState		    SUBCHART
-    subviewer		    128
+    subviewer		    138
     ssIdNumber		    1
     type		    FUNC_STATE
     decomposition	    CLUSTER_STATE
@@ -13011,7 +13371,7 @@ Stateflow {
     }
   }
   data {
-    id			    130
+    id			    140
     ssIdNumber		    4
     name		    "u"
     scope		    INPUT_DATA
@@ -13030,10 +13390,10 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [128 0 131]
+    linkNode		    [138 0 141]
   }
   data {
-    id			    131
+    id			    141
     ssIdNumber		    5
     name		    "y"
     scope		    OUTPUT_DATA
@@ -13053,19 +13413,19 @@ Stateflow {
       }
     }
     dataType		    "Inherit: Same as Simulink"
-    linkNode		    [128 130 0]
+    linkNode		    [138 140 0]
   }
   junction {
-    id			    132
+    id			    142
     position		    [23.5747 49.5747 7]
-    chart		    128
-    subviewer		    128
+    chart		    138
+    subviewer		    138
     ssIdNumber		    3
     type		    CONNECTIVE_JUNCTION
-    linkNode		    [128 0 0]
+    linkNode		    [138 0 0]
   }
   transition {
-    id			    133
+    id			    143
     labelString		    "{eML_blk_kernel();}"
     labelPosition	    [28.125 13.875 102.544 14.964]
     fontSize		    12
@@ -13073,29 +13433,29 @@ Stateflow {
       intersection	      [0 0 1 0 23.5747 14.625 0 0]
     }
     dst {
-      id		      132
+      id		      142
       intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
     }
     midPoint		    [23.5747 24.9468]
-    chart		    128
+    chart		    138
     dataLimits		    [21.175 25.975 14.625 42.575]
-    subviewer		    128
+    subviewer		    138
     drawStyle		    SMART
     slide {
       sticky		      BOTH_STICK
     }
     executionOrder	    1
     ssIdNumber		    2
-    linkNode		    [128 0 0]
+    linkNode		    [138 0 0]
   }
   instance {
-    id			    134
+    id			    144
     machine		    1
     name		    "Disturbance Torques/Gravity Gradient/MATLAB Function"
-    chart		    128
+    chart		    138
   }
   target {
-    id			    135
+    id			    145
     machine		    1
     name		    "sfun"
     description		    "Default Simulink S-Function Target."

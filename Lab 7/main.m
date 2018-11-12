@@ -85,7 +85,7 @@ r_a = 800 + R_e;                    % Km
 r_p = 800 + R_e;                    % Km
 a = (r_a + r_p)/2;                  % Km
 e = (r_a - r_p)/(r_a + r_p);
-i = 40;                             % Degrees
+i = 10;                             % Degrees
 OMG = 0;                            % Degrees
 omg = 0;                            % Degrees
 theta = 0;                          % Degrees
@@ -120,21 +120,7 @@ load('igrf_normalized_coefficient.mat')
 alpha_m = deg2rad(11);
 
 % Earth's magnetic radius 
-a_m = 6371.2;                       % m
-
-% IGRF 2005 Constants
-g_1_0 = -29554*10^-9;               % T
-g_1_1 = -1669.05*10^-9;             % T
-h_1_1 = 5077.99*10^-9;              % T
-
-H_0 = sqrt((g_1_0)^2 +  ...
-     (g_1_1)^2 + (h_1_1)^2);        % T
-
-% Vacuum permeability, to convert m^3*T in A*m^2
-mu_0 = 4*pi*1e-7;                   % T*m/A
-
-% Magnitude of the dipole
-m_m = (a_m^3*H_0)*(4*pi/mu_0);      % Am^2
+a_m = 6371.2;                       % Km
 
 %% CONTROLLER SETUP
 
