@@ -122,14 +122,36 @@ alpha_m = deg2rad(11);
 % Earth's magnetic radius 
 a_m = 6371.2;                       % Km
 
+%% ACTUATORS PROPERTIES
+
+% Magnetic Actuator
+m_max = 0.2;                        %Am^2
+
+% Reaction Wheels
+max_torque = 0.02;
+max_momentum = 0.2;
+wheel_inertia = 3.4*10^(-4);
+
+% rad/sec to RPM conversion factor
+radsToRPM = 9.5492965964254;
+
+%% SENSOR PROPERTIES
+
+% Magnetometer
+psi = deg2rad(9.5);
+tetha = deg2rad(9.5);
+phi = deg2rad(9.5);
+
+A_epsilon = [cos(psi)*cos(tetha),  cos(psi)*sin(tetha)*sin(phi)+sin(psi)*cos(phi), -cos(psi)*sin(tetha)*cos(phi)+sin(psi)*sin(phi);
+            -sin(psi)*cos(tetha), -sin(psi)*sin(tetha)*sin(phi)+cos(psi)*cos(phi),  sin(psi)*sin(tetha)*cos(phi)+cos(psi)*sin(phi);
+                    sin(tetha)  ,               -cos(tetha)*sin(phi)             ,              cos(tetha)*cos(phi)                 ];
+
 %% CONTROLLER SETUP
 
 % Gains
 k_p = -0.001;
 k_d = -0.001;
-% k_bdot = -(4*pi)/((2*pi*sqrt(a^3/mu))) * (1 + sin(deg2rad(38.5))) *
-% min([I_1,I_2,I_3]) * 100
-k_bdot =-5.1553e02;
+k_bdot = -(4*pi)/((2*pi*sqrt(a^3/mu))) * (1 + sin(deg2rad(38.5))) * min([I_1,I_2,I_3]);
 
 % Commanded quaternion 
 %q_c = [0; 1; 0; 0];
