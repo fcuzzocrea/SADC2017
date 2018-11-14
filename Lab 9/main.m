@@ -125,12 +125,12 @@ a_m = 6371.2;                       % Km
 %% ACTUATORS PROPERTIES
 
 % Magnetic Actuator
-m_max = 0.2;                        %Am^2
+m_max = 0.2;                        % Am^2
 
 % Reaction Wheels
-max_torque = 0.02;
-max_momentum = 0.2;
-wheel_inertia = 3.4*10^(-4);
+max_torque = 0.02;                  % Nm
+max_momentum = 0.2;                 % Nms
+wheel_inertia = 3.4*10^(-4);        % Kgm^2
 
 % rad/sec to RPM conversion factor
 radsToRPM = 9.5492965964254;
@@ -145,6 +145,9 @@ phi = deg2rad(9.5);
 A_epsilon = [cos(psi)*cos(tetha),  cos(psi)*sin(tetha)*sin(phi)+sin(psi)*cos(phi), -cos(psi)*sin(tetha)*cos(phi)+sin(psi)*sin(phi);
             -sin(psi)*cos(tetha), -sin(psi)*sin(tetha)*sin(phi)+cos(psi)*cos(phi),  sin(psi)*sin(tetha)*cos(phi)+cos(psi)*sin(phi);
                     sin(tetha)  ,               -cos(tetha)*sin(phi)             ,              cos(tetha)*cos(phi)                 ];
+
+% Gyroscope
+sigma_e = 4.84814e-6;
 
 %% CONTROLLER SETUP
 
@@ -165,7 +168,7 @@ Q_C = [ q_c(4)  q_c(3)  -q_c(2) -q_c(1) ;
 %% LAUNCH SIMULATOR
 
 simulation_time = (2*pi*sqrt(a^3/mu));
-sim Lab_8    
+sim Lab_9    
 
 %% OUTPUTS PLOT
 
