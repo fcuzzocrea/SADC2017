@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.732"
+    ComputedModelVersion    "1.733"
     NumModelReferences	    0
     NumTestPointedSignals   4
     TestPointedSignal {
@@ -117,8 +117,6 @@ Model {
     OrderedModelArguments   1
   }
   LogicAnalyzerPlugin	  "on"
-  LogicAnalyzerSignalOrdering "6aecad76-bbce-46a8-8c9a-272c75b8c2da,9ec31860-f058-4d7d-9b11-b60b83fd0f85,2c179eff-8f50"
-  "-425c-bb61-c0d5e912fe82,533ceeed-096c-4994-b8b3-4d68d553a4e3"
   WebScopes_FoundationPlugin "on"
   DiagnosticSuppressor	  "on"
   NotesPlugin		  "on"
@@ -175,11 +173,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"1174"
 	Extents			[1330.0, 551.0]
-	ZoomFactor		[0.66539440203562339]
-	Offset			[-9348.7119532743782, -640.04015296367106]
+	ZoomFactor		[2.19]
+	Offset			[-241.15296803652967, -197.07077625570776]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -213,9 +211,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "fcuzzocrea"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 14 19:18:25 2018"
-  RTWModifiedTimeStamp	  464107031
-  ModelVersionFormat	  "1.%<AutoIncrement:732>"
+  LastModifiedDate	  "Mon Nov 19 10:25:00 2018"
+  RTWModifiedTimeStamp	  464523895
+  ModelVersionFormat	  "1.%<AutoIncrement:733>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -4273,7 +4271,7 @@ Model {
   System {
     Name		    "Lab_9"
     Location		    [0, 0, 1368, 732]
-    Open		    on
+    Open		    off
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
     ExecutionDomainType	    "Deduce"
@@ -4789,7 +4787,7 @@ Model {
       System {
 	Name			"Actuators"
 	Location		[0, 0, 1368, 732]
-	Open			off
+	Open			on
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
 	ExecutionDomainType	"Deduce"
@@ -4834,7 +4832,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "B"
 	  SID			  "1175"
-	  Position		  [-180, -92, -150, -78]
+	  Position		  [-95, -182, -65, -168]
 	  ZOrder		  2303
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -7058,10 +7056,11 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  66
+	  ZOrder		  75
 	  SrcBlock		  "B"
 	  SrcPort		  1
-	  Points		  [34, 0; 0, 10]
+	  DstBlock		  "Magnetic Actuators"
+	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  59
