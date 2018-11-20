@@ -66,11 +66,12 @@ mu = 398600;                        % Km^3/s^2
 R_e = 6.378e+03;                    % Km
 
 % Test omegas
-w1_0 = 0.02;                        % rad/s
-w2_0 = 0.01;                        % rad/s
-w3_0 = 0.05;                        % rad/s
+w1_0 = 0.022;                        % rad/s
+w2_0 = 0.058;                        % rad/s
+w3_0 = 0.039;                        % rad/s
 %w3_0 = 0.001038158026828;  % Mean motion of the orbit
 w_0 = [w1_0,w2_0,w3_0];
+w_0 = [0.01,0.01,0.01];
 
 % Initial Attitude
 A_BN_0 = eye(3);
@@ -85,7 +86,7 @@ r_a = 800 + R_e;                    % Km
 r_p = 800 + R_e;                    % Km
 a = (r_a + r_p)/2;                  % Km
 e = (r_a - r_p)/(r_a + r_p);
-i = 10;                             % Degrees
+i = 40;                             % Degrees
 OMG = 0;                            % Degrees
 omg = 0;                            % Degrees
 theta = 0;                          % Degrees
@@ -125,7 +126,7 @@ a_m = 6371.2;                       % Km
 %% ACTUATORS PROPERTIES
 
 % Magnetic Actuator
-m_max = 0.2;                        % Am^2
+m_max = 0.3;                        % Am^2
 
 % Reaction Wheels
 max_torque = 0.02;                  % Nm
@@ -152,9 +153,9 @@ sigma_e = 4.84814e-6;
 %% CONTROLLER SETUP
 
 % Gains
-k_p = -0.001;
-k_d = -0.001;
-k_bdot = -(4*pi)/((2*pi*sqrt(a^3/mu))) * (1 + sin(deg2rad(38.5))) * min([I_1,I_2,I_3]);
+k_bdot = -((4*pi)/((2*pi*sqrt(a^3/mu))) * (1 + sin(deg2rad(38.5))) * min([I_1,I_2,I_3]))*100000;
+k_p = -0.003;
+k_d = -0.08;
 
 % Commanded quaternion 
 %q_c = [0; 1; 0; 0];
