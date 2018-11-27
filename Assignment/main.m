@@ -1,9 +1,21 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       SPACECRAFT ATTITUDE SIMULATION AND CONTROL TOOLBOX            %
-%                                                                     %
-%  Author : Francescodario Cuzzocrea                                  %
-%                                                                     %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    CuSiTo - CUbesat SImulation Toolbox
+%    Copyright (C) 2018 - Francescodario Cuzzocrea 
+%    francescodario.cuzzocrea@mail.polimi.it
+%
+%    This program is free software; you can redistribute it and/or modify
+%    it under the terms of the GNU General Public License as published by
+%    the Free Software Foundation; either version 3 of the License, or
+%    (at your option) any later version.
+%    This program is distributed in the hope that it will be useful,
+%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%    GNU General Public License for more details.
+%    You should have received a copy of the GNU General Public License
+%    along with this program; if not, write to the Free Software Foundation,
+%    Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+%
+%    You should have received a copy of the GNU General Public License
+%    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 clearvars
 close all
@@ -69,9 +81,7 @@ R_e = 6.378e+03;                    % Km
 w1_0 = 0.022;                        % rad/s
 w2_0 = 0.058;                        % rad/s
 w3_0 = 0.039;                        % rad/s
-%w3_0 = 0.001038158026828;  % Mean motion of the orbit
 w_0 = [w1_0,w2_0,w3_0];
-%w_0 = [0.01,0.01,0.01];
 
 % Initial Attitude
 A_BN_0 = eye(3);
@@ -130,11 +140,7 @@ m_max = 1.2;                        % Am^2
 
 % Reaction Wheels
 max_torque = 0.635;                  % Nm
-max_momentum = 11.076;                 % Nms
-wheel_inertia = 3.4*10^(-4);        % Kgm^2
-
-% rad/sec to RPM conversion factor
-radsToRPM = 9.5492965964254;
+max_momentum = 11.076;               % Nms
 
 %% SENSOR PROPERTIES
 
