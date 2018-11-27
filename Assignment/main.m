@@ -66,12 +66,12 @@ mu = 398600;                        % Km^3/s^2
 R_e = 6.378e+03;                    % Km
 
 % Test omegas
-%w1_0 = 0.022;                        % rad/s
-%w2_0 = 0.058;                        % rad/s
-%w3_0 = 0.039;                        % rad/s
+w1_0 = 0.022;                        % rad/s
+w2_0 = 0.058;                        % rad/s
+w3_0 = 0.039;                        % rad/s
 %w3_0 = 0.001038158026828;  % Mean motion of the orbit
-%w_0 = [w1_0,w2_0,w3_0];
-w_0 = [0.01,0.01,0.01];
+w_0 = [w1_0,w2_0,w3_0];
+%w_0 = [0.01,0.01,0.01];
 
 % Initial Attitude
 A_BN_0 = eye(3);
@@ -154,11 +154,11 @@ sigma_e = 4.84814e-6;
 
 % Gains
 k_bdot = -((4*pi)/((2*pi*sqrt(a^3/mu))) * (1 + sin(deg2rad(38.5))) * min([I_1,I_2,I_3]))*100000;
-k_p = -0.008;
-k_d = -0.09;
+k_p = -0.0003;
+k_d = -0.08;
 
 % Commanded quaternion 
-q_c = [0; -0.154251449887584; 0.988031624092862; 0];
+q_c = [0; -0.1542; 0.9880; 0];
 
 Q_C = [ q_c(4)  q_c(3)  -q_c(2) -q_c(1) ;
        -q_c(3)  q_c(4)   q_c(1) -q_c(2) ;
@@ -168,49 +168,49 @@ Q_C = [ q_c(4)  q_c(3)  -q_c(2) -q_c(1) ;
 %% LAUNCH SIMULATOR
 
 simulation_time = (2*pi*sqrt(a^3/mu));
-% sim assignment    
-% 
+sim assignment    
+
 % %% OUTPUTS PLOT
-% 
-% % Pointing vector
-% figure(1)
-% plot3(X_P(1,:),X_P(2,:),X_P(3,:)); 
-% 
-% % Reference orbit
-% figure(2)
-% plot3(r_LVLH(:,1),r_LVLH(:,2),r_LVLH(:,3))
-% 
-% % Gravity Gradient
-% figure(3)
-% hold on
-% plot(GG(1:end,1)); plot(GG(1:end,2)); plot(GG(1:end,3));
-% title('Disturbance Torque due to Gravity Gradient')
-% legend('GG_x','GG_y','GG_z')
-% 
-% % Drag Torque
-% figure(4)
-% hold on
-% plot(drag_torque(1:end,1)); plot(drag_torque(1:end,2)); plot(drag_torque(1:end,3));
-% title('Disturbance Torque due to Aerodynamic Drag')
-% legend('DT_x','DT_y','DT_z')
-% 
-% % Solar Radiation Pressure Torque
-% figure(5)
-% hold on
-% plot(srp_torque(1:end,1)); plot(srp_torque(1:end,2)); plot(srp_torque(1:end,3));
-% title('Disturbance Torque due to Solar Radiation Pressure')
-% legend('SRP_x','SRP_y','SRP_z')
-% 
-% % Magnetic Field Torque
-% figure(6)
-% hold on
-% plot(magnetic_torque(1:end,1)); plot(magnetic_torque(1:end,2)); plot(magnetic_torque(1:end,3));
-% title('Disturbance Torque due to Earth''s Magnetic Field')
-% legend('MT_x','MT_y','MT_z')
-% 
-% % Error on attitude
-% figure(7)
-% hold on
-% plot(w_bl(1:end,1)); plot(w_bl(1:end,2)); plot(w_bl(1:end,3));
-% title('Error between BFF and RF')
-% legend('x','y','z')
+
+% Pointing vector
+figure(1)
+plot3(X_P(1,:),X_P(2,:),X_P(3,:)); 
+
+% Reference orbit
+figure(2)
+plot3(r_LVLH(:,1),r_LVLH(:,2),r_LVLH(:,3))
+
+% Gravity Gradient
+figure(3)
+hold on
+plot(GG(1:end,1)); plot(GG(1:end,2)); plot(GG(1:end,3));
+title('Disturbance Torque due to Gravity Gradient')
+legend('GG_x','GG_y','GG_z')
+
+% Drag Torque
+figure(4)
+hold on
+plot(drag_torque(1:end,1)); plot(drag_torque(1:end,2)); plot(drag_torque(1:end,3));
+title('Disturbance Torque due to Aerodynamic Drag')
+legend('DT_x','DT_y','DT_z')
+
+% Solar Radiation Pressure Torque
+figure(5)
+hold on
+plot(srp_torque(1:end,1)); plot(srp_torque(1:end,2)); plot(srp_torque(1:end,3));
+title('Disturbance Torque due to Solar Radiation Pressure')
+legend('SRP_x','SRP_y','SRP_z')
+
+% Magnetic Field Torque
+figure(6)
+hold on
+plot(magnetic_torque(1:end,1)); plot(magnetic_torque(1:end,2)); plot(magnetic_torque(1:end,3));
+title('Disturbance Torque due to Earth''s Magnetic Field')
+legend('MT_x','MT_y','MT_z')
+
+% Error on attitude
+figure(7)
+hold on
+plot(w_bl(1:end,1)); plot(w_bl(1:end,2)); plot(w_bl(1:end,3));
+title('Error between BFF and RF')
+legend('x','y','z')
