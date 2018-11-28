@@ -1,0 +1,23 @@
+xil_rtiostream.o: \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_rtiostream.c \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/rx_tx_buffer_sizes.h \
+ /home/fcuzzocrea/Documenti/Progetti/SADC2017/Assignment/On_ert_rtw/rtwtypes.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_common.h \
+ /opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc_CInterface.h \
+ /opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc.h \
+ /opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc_spec.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.h
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/rx_tx_buffer_sizes.h:
+
+/home/fcuzzocrea/Documenti/Progetti/SADC2017/Assignment/On_ert_rtw/rtwtypes.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_common.h:
+
+/opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc_CInterface.h:
+
+/opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc.h:
+
+/opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc_spec.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.h:

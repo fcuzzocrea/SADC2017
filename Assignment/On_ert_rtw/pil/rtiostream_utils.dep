@@ -1,0 +1,11 @@
+rtiostream_utils.o: \
+ /opt/mathworks/MATLAB/R2018b/toolbox/coder/rtiostream/src/utils/rtiostream_utils.c \
+ /opt/mathworks/MATLAB/R2018b/toolbox/coder/rtiostream/src/utils/rtiostream_utils.h \
+ /home/fcuzzocrea/Documenti/Progetti/SADC2017/Assignment/On_ert_rtw/rtwtypes.h \
+ /opt/mathworks/MATLAB/R2018b/rtw/c/src/rtiostream.h
+
+/opt/mathworks/MATLAB/R2018b/toolbox/coder/rtiostream/src/utils/rtiostream_utils.h:
+
+/home/fcuzzocrea/Documenti/Progetti/SADC2017/Assignment/On_ert_rtw/rtwtypes.h:
+
+/opt/mathworks/MATLAB/R2018b/rtw/c/src/rtiostream.h:

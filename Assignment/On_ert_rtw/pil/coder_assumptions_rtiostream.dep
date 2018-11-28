@@ -1,0 +1,20 @@
+coder_assumptions_rtiostream.o: \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/coder_assumptions_rtiostream.c \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/rx_tx_buffer_sizes.h \
+ /home/fcuzzocrea/Documenti/Progetti/SADC2017/Assignment/On_ert_rtw/rtwtypes.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_common.h \
+ /opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/CoderAssumpTgtAppSvc/CoderAssumpTgtAppSvc_CInterface.h \
+ /opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/CoderAssumpTgtAppSvc/CoderAssumpTgtAppSvc_spec.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.h
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/rx_tx_buffer_sizes.h:
+
+/home/fcuzzocrea/Documenti/Progetti/SADC2017/Assignment/On_ert_rtw/rtwtypes.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_common.h:
+
+/opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/CoderAssumpTgtAppSvc/CoderAssumpTgtAppSvc_CInterface.h:
+
+/opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/CoderAssumpTgtAppSvc/CoderAssumpTgtAppSvc_spec.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.h:

@@ -1,0 +1,2 @@
+hooks.o: \
+ /home/fcuzzocrea/.matlab/SupportPackages/R2018B/3P.instrset/arduinoide.instrset/idepkgs/packages/arduino/hardware/sam/1.6.11/cores/arduino/hooks.c

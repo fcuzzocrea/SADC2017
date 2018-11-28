@@ -1,0 +1,44 @@
+xil_interface_lib.o: \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_interface_lib.c \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_interface_lib.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_error_codes.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_common.h \
+ /home/fcuzzocrea/Documenti/Progetti/SADC2017/Assignment/On_ert_rtw/rtwtypes.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_interface_common.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_interface_lib_private.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_data_stream.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/codeinstr_data_stream.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_interface.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/coder_assumptions_app.h \
+ /opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc_CInterface.h \
+ /opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc.h \
+ /opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc_spec.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.h
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_interface_lib.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_error_codes.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_common.h:
+
+/home/fcuzzocrea/Documenti/Progetti/SADC2017/Assignment/On_ert_rtw/rtwtypes.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_interface_common.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_interface_lib_private.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_data_stream.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/codeinstr_data_stream.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_interface.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/coder_assumptions_app.h:
+
+/opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc_CInterface.h:
+
+/opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc.h:
+
+/opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc_spec.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.h:

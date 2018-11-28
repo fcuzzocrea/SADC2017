@@ -1,0 +1,32 @@
+xilcomms_rtiostream.o: \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.c \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.h \
+ /home/fcuzzocrea/Documenti/Progetti/SADC2017/Assignment/On_ert_rtw/rtwtypes.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/comms_interface.h \
+ /opt/mathworks/MATLAB/R2018b/rtw/c/src/rtiostream.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/coder/rtiostream/src/utils/rtiostream_utils.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/rx_tx_buffer_sizes.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_common.h \
+ /opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc.h \
+ /opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc_spec.h \
+ /opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.h
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.h:
+
+/home/fcuzzocrea/Documenti/Progetti/SADC2017/Assignment/On_ert_rtw/rtwtypes.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/comms_interface.h:
+
+/opt/mathworks/MATLAB/R2018b/rtw/c/src/rtiostream.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/coder/rtiostream/src/utils/rtiostream_utils.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/rx_tx_buffer_sizes.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xil_common.h:
+
+/opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc.h:
+
+/opt/mathworks/MATLAB/R2018b/extern/include/coder/connectivity/XILTgtAppSvc/XILTgtAppSvc_spec.h:
+
+/opt/mathworks/MATLAB/R2018b/toolbox/rtw/targets/pil/c/xilcomms_rtiostream.h:
