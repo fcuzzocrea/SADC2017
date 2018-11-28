@@ -4,3 +4,9 @@
 .directory
 *.original
 *.slxc
+*.aux
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.toc

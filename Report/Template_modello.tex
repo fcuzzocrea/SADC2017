@@ -1,0 +1,134 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[scale=0.75]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage[hyphens]{url}
+\usepackage[unicode=true,bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]{hyperref}
+\usepackage{graphicx}
+\usepackage{datetime}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{3}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage[english]{babel}
+\usepackage{float}
+ 
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newlength{\lyxlabelwidth}      % auxiliary length 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\input{Settings.tex}
+\setlength{\textfloatsep}{\baselineskip}
+
+\makeatother
+
+\begin{document}
+\input{Titlepage.tex}
+
+\input{Titleback.tex}
+
+\pagenumbering{roman}
+
+\tableofcontents{}
+
+\clearpage{}
+
+\pagenumbering{arabic}
+
+\setcounter{page}{3}
+
+\chapter{Parameters and Mission Requirements}
+In this section the parameters used to simulate the behavior of the assigned Spacecraft will be defined, along with the rationale for their selection. 
+The parameters are divided in four main categories : 
+
+\begin{itemize}
+ \item Orbital Parameters
+ \item Sensors Parameters
+ \item Actuators Parameters
+ \item Enviromental Parameters
+ \item Mission Requirements
+\end{itemize}
+
+\section{Orbital Parameters}
+
+Only the altitude of the orbit has be assigned by the customer. 
+The other orbital parameters has been chosen as follows : 
+\begin{center}
+	\renewcommand{\arraystretch}{1.2}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Orbital Parameters & Symbols & Values \\
+		\hline
+		Altitude & h & \textit{600 [Km]} \\
+		\hline
+		Orbit radius & r & \textit{6917 [Km]}\\
+		\hline
+		Semimajor axis & a & \textit{6917 [Km]}\\
+		\hline
+		Inclination & i & \textit{0 $^{o}$}\\
+		\hline
+		Pericenter anomaly & $\omega$ & \textit{0 $^{o}$}\\
+		\hline
+		True anomaly & $\theta$ &  \textit{0 $^{o}$}\\
+		\hline
+		Eccentricity & e &  \textit{0}\\
+		\hline	
+	\end{tabular}
+\end{center}
+
+The selected orbit is circular with $0\ ^{o}$ inclination, meaning an equatorial orbit. Starting from this parameters the period of the orbit is computed and a multiple of its value is adopted as the simulation time in order to run the model.
+
+$$T_{orbit} = 2\pi\sqrt{\frac{a^{3}}{mu}}$$
+
+\section{Sensors Parameters}
+\section{Actuators Parameters}
+\section{Enviromental Parameters}
+\section{Mission Requirements}
+
+\chapter{Spacecraft Description}
+
+\section{General Description}
+\section{Sensors Description}
+\subsection{Magnetometer}
+\subsection{Gyroscope}
+\section{Actuators Description}
+\subsection{Magnetic Torquers}
+\subsection{Reaction Wheels}
+\section{Onboard Computer}
+
+\chapter{ADCS Architecture}
+
+Schema
+
+\chapter{Mathematical Modeling}
+
+\section{Dynamics}
+\subsection{Euler Equations}
+\subsection{Enviromental Disturbances}
+\subsubsection{Gravity Gradient}
+\subsubsection{Earth's Magnetic Field}
+\subsubsection{Solar Radiation Pressure}
+\subsubsection{Aerodynamic Drag}
+\section{Kinematics}
+\subsection{Euler Angles}
+\subsection{Quaternions}
+\section{Sensors Models}
+\subsection{Magnetometer}
+\subsection{Gyroscope}
+\section{Actuators Models}
+\subsection{Magnetic Torquers}
+\subsection{Reaction Wheels}
+
+\chapter{Control}
+\section{Quaternion Feedback Contrl}
+\section{Mixer Matrix}
+
+\chapter{Results}
+
+\chapter{Conclusions}
+
+\newpage
+\end{document}
