@@ -82,9 +82,11 @@ w1_0 = 0.022;                        % rad/s
 w2_0 = 0.058;                        % rad/s
 w3_0 = 0.039;                        % rad/s
 w_0 = [w1_0,w2_0,w3_0];
+%w_0 = [0.01;0.01;0.01];
 
 % Initial Attitude
-A_BN_0 = eye(3);
+q_0 = [0;0;0;1];
+A_BN_0 = quat2dcm([q_0(4), q_0(1), q_0(2), q_0(3)]);
 
 % Euler Angles
 phi_0 = 0;                          % Degrees
@@ -161,15 +163,10 @@ sigma_e = 4.84814e-6;
 % Gains
 k_bdot = -((4*pi)/((2*pi*sqrt(a^3/mu))) * (1 + sin(deg2rad(38.5))) * min([I_1,I_2,I_3]))*100000;
 k_p = -0.0003;
-k_d = -0.08;
+k_d = -0.07;
 
-% Commanded quaternion 
+% Commanded quaternion for inertial pointing 
 q_c = [0; -0.1542; 0.9880; 0];
-
-Q_C = [ q_c(4)  q_c(3)  -q_c(2) -q_c(1) ;
-       -q_c(3)  q_c(4)   q_c(1) -q_c(2) ;
-        q_c(2) -q_c(1)   q_c(4) -q_c(3) ; 
-        q_c(1)  q_c(2)   q_c(3)  q_c(4) ];
 
 %% LAUNCH SIMULATOR
 
