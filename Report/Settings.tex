@@ -2,6 +2,7 @@
 %************************************************************
 % Required stuff
 %************************************************************
+\usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{euler}
 \usepackage[detect-all]{siunitx}
@@ -9,6 +10,13 @@
 \usepackage[font={footnotesize }]{caption}
 \usepackage{multicol}
 \usepackage{prettyref}
+\usepackage[scale=0.75]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage[hyphens]{url}
+\usepackage[unicode=true,bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]{hyperref}
+\usepackage{datetime}
+\usepackage{float}
 
 \allsectionsfont{\rmfamily}
 
@@ -22,10 +30,10 @@
 \definecolor{dark-gray}{gray}{0.75}
 
 \fancyhead{}  % clear all header fields
-\fancyhead[LO,R]{\rule[-2ex]{0pt}{2ex}\fontsize{9}{11} \selectfont \myPhase : \myTitle}
+\fancyhead[LO,RE]{\rule[-2ex]{0pt}{2ex}\fontsize{9}{11} \selectfont \myPhase : \myTitle}
 \fancyhead[CO,C]{\fontsize{9}{11} \selectfont \myIPT}
 \fancyfoot{}  % clear all footer fields
-\fancyfoot[RO,L]{\fontsize{6}{11} \selectfont \includegraphics[height=0.2cm]{gfx/CC} This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.}
+\fancyfoot[RO,LE]{\fontsize{6}{11} \selectfont \includegraphics[height=0.2cm]{gfx/CC} This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.}
 \fancyheadoffset[L,R]{0.2pt}
 \renewcommand{\headrulewidth}{0.2pt}
 \renewcommand{\footrulewidth}{0.2pt}
