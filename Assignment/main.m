@@ -45,7 +45,7 @@ clc
 %
 
 % Mass of 6U cubesat + payload
-M = 12.00;                          % Kg
+M = 14.536;                          % Kg
 
 % Dimensions
 w = 100*10^-3;                      % m
@@ -75,18 +75,17 @@ I_inv = inv(I);
 mu = 398600;                        % Km^3/s^2
 
 % Radius of the Earth 
-R_e = 6.378e+03;                    % Km
+R_e = 6.378e+03;                     % Km
 
 % Test omegas
 w1_0 = 0.022;                        % rad/s
 w2_0 = 0.058;                        % rad/s
 w3_0 = 0.039;                        % rad/s
-w_0 = [w1_0,w2_0,w3_0];
-%w_0 = [0.01;0.01;0.01];
+w_0 = [w1_0,w2_0,w3_0];              % rad/s
 
 % Initial Attitude
 q_0 = [0;0;0;1];
-A_BN_0 = quat2dcm([q_0(4), q_0(1), q_0(2), q_0(3)]);
+A_BN_0 = quatToAtt(q_0);
 
 % Euler Angles
 phi_0 = 0;                          % Degrees
@@ -161,11 +160,11 @@ sigma_e = 4.84814e-6;
 %% CONTROLLER SETUP
 
 % Gains
-k_bdot = -((4*pi)/((2*pi*sqrt(a^3/mu))) * (1 + sin(deg2rad(38.5))) * min([I_1,I_2,I_3]))*100000;
+k_bdot = -((4*pi)/((2*pi*sqrt(a^3/mu))) * (1 + sin(deg2rad(48.5))) * min([I_1,I_2,I_3]))*100000;
 k_p = -0.0003;
 k_d = -0.07;
 
-% Commanded quaternion for inertial pointing 
+% Commanded quaternion for inertial pointing case
 q_c = [0; -0.1542; 0.9880; 0];
 
 %% LAUNCH SIMULATOR
