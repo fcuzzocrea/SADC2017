@@ -1,14 +1,25 @@
 \documentclass[11pt,a4paper]{report}
 
-\usepackage[T1]{fontenc}
-
-
 \setcounter{secnumdepth}{1}
 \setcounter{tocdepth}{3}
 \setlength{\parskip}{\smallskipamount}
 \setlength{\parindent}{0pt}
 
+% Settings file
 \input{Settings.tex}
+
+% Bibliography
+\makeatletter
+\patchcmd{\thebibliography}{%
+	\chapter*{\bibname}\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}}{%
+	\section{\bibname}}{}{}
+\makeatother
+
+% Acronyms 
+\makenoidxglossaries
+
+% Acronyms: definire qui gli acronimi che verranno utilizzati nel testo
+\newacronym{ccd}{CCD}{Charge Couple Device}
 
 \makeatother
 
@@ -24,6 +35,38 @@
 
 \pagenumbering{arabic}
 \setcounter{page}{3}
+
+% Print acronyms
+\glsaddall
+\glsdisablehyper
+\printnoidxglossary[type=\acronymtype,title=Abbreviated Terms]
+
+% Print bibliography
+\nocite{*}
+\renewcommand\bibname{Reference Books}
+\begin{thebibliography}{0}
+\bibitem{Ref:Books:Fundamentals} 
+    F. Landis Markley, John L. Crassidis \\
+    \textit{Fundamentals of Spacecraft Attitude Determination and Control}  
+\end{thebibliography}
+
+\renewcommand\bibname{Reference Articles}
+\begin{thebibliography}{0}
+\setcounter{enumiv}{1}
+\bibitem{Ref:Articles:IGRF}
+    Jeremy Davis\\
+    \textit{Mathematical Modeling of Earth’s Magnetic Field}
+\end{thebibliography}
+
+\renewcommand\bibname{Datasheets \& User Manuals}
+\renewcommand\UrlFont{\rmfamily}
+\begin{thebibliography}{0}
+\setcounter{enumiv}{3}
+\bibitem{Ref:DataSheets:PowerControlUnit} 
+    \url{www.magellan.aero}\\
+    \textit{Power Control Unit Datasheet} 
+\end{thebibliography}
+
 
 \chapter{Parameters and Mission Requirements}
 In this chapter the parameters used to model and simulate the behavior of the assigned spacecraft will be defined starting from the customer requirements.\\
@@ -41,12 +84,12 @@ The parameters are divided in four main categories :
 The requirement placed from the customer for this mission are :
 
 \begin{itemize}
- \item de-tumble Spacecraft after launcher injection\\
- \item perform Earth Pointing with \ang{0.1} accuracy\\
+ \item de-tumble Spacecraft after launcher injection
+ \item perform Earth Pointing with \ang{0.1} accuracy
 \end{itemize}
 
-De-tumble a spacecraft means to reduce it's angular velocity to values which are comparable to the orbit's mean motion.\\
-After the de-tumbling phase the spacecraft must be able to perform a slew maneuver in order to reorient itself to point the desired location on Earth's surface.\\
+De-tumble a spacecraft means to reduce it's angular velocity to values which are comparable to the orbit's mean motion.
+After the de-tumbling phase the spacecraft must be able to perform a slew maneuver in order to reorient itself to point the desired location on Earth's surface.
 
 \section{Orbital Parameters}
 The mission required by the customer is to perform Earth pointing. \\   
@@ -111,7 +154,7 @@ The dimension and the weight of the spacecraft are reported in table \ref{tab:St
 \end{figure}
 
 \section{Sensors Parameters}
-The spacecraft is equipped with three single axis gyroscopes and a three axis magnetometers which will be used to perform the full attitude determination.\\
+The spacecraft is equipped with three single axis gyroscopes and a three axis magnetometers which will be used to perform the full attitude determination.
 The chosen sensor are the NSS Magnetometer available at cubesatshop.com and the Sensonor STIM 210 Gyroscope in the single axis configuration.\\
 In table \ref{tab:magnetometers} and \ref{tab:gyroscopes} are reported the characteristics of the sensors chosen for the S/C.\\
 
@@ -202,7 +245,7 @@ In table \ref{tab:magnetometers} and \ref{tab:gyroscopes} are reported the chara
 \end{figure}
 
 \section{Actuators Parameters}
-The spacecraft is equipped with three magnetic torquers and a reaction wheel. Both the three magnetic torquers will be used to control the attitude of the spacecraft during the initial detumbling phase. The reaction wheel coupled with two magnetic torquers will be used to control the spacecraft during the Earth pointing phase. \\
+The spacecraft is equipped with three magnetic torquers and a reaction wheel. Both the three magnetic torquers will be used to control the attitude of the spacecraft during the initial detumbling phase. The reaction wheel coupled with two magnetic torquers will be used to control the spacecraft during the Earth pointing phase. 
 The chosen actuators are the NCTR-M012 Magnetorquer Rod and the MAI-400 Reaction Wheel available at cubesatshop.com.\\
 In table \ref{tab:magnetictorquer} and \ref{tab:reactionwheel} are reported the characteristics of the sensors chosen for the S/C.\\
 
@@ -328,7 +371,7 @@ In this section are listed the parameters used to simulate the behaviour of the 
 	\end{tabular}
 \end{table}
 
-The implicit assumption of perfectly adjustement and balance between the internal component has been made, in order obtain a rebalancing of the position of the center of mass corresponding to the center of main axis, so $CM_{X} = 0$, $CM_{Y} = 0$, $CM_{Z} = 0$.\\
+The implicit assumption of perfectly adjustement and balance between the internal component has been made, in order obtain a rebalancing of the position of the center of mass corresponding to the center of main axis, so $CM_{X} = 0$, $CM_{Y} = 0$, $CM_{Z} = 0$.
 A diagonal inertia tensor has been considered.\\
 
 \chapter{Spacecraft Description}
@@ -349,7 +392,7 @@ The external surface of the CubeSat will be covered with solar panels in order t
 \section{Sensors Description}
 As stated before, the spacecraft is equipped with a three axis magnetometer and three gyroscopes to be able to determine and control the spacecraft attitude.
 \subsection{Magnetometers}
-Magnetometers have no moving parts and do not require a clear field of view.\\
+Magnetometers have no moving parts and do not require a clear field of view.
 They measure the sum of the ambient field that is of interest and
 any local fields produced by the spacecraft. Local fields can be produced by
 ferromagnetic materials or by current loops in solar arrays, electric motors, payload instruments, or most especially attitude control torquers. If the local fields are known, they can be compensated for. If they are not known, the magnetometers can be located far from the sources of magnetic contamination, on a deployable boom if necessary, to take advantage of the $1/r^3$ falloff of a magnetic dipole field. \\
@@ -364,7 +407,7 @@ Nowadays for spacecraft applications MEMS Magnetometers are available.\\
 
 \subsection{Gyroscopes}
 A gyroscope is any instrument which uses a rapidly spinning mass to sense and respond to changes in the inertial orientation of its spin axis.\\
-In particular, rate gyros measure spacecraft angular rates and are frequently part of a feedback system for either spin rate control or attitude stabilization. The angular rate outputs from RGs may also be integrated by an onboard computer to provide an estimate of spacecraft attitude displacement from some initial reference. \\
+In particular, rate gyros measure spacecraft angular rates and are frequently part of a feedback system for either spin rate control or attitude stabilization. The angular rate outputs from RGs may also be integrated by an onboard computer to provide an estimate of spacecraft attitude displacement from some initial reference. 
 All gyros have the basic construction geometry shown in Fig. \ref{fig:gyro}.\\
 The angular momentum vector of a rate gyro is fixed in magnitude and parallel
 to the gyro's spin axis. Because this vector maintains its inertial orientation in the absence of applied torques, spacecraft motion about the gyro's input axis causes the gimbal supporting the spin axis to precess about the output axis, or gimbal rotation axis. The output of an rate gyro is obtained from the motion of the gimbal.\\
@@ -377,7 +420,7 @@ to the gyro's spin axis. Because this vector maintains its inertial orientation 
 \end{figure}
 
 Rate gyros are the simplest and the least expensive gyros. Their accuracy is
-generally suitable for spin rate control in a feedback system, but their integrated output requires frequent correction for precise attitude determination using other sensors such as Sun sensors or star trackers.\\
+generally suitable for spin rate control in a feedback system, but their integrated output requires frequent correction for precise attitude determination using other sensors such as Sun sensors or star trackers.
 Errors in RG output are generally caused by nonlinearity, drift, and hysteresis. In addition, input accelerations may affect their accuracy if the gimbal is not perfectly balanced.\\
 Nowadays for spacecraft applications MEMS gyros are available.\\
 
@@ -411,11 +454,11 @@ Reaction wheels are used as the primary attitude control actuators on most space
 
 These devices depend on the momentum of a spinning wheel.
 Momentum-bias spacecraft may use one or two reaction wheels, but
-full three-axis attitude control requires three or more wheels.\\
+full three-axis attitude control requires three or more wheels.
 
 \section{Onboard Computer}
 The onboard computer is the central core of the ADC system, and is responsible of acquiring data from sensors, performing attitude determination and control computation and drive the actuator by sending them the correct control variables.\\
-The on board computer shall be able to exchange data with the ground station, collect informations about the health status of the spacecraft's sensors and actuators and perform housekeeping tasks.\\
+The on board computer shall be able to exchange data with the ground station, collect informations about the health status of the spacecraft's sensors and actuators and perform housekeeping tasks.
 
 \begin{figure}[H]
  	\centering
@@ -522,6 +565,82 @@ The controller is responsible of sending the correct input to the actuators in o
 
 \chapter{Mathematical Modeling}
 
+\section{Kinematics}
+In this section the kinematics representation used for the simulation will briefly be descripted. Two approach were taken : 
+\begin{itemize}
+ \item [-] The DCM representation
+ \item [-] The quaternion representation
+\end{itemize}
+
+\subsection{Direct Cosine Matrix}
+The direct cosine matrix, or attitude matrix, gives the transformation of a vector from a reference frame $I$ to another reference frame $O$ : 
+
+\begin{equation}
+ \mathbf{r_{O}} = \mathbf{A_{ON}} \mathbf{r_{N}}
+\end{equation}
+
+So, if we consider the spacecraft body frame and the inertial frame, then we can write the relation between the two frames as : 
+
+\begin{equation}
+ \mathbf{r_{B}} = \mathbf{A_{B/N}} \mathbf{r_{N}}
+\end{equation}
+
+As it is demostrated in reference \cite{Ref:Books:Fundamentals}, we can express the time dependence of the attitude matrix expressing the rotation from the body frame to the inertial grame as : 
+
+\begin{equation}
+ \dot{A}_{B/N}= - [\omega_{B/N} \times]A_{B/N} 
+\end{equation}
+
+where $[\omega_{B/N} \times]$ is the skew-symmetric cross product matrix containing the components of the angular velocity vector : 
+
+\begin{equation*}
+ \mathbf{[\omega \times]} =
+                                \begin{bmatrix}
+                                    0 & -\omega_{B/N 3} & \omega_{B/N 2} \\
+                                    \omega_{B/N 3} & 0 & -\omega_{B/N 1} \\
+                                    -\omega_{B/N 2} & \omega_{B/N 1} & 0
+                                \end{bmatrix}
+\end{equation*}
+
+Thus, by integrating this relation, we can get the full attitude at every iteration.
+
+\subsection{Quaternions}
+Quaternions are another way to express the attitude of a rigid body in space. They are commonly used for control pupose due to the fact that they don't have kinematics singularities.
+A quaternion is a four-component vector with some additional operations defined on it. A quaternion $\mathbf{q}$ has a three-vector part $\mathbf{q_{1:3}}$ and a scalar part $q_{4}$ : 
+
+\begin{equation*}
+ \mathbf{q} =
+                                \begin{bmatrix}
+                                    q_{1}\\
+                                    q_{2}\\
+                                    q_{3}\\
+                                    q_{4}\\
+                                \end{bmatrix}
+\end{equation*}
+
+The kinematic equation for the quaternion can be written in the form
+
+\begin{equation}
+ \label{eq:quaternion}
+ \dot(q) = \frac{1}{2} \mathbf{\varXi(\mathbf{q})} \mathbf{\omega_{B/N}}
+\end{equation}
+
+where $\mathbf{\varXi(\mathbf{q})}$ is defined as 
+
+\begin{equation*}
+ \mathbf{\varXi(\mathbf{q})} =
+                                \begin{bmatrix}
+                                   q_4 & -q_3 & q_2\\
+                                   q_3 & q_4 & -q_1\\
+                                  -q_2 & q_1 & q_4\\
+                                  -q_1 & -q_2 & -q_3\\
+                                \end{bmatrix}
+\end{equation*}
+
+So, by integrating Eq. \ref{eq:quaternion} can get the full attitude at every iteration in terms of quaternion.
+
+\subsection{Attitude Error}
+
 \section{Dynamics}
 \subsection{Euler Equations}
 The dynamics of a rigid body which is tumbling into space can be modeled by mean of the well known Euler equations : 
@@ -530,7 +649,7 @@ The dynamics of a rigid body which is tumbling into space can be modeled by mean
   \mathbf{\omega_B} = \mathbf{(I_B)}^{-1} [\mathbf{L_B} - \mathbf{\omega_b}  \wedge (\mathbf{I_B} \mathbf{\omega_b})
 \end{equation}
 
-where \textbf{$\omega_B$} is the angular velocity vector of the spacecraft in body frame, \textbf{$I_B$} is the inertia tensor of the spacecraft in body frame and \textbf{$L_B$} are the external torques acting on the spacecraft due to the external disturbances and the control action.\\
+where \textbf{$\omega_B$} is the angular velocity vector of the spacecraft in body frame, \textbf{$I_B$} is the inertia tensor of the spacecraft in body frame and \textbf{$L_B$} are the external torques acting on the spacecraft due to the external disturbances and the control action.
 
 \subsection{Enviromental Disturbances}
 The external disturbances acting on a LEO orbit spacecraft are basically four and are due to :
@@ -546,24 +665,109 @@ Details about how those torques have been mathematically modeled will be given i
 
 \subsubsection{Gravity Gradient}
 Any nonsymmetrical rigid body in a gravity field is subject to a gravity-gradient torque.\\
-It is usually adequate to approximate the gravity field as spherically symmetric for computing gravity-gradient torques. In this case, we have : 
-
-\begin{equation}
- \mathbf{g(r)} = - \frac{\mu\mathbf{r}}{r^3}
-\end{equation}
-
-The gravity gradient torque about the center of mass therefore can be modeled as :
+If we consider a rigid spacecraft, this torque about the spacecraft's center of mass can be modeled as :
 
 \begin{equation}
  \mathbf{L_{gg}} = \frac{3*mu}{r^3} \mathbf{n} \wedge (\mathbf{I} \mathbf{n})
 \end{equation}
 
+where $\mu$ is the Eart's gravitational constant, $\textbf{r}$ is the radius vector from the center of the Earth, thus $r \equiv \Vert{\textbf{r}}\Vert$, $\textbf{I}$ is the inertia tensor in body frame and $\textbf{n}$ is the body frame representation of a nadir-pointing unit vector.\\
+Further details about the model can be found in reference \cite{Ref:Books:Fundamentals}.
+
 \subsubsection{Earth's Magnetic Field}
+The torque generated by a magnetic dipole $\textbf{m}$ in a magnetic field $\textbf{B}$ is
+
+\begin{equation}
+ \mathbf{L_{mag}} = \mathbf{m} \wedge \mathbf{B}
+ \label{eq:magfield}
+\end{equation}
+
+The most basic source of a magnetic dipole is a current loop. A current of I amperes flowing in a planar loop of area A produces a dipole moment of magnitude m=IA in the direction normal to the plane of the loop and satisfying a right-hand rule.
+When $\textbf{m}$ is in $Am^2$ and the magnetic field is specified in Tesla, Eq. \ref{eq:magfield} gives the torque in $Nm$. If there are N turns of wire in the loop, the dipole moment has magnitude m=NIA (such as the case of a magnetic torquer).
+To model $\textbf{B}$ either the full IGRF model or the simple dipole model can be used.\\
+For what concerns this work, the full IGRF model truncated to the 10th order has been used. Further details about the model can be found in reference \cite{Ref:Articles:IGRF}
+
 \subsubsection{Solar Radiation Pressure}
+Solar radiation pressure acting on the surfaces of the spacecraft causes a disturbance torque that in general, cannot be neglected for orbits higher than \SI{800}{\kilo\meter}, so it has been taken into account in this work.
+The SRP torque is zero zero when the spacecraft is in the shadow of the Earth or any other body, of course.
+To take into account the effect of solar radiation pressure on the spacecraft, the spacecraft's surface can be modeled as a collection of $N$ flat plates of area $S_{i}$, outward normal $\mathbf{n_{b}}$ in the body coordinate frame, specular reflection coefficient $\rho_s$, diffuse reflection coeffiecient $\rho_{d}$ and absorption coefficient $\rho_{a}$; those coefficients must sum to unity.
+For what concerns this work, only $\rho_s$ and $\rho_d$ have been considered, since all the absorbed radiation is emitted as thermal radiation,  although not necessarily at the same time or from the same surface as its absorption.
+For an accurate modeling of thermal radiation we must also known the absolute temerature and the emissivity of each surface.
+We can define the spacecraft-to-Sun unit vector in the spacecraft's body frame as : 
+
+\begin{equation}
+ \mathbf{s_b} = \mathbf{A_{B/N}} \mathbf{s_i}
+\end{equation}
+
+where $\mathbf{A_{B/N}}$ is the attitude matrix and $\mathbf{s_i}$ is the spacecraft-to-Sun unit vector in the GCI frame.
+We can define the angle between the Sun vector and the normal exiting from the normal to the i-th plate as : 
+
+\begin{equation}
+ cos(\theta_{SRP}^{i}) = \mathbf{n}_{B}^{i} \cdot \mathbf{s_b}
+\end{equation}
+
+The SRP force on the i-th plate can be expressed as : 
+
+\begin{equation}
+ \mathbf{F}_{SRP} = - P_{Sun}A_{i}\left[ 2\left( \frac{\rho_{d}^{i}}{3} + \rho_{s}^{i}cos(\theta_{SRP}^{i}) \right) \mathbf{n}_{B}^{i} + (1 -\rho_{s}) \mathbf{s_b} \right] max(cos(\theta_{SRP}^{i}),0)
+\end{equation}
+
+where $P_{Sun}$ is the solar radiation pressure.
+The Solar radiation pressure torque acting on the spacecraft is then given by :
+
+\begin{equation}
+    \mathbf{L}_{SRP}^{i} = \sum\limits_{i=1}^n  \mathbf{r}_{i} \times \mathbf{F}_{SRP}^{i} 
+\end{equation}
+
+where $\mathbf{r}_{i}$ is the vector from the spacecraft center of mass to the centre of pressure of the SRP on the i-th face.
+In this formulation we are not considering the albedo radiation coming from the Earth and from the Moon.
+Further details on how the solar radiation pressure, the spacecraft-to-Sun unit vector and the eclipse condition have been modeled can be found in reference \cite{Ref:Books:Fundamentals}.
+
 \subsubsection{Aerodynamic Drag}
-\section{Kinematics}
-\subsection{Euler Angles}
-\subsection{Quaternions}
+Aerodynamic torque is generally computed by modeling the spacecraft as a collection of $N$ flat plates of area $A_i$ and outward normal unit vector $\mathbf{n_{B}}$ expressed in the spacecraft body-fixed coordinate system. The torque depends on the velocity of the spacecraft relative to the atmosphere, which is not simply the velocity of the spacecraft in the GCI frame, because the atmosphere is not stationary in that frame.
+The most common assumption is that the atmosphere co-rotates with the Earth. The relative velocity in the GCI frame is then given by : 
+
+\begin{equation}
+ \mathbf{v_{relI}} =  \mathbf{v_I} + [\mathbf{\omega_{\earth} \times}] \mathbf{r_I}
+\end{equation}
+
+where $\mathbf{r_I}$ and $\mathbf{v_I}$ are the position and velocity of the spacecraft expressed in the GCI frame. 
+The Earth’s angular velocity vector is $\mathbf{\omega_{\earth}} = \omega_{\earth}[0 0 1]'$ with $\omega_{\earth}$ = \SI{0.000072921158553}{\radian/\second}.
+The velocity in the body frame is the computed as : 
+
+\begin{equation}
+ \mathbf{v_{relB}} = \mathbf{A_{B/N}}   \begin{bmatrix} \dot{x} + \omega_{\earth} y \\ \dot{y} - \omega_{\earth} x \\ \dot{x} \end{bmatrix}
+\end{equation}
+
+The inclination of the i-th plate WRT the relative velocity is given by : 
+
+\begin{equation}
+ cos(\theta_{aero}^{i}) = \frac{\mathbf{n}_{B}^{i} \cdot \mathbf{v}_{rel\ B}}{\norm{\mathbf{v}_{rel}}}
+\end{equation}
+
+The aerodyninamic force on i-th plate in the flat plate model is
+
+\begin{equation}
+ \mathbf{F}_{aero}^{i} = - \frac{1}{2} \rho C_{D} \norm{\mathbf{v}_{rel}} \mathbf{v}_{rel_{} B}\ S_{i}\ max(cos(\theta_{aero}^{i}),0)
+\end{equation}
+
+where $\rho$ is the atmospheric density, and $C_D$ is the drag coefficient.  
+$\rho$ can be modeled by mean of the well known exponential decaying model for the atmospheric density :
+
+\begin{equation}
+ \rho = \rho_{0} e^{(-(h-h_{0})/H)}
+\end{equation}
+
+where $\rho_{0}$ and $h_{0}$ are reference density and height, respectively, $h$ is the height above the ellipsoid and $H$ is the scale height, which is the fractional change in density with eight.
+The value of $\rho_{0}$, $h_{0}$  and $H$ changes with $h$. 
+The values used to perform the simulation are the one given in \cite{Ref:Books:Fundamentals}.
+The actual torque due to the aerodyninamic drag can be computed as : 
+
+\begin{equation}
+\mathbf{L}_{aero}^{i} = \sum\limits_{i=1}^n  \mathbf{r}_{i} \times \mathbf{F}_{aero}^{i}
+\end{equation}
+where $n$ is the number of faces and $\mathbf{r}_{i}$ is the vector from the spacecraft center of mass to the center of pressure on the $i$ th face.\\
+
 \section{Sensors Models}
 \subsection{Magnetometer}
 \subsection{Gyroscope}

@@ -2,6 +2,7 @@
 %************************************************************
 % Required stuff
 %************************************************************
+\usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{euler}
@@ -17,6 +18,12 @@
 \usepackage[unicode=true,bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]{hyperref}
 \usepackage{datetime}
 \usepackage{float}
+\usepackage[nointegrals]{wasysym}
+\usepackage{amsmath}
+%Bibliography
+\usepackage{etoolbox}
+% Acronyms
+\usepackage[acronym,nonumberlist,nopostdot,section=section,toc,numberedsection]{glossaries}
 
 \allsectionsfont{\rmfamily}
 
@@ -49,6 +56,11 @@
 \renewcommand*\thesection{\arabic{section}}
 
 %************************************************************
+% Defining useful commands
+%************************************************************
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+%************************************************************
 % Cross reference set-up
 %************************************************************
 \newrefformat{tab}{Table\,\ref{#1}}
@@ -73,7 +85,6 @@
 \newcommand{\myGroup}{}
 \newcommand{\myUrl}{\url{https://github.com/fcuzzocrea/SADC2017}}
 \newcommand{\myUni}{}
-
 \newcommand{\myPhase}{Spacecraft Attitude Dynamics and Control}
 \newcommand{\myProject}{}
 \newcommand{\myIPT}{}
