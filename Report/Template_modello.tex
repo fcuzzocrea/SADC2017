@@ -29,7 +29,7 @@
 \newacronym{gmst}{GMST}{Greenwich Mean Sidereal Time}
 \newacronym{ekf}{EKF}{Extended Kalman Filter}
 \makeatother
-
+   
 \begin{document}
 
 \input{Titlepage.tex}
@@ -109,10 +109,10 @@
 \chapter{Spacecraft Description}
 
 \section{General Description} \label{sec:general}
-The spacecraft developed during this work is CubeSat (U-class spacecraft), which is a type of miniaturized satellite for space research that is made up of multiples of 10x10x10 cm cubic units. The CubeSat selected for the mission is made of 6 of those cubic units. \\
-The spacecraft is equipped with a three axis magnetometer and three gyros as sensors which will be used to perform the attitude determination, and with four magnetic torquers and a reaction wheel to perform the attitude control.\\
-The mission required from the customer is to perform Earth pointing.\\
-The external surface of the spacecraft will be covered with solar panels in order to allow the spacecraft to generate enough power to be autonomous for the entire life of the mission : 
+The spacecraft developed during this work is CubeSat (U-class spacecraft), which is a type of miniaturized satellite for space research that is made up of multiples of 10x10x10 cm cubic units. The CubeSat selected for the mission is made of six of those cubic units.
+The spacecraft is equipped with a three axis magnetometer and three single-axis gyros as sensors which will be used to perform the attitude determination, and with four magnetic torquers and a reaction wheel to perform the attitude control.
+The mission required from the customer is to perform Earth pointing.
+The external surface of the spacecraft will be covered with solar panels in order to allow the spacecraft to generate enough power to be autonomous for the entire life-time of the mission : 
 
 \begin{figure}[H]
  	\centering
@@ -121,7 +121,7 @@ The external surface of the spacecraft will be covered with solar panels in orde
 \end{figure}
 
 \section{Sensors Description}
-As stated before, the spacecraft is equipped with a three axis magnetometer and three gyroscopes to be able to determine and control the spacecraft attitude.
+As stated before, the spacecraft is equipped with a three axis magnetometer and three gyroscopes in order to be able to determine it's attitude.
 \subsection{Magnetometers}
 Magnetometers have no moving parts and do not require a clear field of view.
 They measure the sum of the ambient field that is of interest and any local fields produced by the spacecraft. Local fields can be produced by ferromagnetic materials or by current loops in solar arrays, electric motors, payload instruments, or most especially attitude control torquers. If the local fields are known, they can be compensated for. If they are not known, the magnetometers can be located far from the sources of magnetic contamination, on a deployable boom if necessary, to take advantage of the $1/r^3$ falloff of a magnetic dipole field. They do require a well-modeled magnetic field if they are to be used as attitude sensors. Nowadays for spacecraft applications MEMS Magnetometers are available.
@@ -197,7 +197,7 @@ In this section the kinematics representation used for the simulation will brief
 \end{itemize}
 
 \subsection{Direct Cosine Matrix}
-The direct cosine matrix, or attitude matrix, gives the transformation of a vector from a reference frame $I$ to another reference frame $O$ : 
+The direct cosine matrix, or attitude matrix, gives the transformation of a vector from a reference frame $N$ to another reference frame $O$ : 
 
 \begin{equation}
  \mathbf{r_{O}} = \mathbf{A_{ON}} \mathbf{r_{N}}
@@ -209,7 +209,7 @@ So, if we consider the spacecraft body frame and the inertial frame, then we can
  \mathbf{r_{B}} = \mathbf{A_{B/N}} \mathbf{r_{N}}
 \end{equation}
 
-As it is demostrated in reference \cite{Ref:Books:Fundamentals}, we can express the time dependence of the attitude matrix expressing the rotation from the body frame to the inertial grame as : 
+As it is demonstrated in Ref. \cite{Ref:Books:Fundamentals}, we can express the time dependence of the attitude matrix by writing the rotation from the body frame to the inertial frame as : 
 
 \begin{equation}
  \dot{A}_{B/N}= - [\omega_{B/N} \times]A_{B/N} 
@@ -226,10 +226,10 @@ where $[\omega_{B/N} \times]$ is the skew-symmetric cross product matrix contain
                                 \end{bmatrix}
 \end{equation*}
 
-Thus, by integrating this relation, we can get the full attitude at every iteration.
+Thus, by integrating this relation, we can get full attitude at every iteration.
 
 \subsection{Quaternions}
-Quaternions are another way to express the attitude of a rigid body in space. They are commonly used for control purpose due to the fact that they don't have kinematics singularities.
+Quaternions are another way to parametrize the attitude of a rigid body in space. They are commonly used for control purpose due to the fact that they don't have kinematics singularities.
 A quaternion is a four-component vector with some additional operations defined on it. A quaternion $\mathbf{q}$ has a three-vector part $\mathbf{q_{1:3}}$ and a scalar part $q_{4}$ : 
 
 \begin{equation*}
@@ -242,7 +242,7 @@ A quaternion is a four-component vector with some additional operations defined 
                                 \end{bmatrix}
 \end{equation*}
 
-The kinematic equation for the quaternion can be written in the form
+The kinematic equation for the quaternion can be written as :
 
 \begin{equation}
  \label{eq:quaternion}
@@ -261,7 +261,7 @@ where $\mathbf{\varXi(\mathbf{q})}$ is defined as
                                 \end{bmatrix}
 \end{equation*}
 
-So, by integrating Eq. \ref{eq:quaternion} can get the full attitude at every iteration in terms of quaternion.
+By integrating Eq. \ref{eq:quaternion} can get the full attitude at every iteration in terms of quaternion.
 
 \subsection{Attitude Error} \label{sec:lvlh}
 The attitude estimation error can be represented either as a small rotation $\mathbf{A_{\hat{R}R}}$ between $R$ and an estimated reference frame $\hat{R}$ :
@@ -311,14 +311,14 @@ So, the error between the desired attitude and the actual attitude of the spacec
  \mathbf{A_{B/L}} =  \mathbf{A_{B/N}} \mathbf{A_{L/N}^T}
 \end{equation}
 
-$\mathbf{A_{B/L}}$ is expected to be close to the identity matrix when the error between the two frames is small.\\
+$\mathbf{A_{B/L}}$ is expected to be close to the identity matrix when the error between the two frames is small.
 We can define an error also in terms of angular velocity vector : 
 
 \begin{equation}
  \mathbf{\omega_{B/L}} = \mathbf{\omega_{B/N}} - \mathbf{A_{B/L}}\mathbf{\omega_{L/N}}
 \end{equation}
 
-Further details can be found in Ref. \cite{notes:bigss}
+Further details about attitude error representation can be found in Ref. \cite{notes:bigss} and Ref. \cite{Ref:Books:Fundamentals}.
 \section{Dynamics}
 \subsection{Euler Equations}
 The dynamics of a rigid body which is tumbling into space can be modeled by mean of the well known Euler equations : 
@@ -327,10 +327,10 @@ The dynamics of a rigid body which is tumbling into space can be modeled by mean
   \mathbf{\omega_B} = \mathbf{(I_B)}^{-1} [\mathbf{L_B} - \mathbf{\omega_b}  \wedge (\mathbf{I_B} \mathbf{\omega_b})
 \end{equation}
 
-where \textbf{$\omega_B$} is the angular velocity vector of the spacecraft in body frame, \textbf{$I_B$} is the inertia tensor of the spacecraft in body frame and \textbf{$L_B$} are the external torques acting on the spacecraft due to the external disturbances and the control action.
+where \textbf{$\omega_B$} is the angular velocity vector of the spacecraft in body frame, \textbf{$I_B$} is the inertia tensor of the spacecraft in body frame and \textbf{$L_B$} are the external torques acting on the spacecraft due to  external disturbances and control torques.
 
 \subsection{Environmental Disturbances} \label{sec:disturbances}
-The external disturbances acting on a LEO orbit spacecraft are basically four and are due to :
+The external disturbances acting on spacecraft placed in a LEO orbit are basically four and are due to :
 
 \begin{itemize}
   \item[-] Gravity Gradient
@@ -342,8 +342,8 @@ The external disturbances acting on a LEO orbit spacecraft are basically four an
 Details about how those torques have been mathematically modeled will be given in the following sections.
 
 \subsubsection{Gravity Gradient}
-Any non-symmetrical rigid body in a gravity field is subject to a gravity-gradient torque.\\
-If we consider a rigid spacecraft, this torque about the spacecraft's center of mass can be modeled as :
+Any non-symmetrical rigid body in a gravity field is subject to a gravity-gradient torque.
+If we consider a rigid spacecraft, the torque due to the gravity gradient about the spacecraft's center of mass can be modeled as :
 
 \begin{equation}
  \mathbf{L_{gg}} = \frac{3*mu}{r^3} \mathbf{n} \wedge (\mathbf{I} \mathbf{n})
@@ -360,7 +360,7 @@ The torque generated by a magnetic dipole $\textbf{m}$ in a magnetic field $\tex
  \label{eq:magfield}
 \end{equation}
 
-where $\mathbf{B}$ is the magnetic field in the body frame.\\
+where $\mathbf{B}$ is the magnetic field in the body frame.
 The most basic source of a magnetic dipole is a current loop. A current of I amperes flowing in a planar loop of area A produces a dipole moment of magnitude m=IA in the direction normal to the plane of the loop and satisfying a right-hand rule.
 When $\textbf{m}$ is in $Am^2$ and the magnetic field is specified in Tesla, Eq. \ref{eq:magfield} gives the torque in $Nm$. If there are N turns of wire in the loop, the dipole moment has magnitude m=NIA (such as the case of a magnetic torquer).
 To model $\textbf{B}$ either the full IGRF model or the simple dipole model can be used.\\
@@ -451,7 +451,6 @@ where $n$ is the number of faces and $\mathbf{r}_{i}$ is the vector from the spa
 \section{Sensors Models}
 In this section, the equation used to model the behavior of the sensor present on the spacecraft will be illustrated.
 \subsection{Magnetometer}
-A magnetometer measure the value of the magnetic field in the body frame.
 The magnetometer has been modeled considering a small error to take into account the possible misalignment between the true principal axis of the spacecraft and the mounting axis of the magnetometer itself, plus a withe gaussian noise to take into account the noise present on a real magnetometer.
 So, the equation of the magnetometer output in the body frame is given by : 
 
@@ -479,7 +478,6 @@ and
 further details can be found in \cite{notes:bigss}
 
 \subsection{Gyroscope}
-A gyroscope measure the value of the angular velocity in the body frame.
 The spacecraft's angular velocity $\omega_{i}$ in the direction of the gyro's input axis can be related to the gyro's measurement of this quantity $\mathbf{\omega_{i}^{M}}$ by means of the classical rate gyro mathematical model : 
 
 \begin{equation}
@@ -533,7 +531,7 @@ So the total wheel torque and angular momentum in the body frame are given by :
 \end{equation}
 
 In order to be able to transform the desired body frame angular momentum or torque vector into the wheel frame, to get the command to send to the wheel, we must be able to invert the matrix $\mathit{A_{n}}$. For $n \ = \ 3$ there is no problem, but for $n \ > \ 3$ we should consider different approaches to distribute the torque among all the the wheels, such as the pseiduinverse and the minmax methods. Those have not been considered in this work, since the chosen configuration will have only one reaction wheel.
-Finally, the output of the reaction wheel can be modeled as : 
+Finally, the output of the reaction wheel can be modeled as: 
 
 \begin{equation}
  \mathbf{\dot{h}_r} = \mathit{A}^{-1} [A\mathbf{h_r} \wedge \omega_{bn} \ - \ \mathbf{u_{id}}]
@@ -579,7 +577,7 @@ were : \\
  $       
 \end{subequations}\\
 
-Simulations however have demonstrated that this method isn't feasible when lecture comes from real on-board magnetometers, due to the fact that the derivatives of $\mathbf{B}$ are too noisy for control applications, so it will not be used.
+Simulations however have demonstrated that this method isn't feasible when the measurements comes from real on-board magnetometers, due to the fact that the derivatives of $\mathbf{B}$ are too noisy for control applications, so it will not be used.
 
 \section{Method 2}
 A second method to perform attitude determination consist into integrating the angular rates coming from the gyro, so we can get the attitude both in terms of quaternions (needed for computing $\mathbf{\delta q}$) and DCM (needed for computing $\mathbf{\omega_{B/L}}$) :
@@ -787,7 +785,7 @@ The requirement placed from the customer for this mission are :
 \end{itemize}
 
 \section{Orbital Parameters}
-The mission required by the customer is to perform Earth pointing. \\   
+The mission required by the customer is to perform Earth pointing. 
 Only the altitude of the target orbit has be assigned by the customer. The other orbital parameters have been chosen as follows : 
 
 \begin{table}[H]
@@ -1374,9 +1372,8 @@ As it can be seen, the spacecraft it's de-tumbled in about 40 minutes and then e
  \caption{Euler Angles} 
 \end{figure}
 
-\chapter{Conclusion}
+\chapter{Conclusion}   
 The spacecraft is able to full-fill the customer requirements, however, as stated in Chap. \ref{chap:determination}, the algorithm used to perform attitude determination cannot be used in a production environment due to it's computational complexity.
-A possible better determination algorithm to be implemented in future iteration of this work is shown in Ref. \cite{Ref:Articles:Pela}.
-Ref. \cite{Ref:Articles:Pela} explore the implementation of an EKF which exploits the two-axis solar cell measurements in addition to the magnetometer measurements, thus no hardware upgrade is needed.
+A possible better determination algorithm to be implemented in future iteration of this work is shown in Ref. \cite{Ref:Articles:Pela} were it is proposed the implementation of an EKF which exploits the two-axis solar cell measurements in addition to the magnetometer measurements to perform the attitude determination, thus no hardware upgrade is needed.
 \newpage
 \end{document}
