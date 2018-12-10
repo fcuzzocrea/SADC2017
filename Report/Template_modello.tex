@@ -19,8 +19,15 @@
 \makenoidxglossaries
 
 % Acronyms: definire qui gli acronimi che verranno utilizzati nel testo
-\newacronym{ccd}{CCD}{Charge Couple Device}
-
+\newacronym{sc}{S/C}{Spacecraft}
+\newacronym{mems}{MEMS}{Micro Electro-Mechanical Systems}
+\newacronym{adcs}{ADCS}{Attitude Dynamics and Control Subsystem}
+\newacronym{dcm}{DCM}{Direct Cosine Matrix}
+\newacronym{lvlh}{LVLH}{Local-Vertical/Local-Horizontal}
+\newacronym{gg}{GG}{Gravity Gradient}
+\newacronym{igrf}{IGRF}{International Geomagnetic Reference Field}
+\newacronym{srp}{SRP}{Solar Radiation Pressure}
+\newacronym{gmst}{GMST}{Greenwich Mean Sidereal Time}
 \makeatother
 
 \begin{document}
@@ -79,9 +86,24 @@
 \renewcommand\UrlFont{\rmfamily}
 \begin{thebibliography}{0}
 \setcounter{enumiv}{6}
-\bibitem{Ref:DataSheets:PowerControlUnit} 
-    \url{www.magellan.aero}\\
-    \textit{Power Control Unit Datasheet} 
+\bibitem{Ref:DataSheets:Structure} 
+    \url{www.isispace.nl}\\
+    \textit{6-Unit CubeSat Structure Datasheet} 
+\bibitem{Ref:DataSheets:Gyro} 
+    \url{www.sensonor.com}\\
+    \textit{STIM210 Gyroscope Datasheet} 
+\bibitem{Ref:DataSheets:Magnetometer} 
+    \url{www.newspacesystems.com}\\
+    \textit{NMRM-Bn25o485 Magnetometer Datasheet}
+\bibitem{Ref:DataSheets:ReactionWheel} 
+    \url{www.adcolemai.com}\\
+    \textit{MAI-400 Reaction Wheel Datasheet}      
+\bibitem{Ref:DataSheets:MagneticTorquer} 
+    \url{www.newspacesystems.com}\\
+    \textit{NCTR-M012 Magnetic Torquer Datasheet}    
+\bibitem{Ref:DataSheets:Arduino} 
+    \url{www.microchip.com}\\
+    \textit{Atmel SAM3X Datasheet}       
 \end{thebibliography}
 
 \chapter{Spacecraft Description}
@@ -166,22 +188,13 @@ Momentum-bias spacecraft may use one or two reaction wheels, but
 full three-axis attitude control requires three or more wheels.
 
 \section{Onboard Computer}
-The onboard computer is the central core of the ADC system, and is responsible of acquiring data from sensors, performing attitude determination and control computation and drive the actuator by sending them the correct control variables.\\
+The onboard computer is the central core of the ADCS, and is responsible of acquiring data from sensors, performing attitude determination and control computation and drive the actuator by sending them the correct control variables.\\
 The on board computer shall be able to exchange data with the ground station, collect informations about the health status of the spacecraft's sensors and actuators and perform housekeeping tasks.
 
 \begin{figure}[H]
  	\centering
  	\includegraphics[scale=0.25]{gfx/ardusat.jpg}
     \caption{Ardusat On Board Computer}
-\end{figure}
-
-\section{Instruments and Actuators Placing}
-The magnetic torquers are placed on the three principal axis of the spacecraft, while the reaction wheel is placed on the z-axis. The magnetometer is placed inside the spacecraft, while the three gyros are placed on the three principal axis of the spacecraft.
-
-\begin{figure}[H]
- 	\centering
- 	\includegraphics[scale=0.4]{gfx/actuators.png}
-    \caption{Sensors and Actuators Placing}
 \end{figure}
 
 \chapter{Mathematical Modeling}
@@ -326,7 +339,7 @@ The dynamics of a rigid body which is tumbling into space can be modeled by mean
 
 where \textbf{$\omega_B$} is the angular velocity vector of the spacecraft in body frame, \textbf{$I_B$} is the inertia tensor of the spacecraft in body frame and \textbf{$L_B$} are the external torques acting on the spacecraft due to the external disturbances and the control action.
 
-\subsection{Enviromental Disturbances}
+\subsection{Enviromental Disturbances} \label{sec:disturbances}
 The external disturbances acting on a LEO orbit spacecraft are basically four and are due to :
 
 \begin{itemize}
@@ -509,7 +522,7 @@ The magnitude of the dipole moment given by the magnetic torquer can be written 
  m = NIA
 \end{equation}
 
-This value has to be satured using the value of the magnetic moment given by a real actuator.
+This value has to be saturated using the value of the magnetic moment given by a real actuator.
 
 \subsection{Reaction Wheels}
 We can arrange the applied torque and the wheel angular momenta of the individual wheels, $\dot{h_{r}}$ and $h_{r}$, in column vectors $\mathbf{\dot{h}_{r}^W}$ and $\mathbf{{h_{r}^W}}$, were the superscript $W$ indicates n-dimensional wheel frame. The transformation from the wheel frame to the body frame is given by a $3 \ x \ n$ matrix called `distribution matrix`, and denoted by $\mathit{A_{n}}$, whose columns are unit vectors in the body frame, $\mathbf{a_{i}}$ , along the spin axes of the wheels:
@@ -538,7 +551,8 @@ Finally, the output of the reaction wheel can be modeled as :
 where $\mathbf{u_{id}}$ is the required ideal control torque. 
 $\mathbf{\dot{h}_r}$ and $\mathbf{{h}_r}$ must be satured according to the capabilities of the real hardware.
 
-\chapter{Attitude Determination}
+\chapter{Attitude Determination} 
+\label{chap:determination}
 Two methods have been investigated that allows for determination of the attitude using only a magnetometer and a gyro. Their mathematical model will be briefly given in the following subsections.
 
 \section{Method 1}
@@ -604,7 +618,8 @@ However, it's not intended to be used in production enviroment since it presents
 
 
 
-\chapter{Control}
+\chapter{Control} 
+\label{chap:control}
 Two control alghoritm have been developed, one for the de-tumbling phase and one to perform the Earth pointing.
 De-tumble a spacecraft means to reduce it's angular velocity to values which are comparable to the orbit rate.
 After the de-tumbling phase the spacecraft must be able to perform a slew maneuver in order to reorient itself to point the desired location on Earth's surface.
@@ -755,7 +770,7 @@ We can now rewrite everything in matrix form as :
 \end{equation}
 
 \begin{equation}
- [\mathbf{m_{1:2}} \ \mathbf{\dot{h_{r}}}] = -\frac{1}{B_3} \ \mathbf{M} \ \mathbf{L}
+ [\mathbf{m_{1:2}} \ \mathbf{\dot{h}_{r}}] = -\frac{1}{B_3} \ \mathbf{M} \ \mathbf{L}
 \end{equation}
 
 where $\mathbf{M}$ is the mixer matrix, and $\mathbf{L}$ is commanded by Eq. \ref{eq:idealcontrol}
@@ -776,7 +791,7 @@ The parameters are divided in four main categories :
 The requirement placed from the customer for this mission are :
 
 \begin{itemize}
- \item de-tumble Spacecraft after launcher injection
+ \item de-tumble the spacecraft after launcher injection in orbit
  \item perform Earth Pointing with \ang{0.1} accuracy
 \end{itemize}
 
@@ -808,10 +823,28 @@ Only the altitude of the target orbit has be assigned by the customer. The other
 \end{table}
 
 The selected orbit is circular with \ang{60} inclination.
-The rationale for this choice is that with magnetic torquers full three-axis control is available over a complete orbit since the S/C's orbital plane does not coincide with the geomagnetic equatorial plane and does not contain the magnetic poles. \\
+The rationale for this choice is that with magnetic torquers full three-axis control is available over a complete orbit since the S/C's orbital plane does not coincide with the geomagnetic equatorial plane and does not contain the magnetic poles. 
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/results/lvlh_orbit.png}
+ \caption{LVLH} 
+ \label{fig:lvlhorbit}
+\end{figure}
+
 The orbital period is given by 
 
 $$T_{orbit} = 2\pi\sqrt{\frac{a^{3}}{mu}} = 6.0522e03 \ s$$
+
+For the simulation we assume that the launcher is able to inject the spacecraft in the selected orbit with the following angular velocity and attitude : 
+
+\begin{equation}
+ \mathbf{\omega_{0}} = [0.022 \ 0.058 \ 0.039]
+\end{equation}
+
+\begin{equation}
+ \mathbf{q{0}} = [0 \ 0 \ 0 \ 1]
+\end{equation}
 
 \section{Structure Parameters}
 
@@ -842,10 +875,12 @@ The dimension and the weight of the spacecraft are reported in table \ref{tab:St
     \caption{6U CubeSat Structure}
 \end{figure}
 
+Further details can be found in \cite{Ref:DataSheets:Structure}
+
 \section{Sensors Parameters}
 The spacecraft is equipped with three single axis gyroscopes and a three axis magnetometers which will be used to perform the full attitude determination.
-The chosen sensor are the NSS Magnetometer available at cubesatshop.com and the Sensonor STIM 210 Gyroscope in the single axis configuration.\\
-In table \ref{tab:magnetometers} and \ref{tab:gyroscopes} are reported the characteristics of the sensors chosen for the S/C.\\
+The chosen sensor are the NSS NMRM-Bn25o485 Magnetometer and the Sensonor STIM 210 Gyroscope in the single axis configuration.
+In table \ref{tab:magnetometers} and \ref{tab:gyroscopes} are reported the characteristics of the sensors chosen for the S/C.
 
 \subsubsection{Magnetometer}
 \begin{table}[H]
@@ -879,7 +914,7 @@ In table \ref{tab:magnetometers} and \ref{tab:gyroscopes} are reported the chara
         Connector & 9-pin Female Micro-D \\
         \hline
 	\end{tabular}
-	\caption{NSS Magnetometer by spacecraftshop}
+	\caption{NSS NMRM-Bn25o485 Magnetometer}
 	\label{tab:magnetometers}
 \end{table}
 
@@ -888,8 +923,10 @@ In table \ref{tab:magnetometers} and \ref{tab:gyroscopes} are reported the chara
 \begin{figure}[H]
  	\centering
  	\includegraphics[scale=0.6]{gfx/NSSmagnetometer.png}
-    \caption{NSS Magnetometer}
+    \caption{NSS NMRM-Bn25o485 Magnetometer}
 \end{figure}
+
+Further details can be found in \cite{Ref:DataSheets:Magnetometer}
 
 \subsubsection{Gyroscope}
 \begin{table}[H]
@@ -898,7 +935,7 @@ In table \ref{tab:magnetometers} and \ref{tab:gyroscopes} are reported the chara
         \hline
         Measurement Range & +/- \ang{400}/s \\
         \hline
-        Update rate & \SI{1}{hz} \\
+        Sample rate & up to \SI{2000}{hz} \\
         \hline
         Output & \SI{24}{bit} \\
         \hline
@@ -933,10 +970,12 @@ In table \ref{tab:magnetometers} and \ref{tab:gyroscopes} are reported the chara
     \caption{Sensonor STIM 210 Gyroscope}
 \end{figure}
 
+Further details can be found in \cite{Ref:DataSheets:Gyro}
+
 \section{Actuators Parameters}
 The spacecraft is equipped with three magnetic torquers and a reaction wheel. Both the three magnetic torquers will be used to control the attitude of the spacecraft during the initial detumbling phase. The reaction wheel coupled with two magnetic torquers will be used to control the spacecraft during the Earth pointing phase. 
-The chosen actuators are the NCTR-M012 Magnetorquer Rod and the MAI-400 Reaction Wheel available at cubesatshop.com.\\
-In table \ref{tab:magnetictorquer} and \ref{tab:reactionwheel} are reported the characteristics of the sensors chosen for the S/C.\\
+The chosen actuators are the NCTR-M012 Magnetorquer Rod and the MAI-400 Reaction Wheel.
+In table \ref{tab:magnetictorquer} and \ref{tab:reactionwheel} are reported the characteristics of the sensors chosen for the S/C.
 
 \subsubsection{Magnetic Torquer}
 \begin{table}[H]
@@ -974,6 +1013,8 @@ In table \ref{tab:magnetictorquer} and \ref{tab:reactionwheel} are reported the 
     \caption{NSS NCTR-M012 Magnetorquer Rod}
 \end{figure}
 
+Further details can be found at \cite{Ref:DataSheets:MagneticTorquer}
+
 \subsubsection{Reaction Wheel}
 \begin{table}[H]
 	\centering
@@ -1003,7 +1044,7 @@ In table \ref{tab:magnetictorquer} and \ref{tab:reactionwheel} are reported the 
         \hline
 	\end{tabular}
 	\caption{Maryland Aerospace MAI-400 Reaction Wheel}
-	\label{tab:gyroscopes}
+	\label{tab:reactionwheel}
 \end{table}
 
 \begin{figure}[H]
@@ -1011,6 +1052,8 @@ In table \ref{tab:magnetictorquer} and \ref{tab:reactionwheel} are reported the 
  	\includegraphics[scale=0.25]{gfx/mai_reaction_wheel.png}
     \caption{Maryland Aerospace MAI-400 Reaction Wheel}
 \end{figure}
+
+Further details can be found at \cite{Ref:DataSheets:ReactionWheel}
 
 \section{External Disturbances Parameters}
 To be able to correctly simulate the behavior of the external disturbances acting on the spacecraft the following parameters have been used : 
@@ -1030,7 +1073,7 @@ To be able to correctly simulate the behavior of the external disturbances actin
 	\end{tabular}
 \end{table}
 
-The departure date to correctly simulate the behavior of the external disturbances has been set to January 1st 2019, 12:00 AM.
+The departure date to correctly generate the magnetic field and the solar radiation pressure taking into account the Julian date has been set to January 1st 2019, 12:00 AM.
 
 \section{Spacecraft Parameters}
 In this section are listed the parameters used to simulate the behaviour of the spacecraft.
@@ -1153,10 +1196,196 @@ The controller is responsible of sending the correct input to the actuators in o
     \label{fig:architecture}
 \end{figure}
 
+\subsection{Sensors and Actuators Placing}
+The magnetic torquers are placed on the three principal axis of the spacecraft, while the reaction wheel is placed on the z-axis. The magnetometer is placed inside the spacecraft, while the three gyros are placed on the three principal axis of the spacecraft.
+
+\begin{figure}[H]
+ 	\centering
+ 	\includegraphics[scale=0.4]{gfx/actuators.png}
+    \caption{Sensors and Actuators Placing}
+\end{figure}
 
 \chapter{Simulink Model}
+The Simulink model is organized into three main areas, as can be seen from Fig. \ref{fig:generalovw}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/generalovw.png}
+ \caption{General Overview} 
+ \label{fig:generalovw}
+\end{figure}
+
+\subsection{Dynamics}
+The light green area is the one were the dynamics of the spacecraft is computed.
+The models described in section \ref{sec:disturbances} for evaluating disturbances have been implemented inside the green block :
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/DistrurbanceTorques.png}
+ \caption{Disturbance Torques} 
+ \label{fig:disturbancetorques}
+\end{figure}
+
+The gravity gradient is simply evaluated by implementing in simulink the equation shown in \ref{sec:disturbances} :
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/gravitygradient.png}
+ \caption{Gravity Gradient} 
+ \label{fig:gravitygradient}
+\end{figure}
+
+For evaluating the aerodynamic drag, a MATLAB function has been developed. The MATLAB function detects if a surface is wetted by air depending on the orientation of the spacecraft and compute the torque :
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/aerodrag.png}
+ \caption{Aerodynamic Drag} 
+ \label{fig:aerodrag}
+\end{figure}
+
+For evaluating the solar radiation pressure, a MATLAB function has been developed. The MATLAB function detects if a surface is in view of the Sun depending on the orientation of the spacecraft with respect to the Sun. To evaluate the Sun position, another MATLAB function has been developed which takes as an input the current Julian date and outpts the Sun direction versor in the body frame. 
+Eclipse condition is also taken into account.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/srp.png}
+ \caption{Solar Radiation Pressure} 
+ \label{fig:srp}
+\end{figure}
+
+For evaluating the magnetic field, the full IGRF 10th order model has been implemented using a MATLAB function which takes as input the current GMST, latitude and longitude of the spacecraft and outputs the magnetic field strength in \SI{}{\tesla} 
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/magfield.png}
+ \caption{Magnetic Field} 
+ \label{fig:magfield}
+\end{figure}
+
+The yellow block takes as input control and disturbance torques and integrate Euler's equations. The output of this block is the angular velocity vector of the spacecraft in the body frame.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/eulerequation.png}
+ \caption{Euler Equations} 
+ \label{fig:eulerequation}
+\end{figure}
+
+\subsection{True Kinematics}
+The true kinematics is computed in the light purple area of Fig. \ref{fig:generalovw}. 
+The DCM and quaternions are integrated, and the error between the desired attitude and the current attitude is computed.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/kinematics.png}
+ \caption{Kinematics} 
+ \label{fig:kinematics}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/trueattitude.png}
+ \caption{Attitude Error} 
+ \label{fig:trueattitude}
+\end{figure}
+
+\subsection{Spacecraft}
+The light orange area of Fig. \ref{fig:generalovw} represents the spacecraft hardware.
+Inside the cyan block the equation used to model the behavior of the sensor present on the spacecraft and illustrated in Sec. \ref{sec:disturbances} have been implemented
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/sensors.png}
+ \caption{Sensors} 
+ \label{fig:sensors}
+\end{figure}
+
+The dark green block represents the spacecraft's onboard computer. Inside this block, the determination algorithm and the control algorithm shown in Chap. \ref{chap:determination} and Chap. \ref{chap:control} have been implemented : 
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/computer.png}
+ \caption{On-Board Computer} 
+ \label{fig:computer}
+\end{figure}
+
+
+As it can be seen from Fig. \ref{fig:computer} a switch changes the control algorithm from the de-tumbling to the Earth pointing phase when the norm of the angular velocity is small enough.
+
+Instead the orange block of Fig. \ref{fig:generalovw} instead the dynamic of the actuators is simulated :
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{gfx/simulink/actuators_inside.png}
+ \caption{Actuator's Dynamic} 
+ \label{fig:actuatordynamics}
+\end{figure}
 
 \chapter{Results}
 
+\section{Disturbance Torques}
+Fig. \ref{fig:gravitygradienttorque}, \ref{fig:dragtorque}, \ref{fig:srptorque}, \ref{fig:magfieldtorque} shows simulation results for the disturbance torques acting on the spacecraft : 
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{gfx/results/gravitygradient.png}
+ \caption{Gravity Gradient Torque} 
+ \label{fig:gravitygradienttorque}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{gfx/results/dragtorque.png}
+ \caption{Aerodynamic Drag Torque} 
+ \label{fig:dragtorque}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{gfx/results/srp.png}
+ \caption{Solar Radiation Pressure Torque} 
+ \label{fig:srptorque}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{gfx/results/magfield.png}
+ \caption{Magnetic Field Torque} 
+ \label{fig:magfieldtorque}
+\end{figure}
+
+\section{Control}
+In this section results of the two control law implemented are shown.
+As it can be seen, the spacecraft it's de-tumbled in about 40 minutes and then executes a slew maneuver to follow the commanded attitude. The errors on quaternion and on angular velocity go to zero as expected.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{gfx/results/error_w.png}
+ \caption{Error on Angular Velocity} 
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{gfx/results/w_norm.png}
+ \caption{Norm of the Error on Angular velocity} 
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{gfx/results/quaternion_error.png}
+ \caption{Error on Quaternions} 
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{gfx/results/euler_angles.png}
+ \caption{Euler Angles} 
+\end{figure}
+
+\chapter{Conclusion}
+The spacecraft is able to fullfill the customer requirements, however, as stated in Chap. \ref{chap:determination}, the algorithm used to perform attitude determination cannot be used in a production enviroment due to it's computational complexity.
+A possible better determination algorithm to be implemented in future iteration of this work is shown in Ref. \cite{Ref:Articles:Pela}.
+Ref. \cite{Ref:Articles:Pela} explore the implementation of an EKF which exploits the two-axis solar cell measurements in addition to the magnetometer measurements, thus no hardware upgrade is needed.
 \newpage
 \end{document}
