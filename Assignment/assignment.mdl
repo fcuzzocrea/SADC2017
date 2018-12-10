@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.921"
+    ComputedModelVersion    "1.925"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -151,12 +151,12 @@ Model {
 	Dimension		4
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "1381"
 	  Extents		  [1330.0, 546.0]
-	  ZoomFactor		  [0.65819567979669635]
-	  Offset		  [-9421.3378378378384, -649.2702702702702]
+	  ZoomFactor		  [1.19]
+	  Offset		  [117.39912683823525, 61.508403361344506]
 	}
 	Object {
 	  $ObjectID		  7
@@ -171,14 +171,14 @@ Model {
 	  $ObjectID		  8
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "1205"
+	  LoadSaveID		  "2199"
 	  Extents		  [1330.0, 546.0]
-	  ZoomFactor		  [1.8695785159356457]
-	  Offset		  [288.8791064066487, 269.41185949872391]
+	  ZoomFactor		  [4.57]
+	  Offset		  [16.985776805251646, -14.237417943107218]
 	}
 	Object {
 	  $ObjectID		  9
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "1153"
 	  Extents		  [1330.0, 546.0]
@@ -219,9 +219,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "fcuzzocrea"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Dec 10 15:32:30 2018"
-  RTWModifiedTimeStamp	  466356745
-  ModelVersionFormat	  "1.%<AutoIncrement:921>"
+  LastModifiedDate	  "Mon Dec 10 22:36:42 2018"
+  RTWModifiedTimeStamp	  466382197
+  ModelVersionFormat	  "1.%<AutoIncrement:925>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -6538,7 +6538,7 @@ Model {
   System {
     Name		    "assignment"
     Location		    [0, 0, 1368, 732]
-    Open		    on
+    Open		    off
     PortBlocksUseCompactNotation off
     SetExecutionDomain	    off
     ExecutionDomainType	    "Deduce"
@@ -6554,7 +6554,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "66"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2320"
+    SIDHighWatermark	    "2329"
     Block {
       BlockType		      SubSystem
       Name		      "\n"
@@ -6823,7 +6823,7 @@ Model {
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Magnetometer"
-	    Location		    [0, 0, 1920, 1030]
+	    Location		    [0, 0, 1368, 732]
 	    Open		    on
 	    PortBlocksUseCompactNotation off
 	    SetExecutionDomain	    off
@@ -10401,7 +10401,7 @@ Model {
 	      System {
 		Name			"Complete Model"
 		Location		[0, 0, 1368, 732]
-		Open			off
+		Open			on
 		PortBlocksUseCompactNotation off
 		SetExecutionDomain	off
 		ExecutionDomainType	"Deduce"
@@ -10445,7 +10445,7 @@ Model {
 		  BlockType		  Goto
 		  Name			  "Goto1"
 		  SID			  "1531"
-		  Position		  [1095, 350, 1135, 380]
+		  Position		  [1105, 350, 1145, 380]
 		  ZOrder		  356
 		  GotoTag		  "B_n"
 		  TagVisibility		  "global"
@@ -10687,7 +10687,7 @@ Model {
 		  Name			  "Scope"
 		  SID			  "1989"
 		  Ports			  [1]
-		  Position		  [1120, 424, 1150, 456]
+		  Position		  [1110, 449, 1140, 481]
 		  ZOrder		  361
 		  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr"
 		  ".Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sourc"
@@ -11485,7 +11485,7 @@ Model {
 		  Name			  "To Workspace"
 		  SID			  "2284"
 		  Ports			  [1]
-		  Position		  [1065, 395, 1125, 425]
+		  Position		  [1095, 395, 1155, 425]
 		  ZOrder		  362
 		  VariableName		  "B_n"
 		  MaxDataPoints		  "inf"
@@ -11957,7 +11957,7 @@ Model {
 		    }
 		    Branch {
 		    ZOrder		    44
-		    Points		    [0, 30]
+		    Points		    [0, 55]
 		    DstBlock		    "Scope"
 		    DstPort		    1
 		    }
@@ -13344,7 +13344,7 @@ Model {
 		  BlockType		  Inport
 		  Name			  "Magnetometer Measure"
 		  SID			  "2308"
-		  Position		  [-60, 188, -30, 202]
+		  Position		  [-60, 198, -30, 212]
 		  ZOrder		  4087
 		  Port			  "2"
 		  IconDisplay		  "Port number"
@@ -13842,7 +13842,7 @@ Model {
 		  Name			  "LVLH"
 		  SID			  "1841"
 		  Ports			  [0, 1]
-		  Position		  [70, -23, 135, 13]
+		  Position		  [65, -13, 130, 23]
 		  ZOrder		  4044
 		  RequestExecContextInheritance	off
 		  System {
@@ -13862,13 +13862,13 @@ Model {
 		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 		    TiledPageScale	    1
 		    ShowPageBoundaries	    off
-		    ZoomFactor		    "253"
+		    ZoomFactor		    "250"
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "Full Orbital Dynamics"
 		    SID			    "1844"
 		    Ports		    [2, 1]
-		    Position		    [305, 289, 530, 436]
+		    Position		    [305, 293, 530, 442]
 		    ZOrder		    166
 		    RequestExecContextInheritance off
 		    System {
@@ -14812,7 +14812,7 @@ Model {
 		    BlockType		    Constant
 		    Name		    "Initial Conditions (KEP)"
 		    SID			    "1872"
-		    Position		    [135, 387, 255, 413]
+		    Position		    [135, 392, 255, 418]
 		    ZOrder		    171
 		    Value		    "[a, e, i, OMG, omg, theta]"
 		    }
@@ -14820,7 +14820,7 @@ Model {
 		    BlockType		    Constant
 		    Name		    "Planetary Constant"
 		    SID			    "1874"
-		    Position		    [140, 310, 255, 340]
+		    Position		    [140, 315, 255, 345]
 		    ZOrder		    170
 		    Value		    "mu"
 		    }
@@ -14828,7 +14828,7 @@ Model {
 		    BlockType		    Outport
 		    Name		    "A_LN\n"
 		    SID			    "1876"
-		    Position		    [620, 358, 650, 372]
+		    Position		    [585, 323, 615, 337]
 		    ZOrder		    117
 		    IconDisplay		    "Port number"
 		    }
@@ -14850,6 +14850,7 @@ Model {
 		    ZOrder		    3
 		    SrcBlock		    "Full Orbital Dynamics"
 		    SrcPort		    1
+		    Points		    [23, 0; 0, -40]
 		    DstBlock		    "A_LN\n"
 		    DstPort		    1
 		    }
@@ -14860,7 +14861,7 @@ Model {
 		  Name			  "Quaternions"
 		  SID			  "1617"
 		  Ports			  [2, 2]
-		  Position		  [150, 129, 415, 216]
+		  Position		  [160, 137, 425, 228]
 		  ZOrder		  4037
 		  RequestExecContextInheritance	off
 		  System {
@@ -14895,7 +14896,7 @@ Model {
 		    BlockType		    Inport
 		    Name		    "Magnetometer Measure"
 		    SID			    "2309"
-		    Position		    [65, 218, 95, 232]
+		    Position		    [65, 448, 95, 462]
 		    ZOrder		    4087
 		    Port		    "2"
 		    IconDisplay		    "Port number"
@@ -14921,6 +14922,16 @@ Model {
 		    SampleTime		    "-1"
 		    ICPrevOutput	    "DiscIntNeverNeededParam"
 		    ICPrevScaledInput	    "DiscIntNeverNeededParam"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "From"
+		    SID			    "2327"
+		    Position		    [65, 501, 105, 529]
+		    ZOrder		    4094
+		    Commented		    "on"
+		    GotoTag		    "B_n"
+		    TagVisibility	    "global"
 		    }
 		    Block {
 		    BlockType		    Gain
@@ -15146,6 +15157,252 @@ Model {
 		    SrcBlock		    " SFunction "
 		    SrcPort		    2
 		    DstBlock		    "y"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    3
+		    SrcBlock		    " Demux "
+		    SrcPort		    1
+		    DstBlock		    " Terminator "
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    4
+		    SrcBlock		    " SFunction "
+		    SrcPort		    1
+		    DstBlock		    " Demux "
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "MATLAB Function2"
+		    SID			    "2321"
+		    Ports		    [2, 1]
+		    Position		    [200, 469, 350, 516]
+		    ZOrder		    4090
+		    Commented		    "on"
+		    ErrorFcn		    "Stateflow.Translate.translate"
+		    PermitHierarchicalResolution "ExplicitOnly"
+		    TreatAsAtomicUnit	    on
+		    RequestExecContextInheritance off
+		    SFBlockType		    "MATLAB Function"
+		    ContentPreviewEnabled   on
+		    System {
+		    Name		    "MATLAB Function2"
+		    Location		    [223, 338, 826, 833]
+		    Open		    off
+		    PortBlocksUseCompactNotation off
+		    SetExecutionDomain	    off
+		    ExecutionDomainType	    "Deduce"
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    SIDHighWatermark	    "22"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "B_b"
+		    SID			    "2321::1"
+		    Position		    [20, 101, 40, 119]
+		    ZOrder		    -1
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "B_n"
+		    SID			    "2321::22"
+		    Position		    [20, 136, 40, 154]
+		    ZOrder		    13
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    " Demux "
+		    SID			    "2321::20"
+		    Ports		    [1, 1]
+		    Position		    [270, 230, 320, 270]
+		    ZOrder		    11
+		    Outputs		    "1"
+		    }
+		    Block {
+		    BlockType		    S-Function
+		    Name		    " SFunction "
+		    SID			    "2321::19"
+		    Tag			    "Stateflow S-Function assignment 34"
+		    Ports		    [2, 2]
+		    Position		    [180, 100, 230, 160]
+		    ZOrder		    10
+		    FunctionName	    "sf_sfun"
+		    PortCounts		    "[2 2]"
+		    SFunctionDeploymentMode off
+		    EnableBusSupport	    on
+		    SFcnIsStateOwnerBlock   off
+		    Port {
+		    PortNumber		    2
+		    Name		    "A_BN_0"
+		    }
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    " Terminator "
+		    SID			    "2321::21"
+		    Position		    [460, 241, 480, 259]
+		    ZOrder		    12
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "A_BN_0"
+		    SID			    "2321::5"
+		    Position		    [460, 101, 480, 119]
+		    ZOrder		    -5
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    ZOrder		    9
+		    SrcBlock		    "B_b"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    10
+		    SrcBlock		    "B_n"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "A_BN_0"
+		    ZOrder		    11
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    2
+		    DstBlock		    "A_BN_0"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    12
+		    SrcBlock		    " Demux "
+		    SrcPort		    1
+		    DstBlock		    " Terminator "
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    13
+		    SrcBlock		    " SFunction "
+		    SrcPort		    1
+		    DstBlock		    " Demux "
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Block {
+		    BlockType		    SubSystem
+		    Name		    "MATLAB Function3"
+		    SID			    "2329"
+		    Ports		    [1, 1]
+		    Position		    [390, 472, 460, 518]
+		    ZOrder		    4096
+		    Commented		    "on"
+		    ErrorFcn		    "Stateflow.Translate.translate"
+		    PermitHierarchicalResolution "ExplicitOnly"
+		    TreatAsAtomicUnit	    on
+		    RequestExecContextInheritance off
+		    SFBlockType		    "MATLAB Function"
+		    ContentPreviewEnabled   on
+		    System {
+		    Name		    "MATLAB Function3"
+		    Location		    [223, 338, 826, 833]
+		    Open		    off
+		    PortBlocksUseCompactNotation off
+		    SetExecutionDomain	    off
+		    ExecutionDomainType	    "Deduce"
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    SIDHighWatermark	    "21"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "A"
+		    SID			    "2329::1"
+		    Position		    [20, 101, 40, 119]
+		    ZOrder		    -1
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    " Demux "
+		    SID			    "2329::20"
+		    Ports		    [1, 1]
+		    Position		    [270, 230, 320, 270]
+		    ZOrder		    11
+		    Outputs		    "1"
+		    }
+		    Block {
+		    BlockType		    S-Function
+		    Name		    " SFunction "
+		    SID			    "2329::19"
+		    Tag			    "Stateflow S-Function assignment 35"
+		    Ports		    [1, 2]
+		    Position		    [180, 100, 230, 160]
+		    ZOrder		    10
+		    FunctionName	    "sf_sfun"
+		    PortCounts		    "[1 2]"
+		    SFunctionDeploymentMode off
+		    EnableBusSupport	    on
+		    SFcnIsStateOwnerBlock   off
+		    Port {
+		    PortNumber		    2
+		    Name		    "quat"
+		    }
+		    }
+		    Block {
+		    BlockType		    Terminator
+		    Name		    " Terminator "
+		    SID			    "2329::21"
+		    Position		    [460, 241, 480, 259]
+		    ZOrder		    12
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "quat"
+		    SID			    "2329::5"
+		    Position		    [460, 101, 480, 119]
+		    ZOrder		    -5
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    ZOrder		    1
+		    SrcBlock		    "A"
+		    SrcPort		    1
+		    DstBlock		    " SFunction "
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "quat"
+		    ZOrder		    2
+		    Labels		    [0, 0]
+		    SrcBlock		    " SFunction "
+		    SrcPort		    2
+		    DstBlock		    "quat"
 		    DstPort		    1
 		    }
 		    Line {
@@ -15438,9 +15695,10 @@ Model {
 		    Block {
 		    BlockType		    Terminator
 		    Name		    "Terminator"
-		    SID			    "2310"
-		    Position		    [130, 215, 150, 235]
-		    ZOrder		    4088
+		    SID			    "2328"
+		    Position		    [545, 485, 565, 505]
+		    ZOrder		    4095
+		    Commented		    "on"
 		    }
 		    Block {
 		    BlockType		    Outport
@@ -15540,8 +15798,31 @@ Model {
 		    DstPort		    1
 		    }
 		    Line {
-		    ZOrder		    142
+		    ZOrder		    157
 		    SrcBlock		    "Magnetometer Measure"
+		    SrcPort		    1
+		    Points		    [77, 0; 0, 25]
+		    DstBlock		    "MATLAB Function2"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    158
+		    SrcBlock		    "From"
+		    SrcPort		    1
+		    Points		    [43, 0; 0, -10]
+		    DstBlock		    "MATLAB Function2"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    159
+		    SrcBlock		    "MATLAB Function2"
+		    SrcPort		    1
+		    DstBlock		    "MATLAB Function3"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    160
+		    SrcBlock		    "MATLAB Function3"
 		    SrcPort		    1
 		    DstBlock		    "Terminator"
 		    DstPort		    1
@@ -15588,7 +15869,7 @@ Model {
 		  BlockType		  Outport
 		  Name			  "q"
 		  SID			  "1760"
-		  Position		  [505, 188, 535, 202]
+		  Position		  [505, 198, 535, 212]
 		  ZOrder		  4042
 		  Port			  "2"
 		  IconDisplay		  "Port number"
@@ -15630,7 +15911,7 @@ Model {
 		  Points		  [80, 0]
 		  Branch {
 		    ZOrder		    143
-		    Points		    [0, 190]
+		    Points		    [0, 200]
 		    DstBlock		    "Quaternions"
 		    DstPort		    1
 		  }
@@ -15644,7 +15925,7 @@ Model {
 		  ZOrder		  95
 		  SrcBlock		  "Quaternions"
 		  SrcPort		  1
-		  Points		  [19, 0; 0, -31; -183, 0; 0, -54]
+		  Points		  [9, 0; 0, -41; -183, 0; 0, -54]
 		  DstBlock		  "Error on ω "
 		  DstPort		  4
 		}
@@ -15652,10 +15933,16 @@ Model {
 		  ZOrder		  124
 		  SrcBlock		  "LVLH"
 		  SrcPort		  1
-		  Points		  [16, 0]
+		  Points		  [21, 0]
+		  Branch {
+		    ZOrder		    153
+		    Points		    [0, -10]
+		    DstBlock		    "\n"
+		    DstPort		    1
+		  }
 		  Branch {
 		    ZOrder		    130
-		    Points		    [0, 35]
+		    Points		    [0, 25]
 		    Branch {
 		    ZOrder		    144
 		    DstBlock		    "Error on ω "
@@ -15667,11 +15954,6 @@ Model {
 		    DstBlock		    "A_LN"
 		    DstPort		    1
 		    }
-		  }
-		  Branch {
-		    ZOrder		    127
-		    DstBlock		    "\n"
-		    DstPort		    1
 		  }
 		}
 		Line {
@@ -16784,7 +17066,7 @@ Model {
 		  System {
 		    Name		    "Command Quaternion"
 		    Location		    [0, 0, 1368, 732]
-		    Open		    off
+		    Open		    on
 		    PortBlocksUseCompactNotation off
 		    SetExecutionDomain	    off
 		    ExecutionDomainType	    "Deduce"
@@ -18102,7 +18384,7 @@ Model {
       System {
 	Name			"True Error"
 	Location		[0, 0, 1368, 732]
-	Open			on
+	Open			off
 	PortBlocksUseCompactNotation off
 	SetExecutionDomain	off
 	ExecutionDomainType	"Deduce"
@@ -19948,8 +20230,8 @@ Model {
       "623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.27450980392156"
       "9 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.6509803"
       "92156863])),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),ext"
-      "mgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','2018b','Position',[161 155 888 390]"
-      ",'VisibleAtModelOpen','on')"
+      "mgr.Configuration('Tools','Measurements',true,'Version','2018b')),'Version','2018b','Position',[165 159 880 386]"
+      ")"
       NumInputPorts	      "1"
       Floating		      off
     }
@@ -20211,7 +20493,7 @@ Stateflow {
     created		    "04-Oct-2017 12:24:42"
     isLibrary		    0
     sfVersion		    80000014
-    firstTarget		    277
+    firstTarget		    292
   }
   chart {
     id			    2
@@ -22297,9 +22579,6 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 110 0 0]
     viewObj		    109
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    7
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -25594,17 +25873,306 @@ Stateflow {
     name		    "On-Board Computer/Pointing Control/Quaternion Feedback Control/Command Quaternion/MATLAB Function1"
     chart		    270
   }
-  target {
+  chart {
     id			    277
+    machine		    1
+    name		    "On-Board Computer/Attitude Determination/Kinematics/Quaternions/MATLAB Function2"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 278 0 0]
+    viewObj		    277
+    visible		    1
+    subviewS {
+    }
+    ssIdHighWaterMark	    6
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    chartFileNumber	    34
+    disableImplicitCasting  1
+    eml {
+      name		      "fcn"
+    }
+    firstData		    279
+    firstTransition	    283
+    firstJunction	    282
+  }
+  state {
+    id			    278
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    277
+    treeNode		    [277 0 0 0]
+    superState		    SUBCHART
+    subviewer		    277
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function A_BN_0 = fcn(B_b, B_n)\n\nf = (norm(B_b' - x*B_n'))^2 + norm(eye(3) - x'*x)^2;     % Cos"
+      "t function\n\nA_BN_0 = fminsearch(f,x0);"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    279
+    ssIdNumber		    4
+    name		    "B_b"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [277 0 280]
+  }
+  data {
+    id			    280
+    ssIdNumber		    5
+    name		    "A_BN_0"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [277 279 281]
+  }
+  data {
+    id			    281
+    ssIdNumber		    6
+    name		    "B_n"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+	isSigned		1
+	wordLength		"16"
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [277 280 0]
+  }
+  junction {
+    id			    282
+    position		    [23.5747 49.5747 7]
+    chart		    277
+    subviewer		    277
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [277 0 0]
+  }
+  transition {
+    id			    283
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      282
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    277
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    277
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+    linkNode		    [277 0 0]
+  }
+  instance {
+    id			    284
+    machine		    1
+    name		    "On-Board Computer/Attitude Determination/Kinematics/Quaternions/MATLAB Function2"
+    chart		    277
+  }
+  chart {
+    id			    285
+    machine		    1
+    name		    "On-Board Computer/Attitude Determination/Kinematics/Quaternions/MATLAB Function3"
+    windowPosition	    [422 539.941 189 413]
+    viewLimits		    [0 156.75 0 153.75]
+    screen		    [1 1 3600 1200 1.180555555555556]
+    treeNode		    [0 286 0 0]
+    viewObj		    285
+    subviewS {
+    }
+    ssIdHighWaterMark	    5
+    decomposition	    CLUSTER_CHART
+    type		    EML_CHART
+    chartFileNumber	    35
+    disableImplicitCasting  1
+    eml {
+      name		      "attToQuat"
+    }
+    firstData		    287
+    firstTransition	    290
+    firstJunction	    289
+  }
+  state {
+    id			    286
+    labelString		    "eML_blk_kernel()"
+    position		    [18 64.5 118 66]
+    fontSize		    12
+    chart		    285
+    treeNode		    [285 0 0 0]
+    superState		    SUBCHART
+    subviewer		    285
+    ssIdNumber		    1
+    type		    FUNC_STATE
+    decomposition	    CLUSTER_STATE
+    eml {
+      isEML		      1
+      script		      "function quat = attToQuat( A )\n%   Converts the attitude matrix A to a quaternion vector using a"
+      " modification \n%   of the \"Shepperd's Algorithm\"\n%\n%   quat = attToQuat( A )\n%\n%   The attitude matrix A "
+      "represents the rotational matrix from the inertial\n%   reference frame to the body frame of the vehicle.\n%   T"
+      "he quaternion (quat) will be returned as a 4-by-1 vector with the scalar\n%   element as the fourth component.\n"
+      "%\n%   References:\n%	[1] Markley, F. Landis. \"Unit quaternion from rotation matrix.\" \n%       Journal of gui"
+      "dance, control, and dynamics 31.2 (2008): 440.\n\nvector = [A(1,1), A(2,2), A(3,3), trace(A)];\n[M, i] = max(vec"
+      "tor);\n\nswitch i\n    case 1\n        q = [ 1 + A(1,1) - A(2,2) - A(3,3);\n            A(1,2) + A(2,1);\n      "
+      "      A(1,3) + A(3,1);\n            A(2,3) - A(3,2)];\n        \n    case 2\n        q = [A(2,1) + A(1,2);\n    "
+      "        1 + A(2,2) - A(3,3) - A(1,1);\n            A(2,3) + A(3,2);\n            A(3,1) - A(1,3)];\n        \n  "
+      "  case 3\n        q = [A(3,1) + A(1,3);\n            A(3,2) + A(2,3);\n            1 + A(3,3) - A(1,1) - A(2,2);"
+      "\n            A(1,2) - A(2,1)];\n        \n    case 4\n        q = [A(2,3) - A(3,2);\n            A(3,1) - A(1,3"
+      ");\n            A(1,2) - A(2,1);\n            1 + A(1,1) + A(2,2) + A(3,3);];\n        \n    otherwise\n        "
+      "error('Check the Attitude matrix');\nend\n\nquat = q / norm(q);\n"
+      editorLayout	      "100 M4x1[10 5 700 500]"
+    }
+  }
+  data {
+    id			    287
+    ssIdNumber		    4
+    name		    "A"
+    scope		    INPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [285 0 288]
+  }
+  data {
+    id			    288
+    ssIdNumber		    5
+    name		    "quat"
+    scope		    OUTPUT_DATA
+    machine		    1
+    props {
+      array {
+	size			"-1"
+      }
+      type {
+	method			SF_INHERITED_TYPE
+	primitive		SF_DOUBLE_TYPE
+      }
+      complexity	      SF_COMPLEX_INHERITED
+      frame		      SF_FRAME_NO
+      unit {
+	name			"inherit"
+      }
+    }
+    dataType		    "Inherit: Same as Simulink"
+    linkNode		    [285 287 0]
+  }
+  junction {
+    id			    289
+    position		    [23.5747 49.5747 7]
+    chart		    285
+    subviewer		    285
+    ssIdNumber		    3
+    type		    CONNECTIVE_JUNCTION
+    linkNode		    [285 0 0]
+  }
+  transition {
+    id			    290
+    labelString		    "{eML_blk_kernel();}"
+    labelPosition	    [28.125 13.875 102.544 14.964]
+    fontSize		    12
+    src {
+      intersection	      [0 0 1 0 23.5747 14.625 0 0]
+    }
+    dst {
+      id		      289
+      intersection	      [1 0 -1 0 23.5747 42.5747 0 0]
+    }
+    midPoint		    [23.5747 24.9468]
+    chart		    285
+    dataLimits		    [21.175 25.975 14.625 42.575]
+    subviewer		    285
+    drawStyle		    SMART
+    slide {
+      sticky		      BOTH_STICK
+    }
+    executionOrder	    1
+    ssIdNumber		    2
+    linkNode		    [285 0 0]
+  }
+  instance {
+    id			    291
+    machine		    1
+    name		    "On-Board Computer/Attitude Determination/Kinematics/Quaternions/MATLAB Function3"
+    chart		    285
+  }
+  target {
+    id			    292
     machine		    1
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
-    linkNode		    [1 0 278]
+    linkNode		    [1 0 293]
   }
   target {
-    id			    278
+    id			    293
     machine		    1
     name		    "rtw"
-    linkNode		    [1 277 0]
+    linkNode		    [1 292 0]
   }
 }
