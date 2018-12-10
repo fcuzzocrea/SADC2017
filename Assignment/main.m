@@ -214,5 +214,30 @@ legend('MT_x','MT_y','MT_z')
 figure(7)
 hold on
 plot(w_bl(1:end,1)); plot(w_bl(1:end,2)); plot(w_bl(1:end,3));
-title('Error between BFF and RF')
+title('Error on Angular Velocites')
 legend('x','y','z')
+
+figure(8)
+hold on
+plot(w_norm(1:end,1)); 
+title('Angular Velocities Norm')
+legend('x','y','z')
+
+figure(9)
+hold on
+plot(quat_err(1:end,1)); plot(quat_err(1:end,2)); plot(quat_err(1:end,3));
+title('Error on Quaternions')
+legend('q1','q2','q3')
+
+% Euler Angles
+figure(10)
+hold on
+plot(euler_angles(1:end,1)); plot(euler_angles(1:end,2)); plot(euler_angles(1:end,3));
+title('Euler Angles')
+legend('Roll','Pitch','Yaw')
+
+% Angular velocities
+figure(11)
+hold on
+plot(w_bn(1:end,1)); plot(w_bn(1:end,2)); plot(w_bn(1:end,3));
+title('Angular Velocities')
